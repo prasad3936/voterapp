@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<div class="login-box">
+  <h2>लॉगिन</h2>
+
+  <form method="post">
+    <input type="text" name="username" placeholder="वापरकर्ता नाव" required />
+    <input type="password" name="password" placeholder="पासवर्ड" required />
+    <button type="submit">लॉगिन</button>
+  </form>
+
+  <p style="margin-top: 10px; font-size: 13px; color: #555">
+    Username: admin | Password: admin
+  </p>
+</div>
+{% endblock %}

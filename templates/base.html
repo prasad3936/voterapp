@@ -1,0 +1,111 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="mr">
+  <head>
+    <style>
+      @media print {
+        body * {
+          visibility: hidden !important;
+        }
+        #print-area, #print-area * {
+          visibility: visible !important;
+        }
+        #print-area {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+        .no-print {
+          display: none !important;
+        }
+      }
+
+            /* Footer stays at the bottom */
+            footer {
+              margin-top: auto;
+              background-color: #343a40;
+              color: white;
+              text-align: center;
+              padding: 10px 0;
+            }
+                /* Media query for print */
+            @media print {
+              /* Hide the Print button when printing */
+              .print-button {
+                display: none;
+              }
+                @font-face {
+                  font-family: "Noto";
+                  src: url("/static/fonts/NotoSansDevanagari-Regular.ttf");
+                }
+                @font-face {
+                  font-family: "NotoBold";
+                  src: url("/static/fonts/NotoSansDevanagari-Bold.ttf");
+                  font-weight: bold;
+                }
+                body {
+                  font-family: "Noto", sans-serif;
+                }
+                h2,
+                b {
+                  font-family: "NotoBold";
+                }
+    </style>
+
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+
+    <!-- GOV India look -->
+    <style>
+      body {
+        background: #f4f8ff;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .navbar {
+        background: #003366;
+        padding: 12px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .navbar a {
+        color: white;
+        margin-left: 15px;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .footer {
+        text-align: center;
+        padding: 10px;
+        font-size: 13px;
+        background: #002850;
+        color: white;
+        margin-top: 20px;
+      }
+      .container {
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar print-button">
+      <div class="print-button"><b>मतदार माहिती प्रणाली</b></div>
+
+      {% if session.get('user') %}
+      <div class="print-button">
+        <a class="print-button" href="/dashboard">मुख्य पृष्ठ</a>
+        <a class="print-button" href="/logout">लॉगआउट</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="container">{% block content %}{% endblock %}</div>
+
+    <div class="footer print-button">© Invictus Technologies Pvt Ltd 2025</div>
+  </body>
+</html>

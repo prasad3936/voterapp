@@ -1,0 +1,119 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- html2canvas for screenshot -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<div class="container mt-3" id="voterCard">
+  <div class="card shadow p-4" style="max-width: 550px; margin: auto">
+    <h4 class="text-primary mb-3 fw-bold text-center">मतदार ओळखपत्र</h4>
+
+    <div class="text-center mb-3">
+      <img
+        src="/{{ v.photo }}"
+        class="img-thumbnail"
+        width="160"
+        height="180"
+      />
+    </div>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>नाव</th>
+        <td>{{ v.name }}</td>
+      </tr>
+      <tr>
+        <th>क्रमांक</th>
+        <td>{{ v.voter_serial }}</td>
+      </tr>
+      <tr>
+        <th>Voter ID</th>
+        <td>{{ v.voter_id }}</td>
+      </tr>
+      <tr>
+        <th>वय</th>
+        <td>{{ v.age }}</td>
+      </tr>
+      <tr>
+        <th>लिंग</th>
+        <td>{{ v.gender }}</td>
+      </tr>
+      <tr>
+        <th>जात</th>
+        <td>{{ v.caste }}</td>
+      </tr>
+      <tr>
+        <th>पत्ता</th>
+        <td>{{ v.address }}</td>
+      </tr>
+      <tr>
+        <th>मोबाइल</th>
+        <td>{{ v.mobile }}</td>
+      </tr>
+      <tr>
+        <th>नातेवाईक</th>
+        <td>{{ v.relative_name }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- Buttons -->
+<div class="container mt-2 no-print">
+  <button class="btn btn-success w-100 mb-2" onclick="shareToWhatsapp()">
+    📲 WhatsApp वर शेअर करा (Image)
+  </button>
+
+  <button onclick="window.print()" class="btn btn-primary w-100 mb-2">
+    🖨️ कार्ड प्रिंट करा
+  </button>
+
+  <a href="/dashboard" class="btn btn-secondary w-100"> ⬅️ परत </a>
+</div>
+
+<style>
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  }
+</style>
+
+<!-- Screenshot + WhatsApp JS -->
+<script>
+  function shareToWhatsapp() {
+    let card = document.getElementById("voterCard");
+
+    html2canvas(card).then((canvas) => {
+      canvas.toBlob(async (blob) => {
+        const file = new File([blob], "voter_card.png", { type: "image/png" });
+
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          try {
+            await navigator.share({
+              title: "Voter Card",
+              text: "मतदार ओळखपत्र",
+              files: [file],
+            });
+          } catch (err) {
+            console.log("Share cancelled:", err);
+          }
+        } else {
+          const link = document.createElement("a");
+          link.href = canvas.toDataURL("image/png");
+          link.download = "voter_card.png";
+          link.click();
+
+          alert(
+            "⚠️ Sharing not supported.\nImage downloaded, please share manually."
+          );
+        }
+      }, "image/png");
+    });
+  }
+</script>
+
+{% endblock %}
