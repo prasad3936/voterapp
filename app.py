@@ -1,27 +1,23 @@
-from flask import Flask, render_template, request, redirect, url_for, session, send_file, flash
-import sqlite3, math, io, os, urllib.parse
-import imgkit
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import A4
-from PIL import Image, ImageDraw, ImageFont
-
-import time
-
-
+from flask import Flask, render_template, request, redirect, url_for, session, flash
+import pymysql, math, urllib.parse
 
 app = Flask(__name__)
 app.secret_key = "verysecretkey_local"
-DB = "voters.db"
 
-# DB Connection
+# ---------------- DB CONNECTION ----------------
 def get_db():
-    conn = sqlite3.connect(DB)
-    conn.row_factory = sqlite3.Row
-    return conn
+    return pymysql.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="voterdb",
+        charset="utf8mb4",
+        cursorclass=pymysql.cursors.DictCursor
+    )
 
-# ------------------- LOGIN -------------------
-@app.route("/", methods=["GET","POST"])
-@app.route("/login", methods=["GET","POST"])
+# ---------------- LOGIN ----------------
+@app.route("/", methods=["GET", "POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         u = request.form.get("username")
@@ -29,10 +25,11 @@ def login():
         if u == "admin" and p == "admin":
             session["user"] = "admin"
             return redirect(url_for("dashboard"))
-        flash("चुकीचे क्रेडेन्शियल्स — Username/Password तपासा", "danger")
+        flash("❌ चुकीचे Username/Password", "danger")
+
     return render_template("login.html")
 
-# ------------------- DASHBOARD LIST -------------------
+# ---------------- DASHBOARD ----------------
 @app.route("/dashboard")
 def dashboard():
     if "user" not in session:
@@ -40,45 +37,51 @@ def dashboard():
 
     q = request.args.get("q", "").strip()
     gender = request.args.get("gender", "")
-    caste = request.args.get("caste", "")
     page = int(request.args.get("page", 1))
-    per_page = 10
+
+    per_page = 20
     offset = (page - 1) * per_page
 
-    base = " FROM voters WHERE 1=1"
+    query = "FROM voters WHERE 1=1"
     params = []
-    cond = ""
 
+    # Search box
     if q:
-        cond += " AND (name LIKE ? OR voter_serial LIKE ? OR voter_id LIKE ? OR address LIKE ?)"
+        query += " AND (name LIKE %s OR serial LIKE %s OR epic LIKE %s OR relation LIKE %s OR house LIKE %s)"
         like = f"%{q}%"
-        params.extend([like, like, like, like])
+        params += [like, like, like, like, like]
 
+    # Gender Filter
     if gender:
-        cond += " AND gender = ?"; params.append(gender)
-
-    if caste:
-        cond += " AND caste = ?"; params.append(caste)
+        query += " AND gender=%s"
+        params.append(gender)
 
     conn = get_db()
     cur = conn.cursor()
 
-    cur.execute("SELECT COUNT(*) " + base + cond, params)
-    total = cur.fetchone()[0]
+    # Total count for pagination
+    cur.execute("SELECT COUNT(*) " + query, params)
+    total = cur.fetchone()["COUNT(*)"]
     total_pages = math.ceil(total / per_page)
 
-    sql = "SELECT * " + base + cond + " ORDER BY id ASC LIMIT ? OFFSET ?"
+    # Fetch page data
+    sql = f"SELECT * {query} ORDER BY serial*1 ASC LIMIT %s OFFSET %s"
     cur.execute(sql, params + [per_page, offset])
     voters = cur.fetchall()
 
     conn.close()
 
-    return render_template("dashboard.html",
-        voters=voters, q=q, gender=gender, caste=caste,
-        page=page, total_pages=total_pages
+    return render_template(
+        "dashboard.html",
+        voters=voters,
+        q=q,
+        gender=gender,
+        page=page,
+        total_pages=total_pages
     )
 
-# ------------------- VOTER DETAIL CARD -------------------
+
+# ---------------- VOTER DETAIL ----------------
 @app.route("/voter/<int:vid>")
 def voter_detail(vid):
     if "user" not in session:
@@ -86,27 +89,24 @@ def voter_detail(vid):
 
     conn = get_db()
     cur = conn.cursor()
-    cur.execute("SELECT * FROM voters WHERE id=?", (vid,))
+    cur.execute("SELECT * FROM voters WHERE id=%s", (vid,))
     v = cur.fetchone()
     conn.close()
 
     if not v:
-        return "Voter not found",404
+        return "❌ Voter Not Found", 404
 
-    # WhatsApp message text
-    text = f"मतदार माहिती:\nनाव: {v['name']}\nID: {v['voter_id']}\nक्रमांक: {v['voter_serial']}"
+    text = f"मतदार माहिती:\nनाव: {v['name']}\nEPIC: {v['epic']}\nक्रमांक: {v['serial']}"
     wa_url = "https://wa.me/?text=" + urllib.parse.quote(text)
 
     return render_template("card.html", v=v, wa_url=wa_url)
 
-    
-
-# ------------------- LOGOUT -------------------
+# ---------------- LOGOUT ----------------
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect(url_for("login"))
 
-# -------------------
+# ---------------- RUN APP ----------------
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,59 +1,69 @@
 {% extends "base.html" %} {% block content %}
 
-<!-- html2canvas for screenshot -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <style>
-  /* Hide buttons during print */
+  .card-border {
+    border: 2px solid #000;
+    padding: 10px;
+    border-radius: 8px;
+  }
   @media print {
     .no-print {
-      display: none !important;
+      display: none;
     }
-
     body * {
       visibility: hidden;
     }
-
-    #voterCard,
-    #voterCard * {
+    #vCard,
+    #vCard * {
       visibility: visible;
     }
-
-    #voterCard {
+    #vCard {
       position: absolute;
       left: 0;
       top: 0;
       width: 100%;
     }
   }
+  th {
+    width: 40%;
+  }
 </style>
 
-<div class="container mt-3" id="voterCard">
-  <div class="card shadow p-4" style="max-width: 550px; margin: auto">
-    <h4 class="text-primary mb-3 fw-bold text-center">मतदार ओळखपत्र</h4>
+<div class="container mt-3" id="vCard">
+  <div class="card card-border shadow" style="max-width: 420px; margin: auto">
+    <h4 class="text-center fw-bold text-primary mt-2">मतदार ओळखपत्र</h4>
 
-    <!-- Voter Photo -->
-    <div class="text-center mb-3">
+    <div class="text-center mb-2">
       <img
-        src="/{{ v.photo }}"
+        src="/{{ v.photo if v.photo else 'static/photos/default.jpg' }}"
+        width="130"
+        height="150"
         class="img-thumbnail"
-        width="160"
-        height="180"
       />
     </div>
 
-    <table class="table table-bordered">
+    <table class="table table-sm table-bordered">
       <tr>
         <th>नाव</th>
         <td>{{ v.name }}</td>
       </tr>
       <tr>
         <th>क्रमांक</th>
-        <td>{{ v.voter_serial }}</td>
+        <td>{{ v.serial }}</td>
       </tr>
       <tr>
-        <th>Voter ID</th>
-        <td>{{ v.voter_id }}</td>
+        <th>EPIC</th>
+        <td>{{ v.epic }}</td>
+      </tr>
+      <tr>
+        <th>नातेसंबंध</th>
+        <td>{{ v.relation }}</td>
+      </tr>
+      <tr>
+        <th>घर क्रमांक</th>
+        <td>{{ v.house }}</td>
       </tr>
       <tr>
         <th>वय</th>
@@ -63,66 +73,36 @@
         <th>लिंग</th>
         <td>{{ v.gender }}</td>
       </tr>
-      <tr>
-        <th>जात</th>
-        <td>{{ v.caste }}</td>
-      </tr>
-      <tr>
-        <th>पत्ता</th>
-        <td>{{ v.address }}</td>
-      </tr>
-      <tr>
-        <th>मोबाइल</th>
-        <td>{{ v.mobile }}</td>
-      </tr>
-      <tr>
-        <th>नातेवाईक</th>
-        <td>{{ v.relative_name }}</td>
-      </tr>
     </table>
   </div>
 </div>
 
-<!-- Buttons -->
-<div class="container mt-2 no-print">
+<div class="container mt-3 no-print">
   <button class="btn btn-success w-100 mb-2" onclick="shareToWhatsapp()">
-    📲 WhatsApp वर शेअर करा
+    📲 WhatsApp वर शेअर
   </button>
-  <!--
   <button class="btn btn-primary w-100 mb-2" onclick="window.print()">
-    🖨️ कार्ड प्रिंट करा
+    🖨️ प्रिंट
   </button>
--->
-  <a href="/dashboard" class="btn btn-secondary w-100">⬅️ परत</a>
+  <a href="/dashboard" class="btn btn-secondary w-100">⬅ परत</a>
 </div>
 
-<!-- Screenshot + WhatsApp JS -->
 <script>
   function shareToWhatsapp() {
-    let card = document.getElementById("voterCard");
-
+    let card = document.getElementById("vCard");
     html2canvas(card).then((canvas) => {
       canvas.toBlob(async (blob) => {
         const file = new File([blob], "voter_card.png", { type: "image/png" });
-
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
-          try {
-            await navigator.share({
-              title: "Voter Card",
-              text: "मतदार ओळखपत्र",
-              files: [file],
-            });
-          } catch (err) {
-            console.log("Share cancelled:", err);
-          }
+          await navigator.share({ title: "Voter Card", files: [file] });
         } else {
-          const link = document.createElement("a");
-          link.href = canvas.toDataURL("image/png");
-          link.download = "voter_card.png";
-          link.click();
-          alert("⚠️ Sharing not supported.\nImage downloaded, share manually.");
+          const a = document.createElement("a");
+          a.href = canvas.toDataURL();
+          a.download = "voter_card.png";
+          a.click();
+          alert("Saved — now share manually.");
         }
-      }, "image/png");
+      });
     });
   }
 </script>

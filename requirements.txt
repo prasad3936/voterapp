@@ -1,0 +1,7 @@
+# Python dependencies for /d:/election/voterapp/app.py
+Flask>=2.0,<3.0
+imgkit>=1.2.2
+reportlab>=3.6.12
+Pillow>=9.0.0
+
+# Note: imgkit requires the wkhtmltoimage binary installed on the host system.
