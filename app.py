@@ -1,19 +1,45 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+import os
+from flask import Flask, render_template, request, redirect, url_for, session, flash, g
+import mysql
 import pymysql, math, urllib.parse
+from urllib.parse import urlparse, unquote
 
 app = Flask(__name__)
 app.secret_key = "verysecretkey_local"
 
-# ---------------- DB CONNECTION ----------------
+DB_URL = "mysql://USER:PASSWORD@mysql-1f761a7d-prasadcpatil246-f8f0.b.aivencloud.com:14627/voterdb"  # mysql://user:pass@host:port/dbname
+
+if not DB_URL:
+    raise Exception("❌ DATABASE_URL environment variable not set!")
+
+# ---- Parse DB URI ----
+url = urlparse(DB_URL)
+
+DB_CONFIG = {
+    "host": url.hostname,
+    "port": url.port,
+    "user": url.username,
+    "password": url.password,
+    "database": url.path.lstrip('/'),
+    "charset": "utf8mb4",
+    "cursorclass": pymysql.cursors.DictCursor,
+    "ssl": {
+        "ca": os.path.join(os.path.dirname(__file__), "ca.pem")
+    }
+}
+
 def get_db():
-    return pymysql.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="voterdb",
-        charset="utf8mb4",
-        cursorclass=pymysql.cursors.DictCursor
-    )
+    """ Reuse connection across Lambda invocations """
+    if "db" not in g:
+        g.db = pymysql.connect(**DB_CONFIG, connect_timeout=8)
+    return g.db
+
+@app.teardown_appcontext
+def close_db(error):
+    db = g.pop("db", None)
+    if db:
+        db.close()
+
 
 # ---------------- LOGIN ----------------
 @app.route("/", methods=["GET", "POST"])
@@ -42,16 +68,14 @@ def dashboard():
     per_page = 20
     offset = (page - 1) * per_page
 
-    query = "FROM voters WHERE 1=1"
+    query = "FROM voters WHERE name IS NOT NULL AND name != ''"
     params = []
 
-    # Search box
     if q:
         query += " AND (name LIKE %s OR serial LIKE %s OR epic LIKE %s OR relation LIKE %s OR house LIKE %s)"
         like = f"%{q}%"
-        params += [like, like, like, like, like]
+        params += [like] * 5
 
-    # Gender Filter
     if gender:
         query += " AND gender=%s"
         params.append(gender)
@@ -59,27 +83,15 @@ def dashboard():
     conn = get_db()
     cur = conn.cursor()
 
-    # Total count for pagination
     cur.execute("SELECT COUNT(*) " + query, params)
     total = cur.fetchone()["COUNT(*)"]
     total_pages = math.ceil(total / per_page)
 
-    # Fetch page data
     sql = f"SELECT * {query} ORDER BY serial*1 ASC LIMIT %s OFFSET %s"
     cur.execute(sql, params + [per_page, offset])
     voters = cur.fetchall()
 
-    conn.close()
-
-    return render_template(
-        "dashboard.html",
-        voters=voters,
-        q=q,
-        gender=gender,
-        page=page,
-        total_pages=total_pages
-    )
-
+    return render_template("dashboard.html", voters=voters, q=q, gender=gender, page=page, total_pages=total_pages)
 
 # ---------------- VOTER DETAIL ----------------
 @app.route("/voter/<int:vid>")
@@ -91,7 +103,6 @@ def voter_detail(vid):
     cur = conn.cursor()
     cur.execute("SELECT * FROM voters WHERE id=%s", (vid,))
     v = cur.fetchone()
-    conn.close()
 
     if not v:
         return "❌ Voter Not Found", 404
@@ -107,6 +118,5 @@ def logout():
     session.clear()
     return redirect(url_for("login"))
 
-# ---------------- RUN APP ----------------
 if __name__ == "__main__":
     app.run(debug=True)
