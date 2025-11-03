@@ -6,7 +6,7 @@ app.secret_key = "verysecretkey_local"
 
 # ---------------- DB CONNECTION ----------------
 def get_db():
-    conn = sqlite3.connect("voterdb.db")
+    conn = sqlite3.connect("voters.sqlite")
     conn.row_factory = sqlite3.Row  # return dict-like rows
     return conn
 
@@ -102,4 +102,4 @@ def logout():
 
 # ---------------- RUN APP ----------------
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
