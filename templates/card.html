@@ -1,0 +1,141 @@
+{% extends "base.html" %} {% block content %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<style>
+  .voter-card-box {
+    max-width: 420px;
+    margin: auto;
+  }
+
+  .card-border {
+    border: 2px solid #000;
+    padding: 10px;
+    border-radius: 8px;
+    background: white;
+  }
+
+  table td,
+  table th {
+    font-size: 14px;
+  }
+
+  th {
+    width: 45%;
+  }
+
+  /* Mobile Photo resize */
+  @media (max-width: 576px) {
+    .voter-photo {
+      width: 110px !important;
+      height: 130px !important;
+    }
+    table td,
+    table th {
+      font-size: 13px;
+      padding: 6px;
+    }
+  }
+
+  /* Printing */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body * {
+      visibility: hidden !important;
+    }
+    #vCard,
+    #vCard * {
+      visibility: visible !important;
+    }
+    #vCard {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="container mt-3" id="vCard">
+  <div class="card voter-card-box card-border shadow">
+    <h5 class="text-center fw-bold text-primary mt-2">मतदार ओळखपत्र</h5>
+
+    <div class="text-center mb-2">
+      <img
+        src="/{{ v.photo if v.photo else 'static/photos/default.jpg' }}"
+        width="130"
+        height="150"
+        class="img-thumbnail voter-photo"
+      />
+    </div>
+
+    <table class="table table-sm table-bordered mb-0">
+      <tr>
+        <th>नाव</th>
+        <td>{{ v.name }}</td>
+      </tr>
+      <tr>
+        <th>क्रमांक</th>
+        <td>{{ v.serial }}</td>
+      </tr>
+      <tr>
+        <th>EPIC</th>
+        <td>{{ v.epic }}</td>
+      </tr>
+      <tr>
+        <th>वडिलांचे नाव / पतीचे नाव</th>
+        <td>{{ v.relation }}</td>
+      </tr>
+      <tr>
+        <th>घर क्रमांक</th>
+        <td>{{ v.house_no }}</td>
+      </tr>
+      <tr>
+        <th>वय</th>
+        <td>{{ v.age }}</td>
+      </tr>
+      <tr>
+        <th>लिंग</th>
+        <td>{{ v.gender }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- Action Buttons -->
+<div class="container mt-3 no-print">
+  <button class="btn btn-success w-100 mb-2" onclick="shareToWhatsapp()">
+    📲 WhatsApp वर शेअर
+  </button>
+  <!---
+  <button class="btn btn-primary w-100 mb-2" onclick="window.print()">
+    🖨️ प्रिंट
+  </button>
+-->
+  <a href="/dashboard" class="btn btn-secondary w-100"> ⬅ परत </a>
+</div>
+
+<script>
+  function shareToWhatsapp() {
+    let card = document.getElementById("vCard");
+    html2canvas(card).then((canvas) => {
+      canvas.toBlob(async (blob) => {
+        const file = new File([blob], "voter_card.png", { type: "image/png" });
+
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          await navigator.share({ title: "Voter Card", files: [file] });
+        } else {
+          const a = document.createElement("a");
+          a.href = canvas.toDataURL();
+          a.download = "voter_card.png";
+          a.click();
+          alert("Saved — now share manually.");
+        }
+      });
+    });
+  }
+</script>
+
+{% endblock %}

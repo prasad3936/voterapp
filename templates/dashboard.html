@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-2">
+
+  <h4 class="fw-bold text-primary mb-3">मतदार यादी</h4>
+
+  <!-- Search + Filter + Pagination -->
+  <form method="get" class="row g-2 mb-2 align-items-center">
+
+    <!-- Search -->
+    <div class="col-12 col-md-4">
+      <input class="form-control"
+             name="q"
+             value="{{q}}"
+             placeholder="नाव / EPIC / पत्ता शोधा">
+    </div>
+
+    <!-- Gender -->
+    <div class="col-6 col-md-2">
+      <select class="form-select" name="gender">
+        <option value="">लिंग</option>
+        <option value="पुरुष" {% if gender=='पुरुष' %}selected{% endif %}>पुरुष</option>
+        <option value="स्त्री" {% if gender=='स्त्री' %}selected{% endif %}>स्त्री</option>
+      </select>
+    </div>
+
+    <!-- Search Button -->
+    <div class="col-6 col-md-2">
+      <button class="btn btn-primary w-100 fw-bold">🔍 शोधा</button>
+    </div>
+
+    <!-- Pagination Right (Moves Down on Mobile) -->
+    <div class="col-12 col-md-4 text-end mt-1">
+      <ul class="pagination pagination-sm justify-content-end mb-0">
+
+        {% if page > 1 %}
+        <li class="page-item">
+          <a class="page-link"
+             href="?page={{page-1}}&q={{q}}&gender={{gender}}">
+            ⬅ मागील
+          </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled"><span class="page-link">⬅ मागील</span></li>
+        {% endif %}
+
+        {% for p in range(1, total_pages + 1) %}
+        <li class="page-item {% if p == page %}active{% endif %}">
+          <a class="page-link"
+             href="?page={{p}}&q={{q}}&gender={{gender}}">
+            {{p}}
+          </a>
+        </li>
+        {% endfor %}
+
+        {% if page < total_pages %}
+        <li class="page-item">
+          <a class="page-link"
+             href="?page={{page+1}}&q={{q}}&gender={{gender}}">
+            पुढील ➡
+          </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled"><span class="page-link">पुढील ➡</span></li>
+        {% endif %}
+
+      </ul>
+    </div>
+
+  </form>
+
+  <!-- Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover bg-white shadow-sm text-center align-middle small">
+      <thead class="table-primary text-nowrap">
+        <tr>
+          <th>फोटो</th>
+          <th>नाव</th>
+          <th>क्रमांक</th>
+          <th>EPIC</th>
+          <th>घर क्रमांक</th>
+          <th>वय</th>
+          <th>कार्ड</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for v in voters %}
+        <tr>
+          <td><img src="/{{v.photo if v.photo else 'static/photos/default.jpg'}}"
+              width="45" height="55" class="rounded"></td>
+
+          <td class="text-start">{{ v.name }}</td>
+          <td>{{ v.serial }}</td>
+          <td class="text-nowrap">{{ v.epic }}</td>
+          <td>{{ v.house }}</td>
+          <td>{{ v.age }}</td>
+
+          <td>
+            <a class="btn btn-success btn-sm w-100" href="/voter/{{v.id}}">View</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+{% endblock %}

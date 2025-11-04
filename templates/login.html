@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %}
+
+<div
+  class="d-flex justify-content-center align-items-center"
+  style="min-height: 65vh"
+>
+  <div class="card shadow p-4" style="max-width: 350px; width: 100%">
+    <h4 class="text-center mb-3 fw-bold text-primary">🔐 लॉगिन</h4>
+
+    <form method="post">
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          placeholder="वापरकर्ता नाव"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="पासवर्ड"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 fw-bold">लॉगिन</button>
+    </form>
+
+    <p class="text-center mt-3 text-muted" style="font-size: 13px">
+      (Username: admin | Password: admin)
+    </p>
+  </div>
+</div>
+
+{% endblock %}

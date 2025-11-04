@@ -1,0 +1,3 @@
+lambda_build/
+*.zip
+lambda_handler.py

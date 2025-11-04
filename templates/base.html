@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="mr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title if title else "मतदार माहिती प्रणाली" }}</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        background: #f4f8ff;
+        font-family: Arial, sans-serif;
+      }
+
+      .content-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ✅ Navbar mobile responsive */
+      .navbar {
+        background: #003366;
+        padding: 12px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .navbar-title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .navbar a {
+        color: white;
+        margin-left: 12px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      /* ✅ Container responsive padding */
+      .container {
+        padding: 15px;
+      }
+
+      /* ✅ Sticky Footer */
+      footer {
+        background-color: #002850;
+        color: white;
+        text-align: center;
+        padding: 8px 0;
+        font-size: 13px;
+        margin-top: auto;
+      }
+
+      /* ✅ Table mobile scroll */
+      .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* ✅ Buttons & inputs full width on mobile */
+      @media (max-width: 768px) {
+        .navbar-title {
+          font-size: 14px;
+        }
+
+        .navbar {
+          text-align: center;
+        }
+        .navbar div {
+          width: 100%;
+          text-align: center;
+          margin-top: 6px;
+        }
+
+        .form-select,
+        .form-control,
+        .btn {
+          width: 100% !important;
+          margin-bottom: 7px;
+        }
+      }
+
+      /* ✅ Pagination reset bullet dots */
+      .pagination li {
+        list-style: none !important;
+      }
+
+      /* ✅ PRINT SETTINGS */
+      @media print {
+        .navbar,
+        footer,
+        .print-button {
+          display: none !important;
+        }
+
+        body * {
+          visibility: hidden;
+        }
+        #print-area,
+        #print-area * {
+          visibility: visible;
+        }
+
+        #print-area {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+
+        @font-face {
+          font-family: "Noto";
+          src: url("/static/fonts/NotoSansDevanagari-Regular.ttf");
+        }
+        @font-face {
+          font-family: "NotoBold";
+          src: url("/static/fonts/NotoSansDevanagari-Bold.ttf");
+          font-weight: bold;
+        }
+        body {
+          font-family: "Noto", sans-serif;
+        }
+        h2,
+        b {
+          font-family: "NotoBold";
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ✅ Mobile-friendly Navbar -->
+    <div class="navbar print-button">
+      <div class="navbar-title">मतदार माहिती प्रणाली</div>
+
+      {% if session.get('user') %}
+      <div>
+        <a href="/dashboard">🏠 मुख्य पृष्ठ</a>
+        <a href="/logout">🚪 लॉगआउट</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- ✅ Page Content -->
+    <div class="content-wrapper">
+      <div class="container mt-2">{% block content %}{% endblock %}</div>
+    </div>
+
+    <!-- ✅ Sticky Footer -->
+    <footer class="print-button">© Invictus Technologies Pvt Ltd 2025</footer>
+  </body>
+</html>
