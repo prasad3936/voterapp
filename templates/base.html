@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <title>{{ title if title else "Voter Information System" }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <link
       rel="stylesheet"
@@ -12,21 +13,13 @@
     <style>
       html,
       body {
-        height: 100%;
         margin: 0;
-        display: flex;
-        flex-direction: column;
         background: #f4f8ff;
-        font-family: Arial, sans-serif;
-      }
-
-      .content-wrapper {
-        flex: 1;
+        font-family: Arial;
+        height: 100%;
         display: flex;
         flex-direction: column;
       }
-
-      /* ✅ Navbar mobile responsive */
       .navbar {
         background: #003366;
         padding: 12px;
@@ -36,12 +29,6 @@
         align-items: center;
         flex-wrap: wrap;
       }
-
-      .navbar-title {
-        font-size: 16px;
-        font-weight: bold;
-      }
-
       .navbar a {
         color: white;
         margin-left: 12px;
@@ -49,118 +36,184 @@
         font-size: 14px;
         font-weight: bold;
       }
-
-      /* ✅ Container responsive padding */
-      .container {
-        padding: 15px;
+      .lang-btn {
+        border: 1px solid #fff;
+        color: #fff;
+        background: transparent;
+        padding: 3px 6px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 13px;
+        margin-left: 5px;
       }
-
-      /* ✅ Sticky Footer */
       footer {
-        background-color: #002850;
-        color: white;
+        background: #002850;
+        color: #fff;
         text-align: center;
         padding: 8px 0;
         font-size: 13px;
         margin-top: auto;
       }
 
-      /* ✅ Table mobile scroll */
-      .table-responsive {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+      /* Hide Google UI */
+      .goog-logo-link,
+      .goog-te-gadget span,
+      .goog-te-banner-frame,
+      .goog-te-balloon-frame,
+      .goog-te-spinner-pos,
+      #goog-gt-tt {
+        display: none !important;
+      }
+      .goog-te-gadget {
+        font-size: 0 !important;
+        color: transparent !important;
+      }
+      body {
+        top: 0 !important;
       }
 
-      /* ✅ Buttons & inputs full width on mobile */
-      @media (max-width: 768px) {
-        .navbar-title {
-          font-size: 14px;
-        }
-
-        .navbar {
-          text-align: center;
-        }
-        .navbar div {
-          width: 100%;
-          text-align: center;
-          margin-top: 6px;
-        }
-
-        .form-select,
-        .form-control,
-        .btn {
-          width: 100% !important;
-          margin-bottom: 7px;
-        }
+      /* Voter badge */
+      #voterCountBadge {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        border-radius: 10px;
+        background: #0d6efd;
+        color: white;
+        margin-left: 6px;
+        font-weight: bold;
       }
 
-      /* ✅ Pagination reset bullet dots */
-      .pagination li {
-        list-style: none !important;
+      /* Auto translate toggle */
+      .translator-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: 10px;
+        color: white;
       }
-
-      /* ✅ PRINT SETTINGS */
-      @media print {
-        .navbar,
-        footer,
-        .print-button {
-          display: none !important;
-        }
-
-        body * {
-          visibility: hidden;
-        }
-        #print-area,
-        #print-area * {
-          visibility: visible;
-        }
-
-        #print-area {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-        }
-
-        @font-face {
-          font-family: "Noto";
-          src: url("/static/fonts/NotoSansDevanagari-Regular.ttf");
-        }
-        @font-face {
-          font-family: "NotoBold";
-          src: url("/static/fonts/NotoSansDevanagari-Bold.ttf");
-          font-weight: bold;
-        }
-        body {
-          font-family: "Noto", sans-serif;
-        }
-        h2,
-        b {
-          font-family: "NotoBold";
-        }
+      .translator-switch input {
+        transform: scale(1.1);
       }
     </style>
   </head>
 
   <body>
-    <!-- ✅ Mobile-friendly Navbar -->
-    <div class="navbar print-button">
-      <div class="navbar-title">Voter Information System</div>
+    <div class="navbar">
+      <div class="navbar-title fw-bold">Voter Information System</div>
 
       {% if session.get('user') %}
-      <div>
+      <div class="d-flex align-items-center">
         <a href="/dashboard">🏠 Home</a>
-        <a href="/logout">🚪Logout</a>
+        <span id="voterCountBadge">Total: {{ total_voters }}</span>
+
+        <!-- Toggle -->
+        <label class="translator-switch">
+          <input id="translatorToggle" type="checkbox" />
+          <small>Auto Translate</small>
+        </label>
+
+        <!-- Lang Buttons (Hidden initially) -->
+        <div id="langButtons" style="display: none">
+          <button class="lang-btn" onclick="chooseLang('en')">🇬🇧 EN</button>
+          <button class="lang-btn" onclick="chooseLang('mr')">🇮🇳 MR</button>
+        </div>
+
+        <a href="/logout">🚪 Logout</a>
+
+        <span
+          id="google_translate_element"
+          style="visibility: hidden; height: 0"
+        ></span>
       </div>
       {% endif %}
     </div>
 
-    <!-- ✅ Page Content -->
-    <div class="content-wrapper">
-      <div class="container mt-2">{% block content %}{% endblock %}</div>
+    <div class="content-wrapper container mt-2">
+      {% block content %}{% endblock %}
     </div>
 
-    <!-- ✅ Sticky Footer -->
-    <footer class="print-button">© Invictus Technologies Pvt Ltd 2025</footer>
+    <footer>© Invictus Technologies Pvt Ltd 2025</footer>
+
+    <script>
+      const GOOGLE_SCRIPT_SRC =
+        "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      let googleScriptEl = null;
+
+      // ✅ Google translate init
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,mr",
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+        const saved = localStorage.getItem("langChoice") || "en";
+        setGoogleLang(saved);
+      }
+
+      // ✅ Load Google script dynamically
+      function loadGoogleScript() {
+        if (googleScriptEl) return;
+        googleScriptEl = document.createElement("script");
+        googleScriptEl.src = GOOGLE_SCRIPT_SRC;
+        googleScriptEl.async = true;
+        document.head.appendChild(googleScriptEl);
+      }
+
+      // ✅ Set language
+      function setGoogleLang(lang) {
+        const combo = document.querySelector(".goog-te-combo");
+        if (!combo) return;
+        combo.value = lang === "mr" ? "mr" : "en";
+        combo.dispatchEvent(new Event("change"));
+        localStorage.setItem("langChoice", lang);
+      }
+
+      // ✅ Turn translator on/off
+      function setTranslatorEnabled(enabled) {
+        localStorage.setItem("translatorEnabled", enabled ? "1" : "0");
+
+        // Show/Hide language buttons
+        document.getElementById("langButtons").style.display = enabled
+          ? "inline-flex"
+          : "none";
+
+        if (enabled) {
+          loadGoogleScript();
+        } else {
+          localStorage.setItem("langChoice", "en");
+          location.reload(); // remove translation
+        }
+      }
+
+      // ✅ EN/MR button clicked
+      function chooseLang(lang) {
+        if (localStorage.getItem("translatorEnabled") !== "1") {
+          setTranslatorEnabled(true);
+          setTimeout(() => setGoogleLang(lang), 1200);
+        } else {
+          setGoogleLang(lang);
+        }
+      }
+
+      // ✅ On page load
+      document.addEventListener("DOMContentLoaded", () => {
+        const enabled = localStorage.getItem("translatorEnabled") === "1";
+        document.getElementById("translatorToggle").checked = enabled;
+
+        if (enabled) {
+          loadGoogleScript();
+          document.getElementById("langButtons").style.display = "inline-flex";
+        }
+
+        document
+          .getElementById("translatorToggle")
+          .addEventListener("change", (ev) => {
+            setTranslatorEnabled(ev.target.checked);
+          });
+      });
+    </script>
   </body>
 </html>

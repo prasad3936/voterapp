@@ -3,7 +3,8 @@
 
 <div class="container mt-2">
 
-  <h4 class="fw-bold text-primary mb-3">Voters List</h4>
+  <h4 class="fw-bold text-primary mb-3" data-lang="voterList">Voters List</h4>
+
 
   <!-- Search + Filter Form -->
   <form method="get" class="row g-2 mb-2 align-items-center">
@@ -13,21 +14,22 @@
       <input class="form-control"
         name="q"
         value="{{q}}"
-        placeholder="Search Name / EPIC / Address">
+        placeholder="Search Name / EPIC / Address"
+        data-lang-placeholder="searchPlaceholder">
     </div>
 
     <!-- Gender Filter -->
     <div class="col-6 col-md-2">
       <select class="form-select" name="gender">
-        <option value="">Gender</option>
-        <option value="Male" {% if gender=='Male' %}selected{% endif %}>Male</option>
-        <option value="Female" {% if gender=='Female' %}selected{% endif %}>Female</option>
+        <option value="" data-lang="gender">Gender</option>
+        <option value="Male" {% if gender=='Male' %}selected{% endif %} data-lang="male">Male</option>
+        <option value="Female" {% if gender=='Female' %}selected{% endif %} data-lang="female">Female</option>
       </select>
     </div>
 
     <!-- Submit Button -->
     <div class="col-6 col-md-2">
-      <button class="btn btn-primary w-100 fw-bold">🔍 Search</button>
+      <button class="btn btn-primary w-100 fw-bold" data-lang="searchBtn">🔍 Search</button>
     </div>
 
     <!-- Pagination -->
@@ -36,10 +38,10 @@
 
         {% if page > 1 %}
         <li class="page-item">
-          <a class="page-link" href="?page={{page-1}}&q={{q}}&gender={{gender}}">⬅ Prev</a>
+          <a class="page-link" href="?page={{page-1}}&q={{q}}&gender={{gender}}" data-lang="prev">⬅ Prev</a>
         </li>
         {% else %}
-        <li class="page-item disabled"><span class="page-link">⬅ Prev</span></li>
+        <li class="page-item disabled"><span class="page-link" data-lang="prev">⬅ Prev</span></li>
         {% endif %}
 
         {% set window_size = 4 %}
@@ -54,10 +56,10 @@
 
         {% if page < total_pages %}
         <li class="page-item">
-          <a class="page-link" href="?page={{page+1}}&q={{q}}&gender={{gender}}">Next ➡</a>
+          <a class="page-link" href="?page={{page+1}}&q={{q}}&gender={{gender}}" data-lang="next">Next ➡</a>
         </li>
         {% else %}
-        <li class="page-item disabled"><span class="page-link">Next ➡</span></li>
+        <li class="page-item disabled"><span class="page-link" data-lang="next">Next ➡</span></li>
         {% endif %}
 
       </ul>
@@ -70,13 +72,13 @@
     <table class="table table-bordered table-hover bg-white shadow-sm text-center align-middle small">
       <thead class="table-primary text-nowrap">
         <tr>
-          <th>Photo</th>
-          <th>Name</th>
-          <th>Serial</th>
-          <th>EPIC</th>
-          <th>House No</th>
-          <th>Age</th>
-          <th>Card</th>
+          <th data-lang="photo">Photo</th>
+          <th data-lang="name">Name</th>
+          <th data-lang="serial">Serial</th>
+          <th data-lang="epic">EPIC</th>
+          <th data-lang="houseNo">House No</th>
+          <th data-lang="age">Age</th>
+          <th data-lang="card">Card</th>
         </tr>
       </thead>
 
@@ -95,7 +97,8 @@
           <td>{{ v.age }}</td>
 
           <td>
-            <a class="btn btn-success btn-sm w-100" href="/voter/{{v.serial}}">View</a>
+            <a class="btn btn-success btn-sm w-100"
+               href="/voter/{{v.serial}}" data-lang="viewBtn">View</a>
           </td>
         </tr>
         {% endfor %}

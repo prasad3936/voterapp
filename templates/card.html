@@ -58,7 +58,9 @@
 
 <div class="container mt-3" id="vCard">
   <div class="card voter-card-box card-border shadow">
-    <h5 class="text-center fw-bold text-primary mt-2">Voter ID Card</h5>
+    <h5 class="text-center fw-bold text-primary mt-2" data-lang="voterIdCard">
+      Voter ID Card
+    </h5>
 
     <div class="text-center mb-2">
       <img
@@ -71,31 +73,31 @@
 
     <table class="table table-sm table-bordered mb-0">
       <tr>
-        <th>Name</th>
+        <th data-lang="name">Name</th>
         <td>{{ v.name }}</td>
       </tr>
       <tr>
-        <th>Serial No</th>
+        <th data-lang="serial">Serial No</th>
         <td>{{ v.serial }}</td>
       </tr>
       <tr>
-        <th>EPIC</th>
+        <th data-lang="epic">EPIC</th>
         <td>{{ v.epic }}</td>
       </tr>
       <tr>
-        <th>Father/Husband Name</th>
+        <th data-lang="relation">Father/Husband Name</th>
         <td>{{ v.relation }}</td>
       </tr>
       <tr>
-        <th>House No</th>
+        <th data-lang="houseNo">House No</th>
         <td>{{ v.house_no }}</td>
       </tr>
       <tr>
-        <th>Age</th>
+        <th data-lang="age">Age</th>
         <td>{{ v.age }}</td>
       </tr>
       <tr>
-        <th>Gender</th>
+        <th data-lang="gender">Gender</th>
         <td>{{ v.gender }}</td>
       </tr>
     </table>
@@ -103,11 +105,17 @@
 </div>
 
 <div class="container mt-3 no-print">
-  <button class="btn btn-success w-100 mb-2" onclick="shareToWhatsapp()">
+  <button
+    class="btn btn-success w-100 mb-2"
+    onclick="shareToWhatsapp()"
+    data-lang="shareWhatsapp"
+  >
     📲 Share via WhatsApp
   </button>
 
-  <a href="/dashboard" class="btn btn-secondary w-100">⬅ Back</a>
+  <a href="/dashboard" class="btn btn-secondary w-100" data-lang="back">
+    ⬅ Back
+  </a>
 </div>
 
 <script>

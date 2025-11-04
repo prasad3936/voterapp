@@ -42,21 +42,25 @@ def require_login():
 @app.route("/dashboard")
 def dashboard():
     auth = require_login()
-    if auth: return auth
+    if auth: 
+        return auth
 
     q = request.args.get("q", "").strip().lower()
     gender = request.args.get("gender", "")
     page = int(request.args.get("page", 1))
 
     per_page = 20
-    voters = load_voters()
+    voters = load_voters()  # ✅ Load all voters from JSON
+
+    # ✅ Total voters available in JSON (for navbar badge)
+    total_voters_all = len(voters)
 
     results = []
     for v in voters:
         if v.get("name"):
             match = True
 
-            # Search text
+            # 🔍 Search in all fields
             if q:
                 match = False
                 for key, val in v.items():
@@ -64,19 +68,19 @@ def dashboard():
                         match = True
                         break
 
-            # Gender filter
+            # 🚻 Gender filter
             if gender and v.get("gender") != gender:
                 match = False
 
             if match:
                 results.append(v)
 
-    # Pagination
-    total = len(results)
+    # 📄 Pagination
+    total_filtered = len(results)
     start = (page - 1) * per_page
     end = start + per_page
     page_data = results[start:end]
-    total_pages = math.ceil(total / per_page)
+    total_pages = math.ceil(total_filtered / per_page)
 
     return render_template(
         "dashboard.html",
@@ -84,8 +88,12 @@ def dashboard():
         q=q,
         gender=gender,
         page=page,
-        total_pages=total_pages
+        total_pages=total_pages,
+        
+        # ✅ Pass total voters count to template
+        total_voters=total_voters_all
     )
+
 
 # ---------------- VOTER DETAIL ----------------
 @app.route("/voter/<int:serial>")
