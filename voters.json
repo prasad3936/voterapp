@@ -1,0 +1,2711 @@
+[
+  {
+    "serial": 1,
+    "name": "Nagesh Chilappa Kumbre",
+    "relation": "Chilappa Kumbre",
+    "house_number": null,
+    "age": 53,
+    "gender": "Male",
+    "epic": "TUZ6544449"
+  },
+  {
+    "serial": 2,
+    "name": "Shalaka Nagesh Kumbre",
+    "relation": "Nagesh Kumbre",
+    "house_number": null,
+    "age": 44,
+    "gender": "Female",
+    "epic": "TUZ6544068"
+  },
+  {
+    "serial": 3,
+    "name": "Shalu Rudrappa Aakamar",
+    "relation": "Rudrappa AAkamae",
+    "house_number": null,
+    "age": 34,
+    "gender": "Female",
+    "epic": "TUZ6741938"
+  },
+  {
+    "serial": 4,
+    "name": "Jivan Mahadevappa Aakamar",
+    "relation": "Mahadevappa Akamar",
+    "house_number": null,
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ6741961"
+  },
+  {
+    "serial": 5,
+    "name": "Mahadev Muralidhar Aare",
+    "relation": "Muralidhar Aare",
+    "house_number": null,
+    "age": 34,
+    "gender": "Male",
+    "epic": "TUZ6741839"
+  },
+  {
+    "serial": 6,
+    "name": "Santosh Madhukar Aare",
+    "relation": "Madhukar Are",
+    "house_number": null,
+    "age": 33,
+    "gender": "Male",
+    "epic": "TUZ6741862"
+  },
+  {
+    "serial": 7,
+    "name": "Sagar Madhukar Aare",
+    "relation": "Madhukar Aare",
+    "house_number": null,
+    "age": 31,
+    "gender": "Male",
+    "epic": "TUZ6741854"
+  },
+  {
+    "serial": 8,
+    "name": "Sujata Gajanan Akakar",
+    "relation": "Gajanan Akmar",
+    "house_number": null,
+    "age": 32,
+    "gender": "Female",
+    "epic": "TUZ6742043"
+  },
+  {
+    "serial": 9,
+    "name": "Sunita Umakantaappa Akamar",
+    "relation": "Umakantaappa Akamar",
+    "house_number": null,
+    "age": 56,
+    "gender": "Female",
+    "epic": "TUZ3636032"
+  },
+  {
+    "serial": 10,
+    "name": "Rekha Vaijnath Akamar",
+    "relation": "Vaijnath Akamar",
+    "house_number": null,
+    "age": 39,
+    "gender": "Female",
+    "epic": "TUZ6081210"
+  },
+  {
+    "serial": 11,
+    "name": "Jayashri Bhagwan Akamar",
+    "relation": "Bhagwan Akamar",
+    "house_number": null,
+    "age": 35,
+    "gender": "Female",
+    "epic": "TUZ6544126"
+  },
+  {
+    "serial": 12,
+    "name": "Sham Subhash Akamar",
+    "relation": "Subhash Akamar",
+    "house_number": null,
+    "age": 34,
+    "gender": "Male",
+    "epic": "TUZ3599297"
+  },
+  {
+    "serial": 13,
+    "name": "Shivaraj Umakant Akamar",
+    "relation": "Umakant Akamar",
+    "house_number": null,
+    "age": 33,
+    "gender": "Male",
+    "epic": "TUZ6544373"
+  },
+  {
+    "serial": 14,
+    "name": "Shivraj Umakantaappa Akamar",
+    "relation": "Umakantaappa Akamar",
+    "house_number": null,
+    "age": 33,
+    "gender": "Male",
+    "epic": "TUZ3636040"
+  },
+  {
+    "serial": 15,
+    "name": "Pankaj Umakantaappa Akamar",
+    "relation": "Umakantaappa Akamar",
+    "house_number": null,
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ6081194"
+  },
+  {
+    "serial": 16,
+    "name": "Santoshi Santoshaappa Akamar",
+    "relation": "Santoshaappa Akamar",
+    "house_number": null,
+    "age": 32,
+    "gender": "Female",
+    "epic": "TUZ6544050"
+  },
+  {
+    "serial": 17,
+    "name": "Anil Subhash Akmar",
+    "relation": "Subhash Akmar",
+    "house_number": null,
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ6544209"
+  },
+  {
+    "serial": 18,
+    "name": "Shivraj Rambhau Akamar",
+    "relation": "Rambhau Akamar",
+    "house_number": null,
+    "age": 31,
+    "gender": "Male",
+    "epic": "TUZ6544217"
+  },
+  {
+    "serial": 19,
+    "name": "Kapil Subhash Akamar",
+    "relation": "Subhash Akamar",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6544381"
+  },
+  {
+    "serial": 20,
+    "name": "Laxman Nagappa Akamar",
+    "relation": "Nagappa Akamar",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6544324"
+  },
+  {
+    "serial": 21,
+    "name": "Manoj Umakantaappa Akamar",
+    "relation": "Umakantaappa Akamar",
+    "house_number": null,
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ6544308"
+  },
+  {
+    "serial": 22,
+    "name": "Vaishatai Avinash Akamar",
+    "relation": "Avinash Akamar",
+    "house_number": null,
+    "age": 28,
+    "gender": "Female",
+    "epic": "TUZ6742217"
+  },
+  {
+    "serial": 23,
+    "name": "Diraj Umakantppa Akamar",
+    "relation": "Umakantppa Aakamar",
+    "house_number": null,
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ6741953"
+  },
+  {
+    "serial": 24,
+    "name": "Madura Gajanan Akmar",
+    "relation": "Gajanan Akmar",
+    "house_number": null,
+    "age": 30,
+    "gender": "Female",
+    "epic": "TUZ6741771"
+  },
+  {
+    "serial": 25,
+    "name": "Pravin Sadashivappa Akmar",
+    "relation": "Sadashivappa Akmar",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ7040025"
+  },
+  {
+    "serial": 26,
+    "name": "Vaijnath Narayan Are",
+    "relation": "Narayan Are",
+    "house_number": null,
+    "age": 60,
+    "gender": "Male",
+    "epic": "TUZ6544423"
+  },
+  {
+    "serial": 27,
+    "name": "Manisha Belappa Are",
+    "relation": "Belappa Are",
+    "house_number": null,
+    "age": 32,
+    "gender": "Female",
+    "epic": "TUZ6544043"
+  },
+  {
+    "serial": 28,
+    "name": "Sunil Malikarjun Are",
+    "relation": "Malikarjun Are",
+    "house_number": null,
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ6081186"
+  },
+  {
+    "serial": 29,
+    "name": "Nitin Kashinath Are",
+    "relation": "Kashiram Aare",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6741912"
+  },
+  {
+    "serial": 30,
+    "name": "Manmath Bellapa Are",
+    "relation": "Bellapa Are",
+    "house_number": null,
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ6544266"
+  },
+  {
+    "serial": 31,
+    "name": "Vijay Sukhlal Bahire",
+    "relation": "Sukhlal Bahire",
+    "house_number": null,
+    "age": 37,
+    "gender": "Male",
+    "epic": "TUZ3599271"
+  },
+  {
+    "serial": 32,
+    "name": "Vishwanath Mahadu Bangar",
+    "relation": "Mahadu Bangar",
+    "house_number": null,
+    "age": 36,
+    "gender": "Male",
+    "epic": "TUZ6544456"
+  },
+  {
+    "serial": 33,
+    "name": "Shivaji Sampati Bangar",
+    "relation": "Sampati Bangar",
+    "house_number": null,
+    "age": 33,
+    "gender": "Male",
+    "epic": "TUZ6544340"
+  },
+  {
+    "serial": 34,
+    "name": "Asha Vishwanath Bangar",
+    "relation": "Vishwanath Bangar",
+    "house_number": null,
+    "age": 31,
+    "gender": "Female",
+    "epic": "TUZ6544159"
+  },
+  {
+    "serial": 35,
+    "name": "Arun Shankar Bangar",
+    "relation": "Shankar Bangar",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6741821"
+  },
+  {
+    "serial": 36,
+    "name": "Vitthal Sampatti Bangar",
+    "relation": "Sampati Bangrar",
+    "house_number": null,
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ6544332"
+  },
+  {
+    "serial": 37,
+    "name": "Pankaj Rudrappa Bolwar",
+    "relation": "Rudrappa Bolwar",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6742167"
+  },
+  {
+    "serial": 38,
+    "name": "Anil Pralad Chatase",
+    "relation": "Pralad Chatase",
+    "house_number": null,
+    "age": 34,
+    "gender": "Male",
+    "epic": "TUZ6742225"
+  },
+  {
+    "serial": 39,
+    "name": "Sachin Ramesh Chatase",
+    "relation": "Ramesh Chatase",
+    "house_number": null,
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ6741888"
+  },
+  {
+    "serial": 40,
+    "name": "Parameshwar Panditarao Deshamukh",
+    "relation": "Panditarao Deshamukh",
+    "house_number": null,
+    "age": 36,
+    "gender": "Male",
+    "epic": "TUZ6741870"
+  },
+  {
+    "serial": 41,
+    "name": "Vitthal Santosh Deshemukh",
+    "relation": "Santosh Deshmukh",
+    "house_number": null,
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ6741813"
+  },
+  {
+    "serial": 42,
+    "name": "Kalpana Ramprabhu Deshmukh",
+    "relation": "Ramprabhu Deshmukh",
+    "house_number": null,
+    "age": 34,
+    "gender": "Female",
+    "epic": "TUZ7187305"
+  },
+  {
+    "serial": 43,
+    "name": "Shivlila Rameshwar Deshmukh",
+    "relation": "Rameshwar Deshmukh",
+    "house_number": null,
+    "age": 31,
+    "gender": "Female",
+    "epic": "TUZ6081236"
+  },
+  {
+    "serial": 44,
+    "name": "Santosh Sambhaji Garad",
+    "relation": "Sambhaji Garad",
+    "house_number": null,
+    "age": 38,
+    "gender": "Male",
+    "epic": "TUZ6742175"
+  },
+  {
+    "serial": 45,
+    "name": "Savita Bhujang Garad",
+    "relation": "Bhujang Garad",
+    "house_number": null,
+    "age": 31,
+    "gender": "Female",
+    "epic": "TUZ7208937"
+  },
+  {
+    "serial": 46,
+    "name": "Pryanka Sukhdev Ghodake",
+    "relation": "Sukhdev Ghodake",
+    "house_number": null,
+    "age": 30,
+    "gender": "Female",
+    "epic": "TUZ6742126"
+  },
+  {
+    "serial": 47,
+    "name": "Rukhmaji Ganesh Ghodake",
+    "relation": "Ganesh Ghodake",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6742183"
+  },
+  {
+    "serial": 48,
+    "name": "Magal Prabhak Gore",
+    "relation": "Prabhak Gore",
+    "house_number": null,
+    "age": 35,
+    "gender": "Female",
+    "epic": "TUZ6741789"
+  },
+  {
+    "serial": 49,
+    "name": "Ashok Narayan Gore",
+    "relation": "Narayan Gore",
+    "house_number": null,
+    "age": 35,
+    "gender": "Male",
+    "epic": "TUZ7019169"
+  },
+  {
+    "serial": 50,
+    "name": "Anita Ashok Gore",
+    "relation": "Ashok Gore",
+    "house_number": null,
+    "age": 28,
+    "gender": "Female",
+    "epic": "TUZ6742191"
+  },
+  {
+    "serial": 51,
+    "name": "Gajanan Baban Rao Hendre",
+    "relation": "Baban Rao Hendre",
+    "house_number": null,
+    "age": 34,
+    "gender": "Male",
+    "epic": "TUZ6081244"
+  },
+  {
+    "serial": 52,
+    "name": "Sangeeta Nitin Ingole",
+    "relation": "Nitin Ingole",
+    "house_number": null,
+    "age": 37,
+    "gender": "Female",
+    "epic": "TUZ6544142"
+  },
+  {
+    "serial": 53,
+    "name": "Ratnkala Santosh Ingole",
+    "relation": "Santosh Ingole",
+    "house_number": null,
+    "age": 35,
+    "gender": "Female",
+    "epic": "TUZ6544167"
+  },
+  {
+    "serial": 54,
+    "name": "Bujang Amaruta Ingole",
+    "relation": "Amaruta Ingole",
+    "house_number": null,
+    "age": 35,
+    "gender": "Male",
+    "epic": "TUZ6742100"
+  },
+  {
+    "serial": 55,
+    "name": "Nandabai Bhujang Ingole",
+    "relation": "Bhujang Ingole",
+    "house_number": null,
+    "age": 31,
+    "gender": "Female",
+    "epic": "TUZ6742118"
+  },
+  {
+    "serial": 56,
+    "name": "Anusay Devand Jogadand",
+    "relation": "Devand Jogadand",
+    "house_number": null,
+    "age": 33,
+    "gender": "Female",
+    "epic": "TUZ6741797"
+  },
+  {
+    "serial": 57,
+    "name": "Parashram Dulaji Jogdand",
+    "relation": "Dulaji Jogdand",
+    "house_number": null,
+    "age": 78,
+    "gender": "Male",
+    "epic": "TUZ7039951"
+  },
+  {
+    "serial": 58,
+    "name": "Latabai Shivaji Jogdand",
+    "relation": "Shivaji Jogdand",
+    "house_number": null,
+    "age": 37,
+    "gender": "Female",
+    "epic": "TUZ6081251"
+  },
+  {
+    "serial": 59,
+    "name": "Gajanan Suryabhan Jogdand",
+    "relation": "Suryabhan Jogdand",
+    "house_number": null,
+    "age": 35,
+    "gender": "Male",
+    "epic": "TUZ6544357"
+  },
+  {
+    "serial": 60,
+    "name": "Shantabai Shashikant Jogdand",
+    "relation": "Shashikant Jogdand",
+    "house_number": null,
+    "age": 34,
+    "gender": "Female",
+    "epic": "TUZ6081228"
+  },
+  {
+    "serial": 61,
+    "name": "Rajesh Kisan Jogdand",
+    "relation": "Kisan Jogdand",
+    "house_number": null,
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ6544225"
+  },
+  {
+    "serial": 62,
+    "name": "Murli Arshu Jogdand",
+    "relation": "Arshu Jogdand",
+    "house_number": null,
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ6742159"
+  },
+  {
+    "serial": 63,
+    "name": "Avinash Tulshiram Jogdand",
+    "relation": "Tulshiram Jogdand",
+    "house_number": null,
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ6969018"
+  },
+  {
+    "serial": 64,
+    "name": "Kodu Kisan Kabale",
+    "relation": "Kisan Kabale",
+    "house_number": null,
+    "age": 35,
+    "gender": "Male",
+    "epic": "TUZ6742050"
+  },
+  {
+    "serial": 65,
+    "name": "Anita Koduji Kabale",
+    "relation": "Koduji Kabale",
+    "house_number": null,
+    "age": 32,
+    "gender": "Female",
+    "epic": "TUZ6742068"
+  },
+  {
+    "serial": 66,
+    "name": "Bhimrao Tukaram Kalambe",
+    "relation": "Tukaram Kalambe",
+    "house_number": null,
+    "age": 51,
+    "gender": "Male",
+    "epic": "TUZ6544431"
+  },
+  {
+    "serial": 67,
+    "name": "Varsha Bhimrao Kalambe",
+    "relation": "Bhimrao Kalabe",
+    "house_number": null,
+    "age": 33,
+    "gender": "Female",
+    "epic": "TUZ6544100"
+  },
+  {
+    "serial": 68,
+    "name": "Dasharath Dajiba Kalambe",
+    "relation": "Dajiba Kanlabe",
+    "house_number": null,
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ6544233"
+  },
+  {
+    "serial": 69,
+    "name": "Rambhau Rajaram Kambale",
+    "relation": "Rajaram Kambale",
+    "house_number": null,
+    "age": 37,
+    "gender": "Male",
+    "epic": "TUZ7019151"
+  },
+  {
+    "serial": 70,
+    "name": "Vilas Amruta Kamble",
+    "relation": "Amruta Kamble",
+    "house_number": null,
+    "age": 39,
+    "gender": "Male",
+    "epic": "TUZ6969059"
+  },
+  {
+    "serial": 71,
+    "name": "Sunita Vilas Kamble",
+    "relation": "Vilas Kamble",
+    "house_number": null,
+    "age": 33,
+    "gender": "Female",
+    "epic": "TUZ6969067"
+  },
+  {
+    "serial": 72,
+    "name": "Parsram Kisan Kamble",
+    "relation": "Kisan Kamble",
+    "house_number": null,
+    "age": 33,
+    "gender": "Male",
+    "epic": "TUZ6969000"
+  },
+  {
+    "serial": 73,
+    "name": "Sangeeta Dilip Kamble",
+    "relation": "Dilip Kamble",
+    "house_number": null,
+    "age": 29,
+    "gender": "Female",
+    "epic": "TUZ6544092"
+  },
+  {
+    "serial": 74,
+    "name": "Vitthal Mahadu Kamble",
+    "relation": "Mahadu Kamble",
+    "house_number": null,
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ6544290"
+  },
+  {
+    "serial": 75,
+    "name": "Gajanan Dajiba Kamble",
+    "relation": "Dajiba Kamble",
+    "house_number": null,
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ6544241"
+  },
+  {
+    "serial": 76,
+    "name": "Santabai Lashman Kandare",
+    "relation": "Lashman Kandare",
+    "house_number": null,
+    "age": 64,
+    "gender": "Female",
+    "epic": "TUZ6742092"
+  },
+  {
+    "serial": 77,
+    "name": "Ganesh Prlad Kandare",
+    "relation": "Prlad Kandare",
+    "house_number": null,
+    "age": 36,
+    "gender": "Male",
+    "epic": "TUZ6741995"
+  },
+  {
+    "serial": 78,
+    "name": "Motiram Lashman Kandare",
+    "relation": "Lashman Kandare",
+    "house_number": null,
+    "age": 36,
+    "gender": "Male",
+    "epic": "TUZ6741979"
+  },
+  {
+    "serial": 79,
+    "name": "Mirabai Gajanan Kandare",
+    "relation": "Gajanan Kandare",
+    "house_number": null,
+    "age": 33,
+    "gender": "Female",
+    "epic": "TUZ6741946"
+  },
+  {
+    "serial": 80,
+    "name": "Sagar Amol Kandare",
+    "relation": "Amol Kandare",
+    "house_number": null,
+    "age": 32,
+    "gender": "Female",
+    "epic": "TUZ6742142"
+  },
+  {
+    "serial": 81,
+    "name": "Amol Pralad Kandare",
+    "relation": "Pralad Kandare",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6742001"
+  },
+  {
+    "serial": 82,
+    "name": "Amol Gajanan Kandare",
+    "relation": "Gajanan Kandare",
+    "house_number": null,
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ6742134"
+  },
+  {
+    "serial": 83,
+    "name": "Bhurav Rajaram Kashinde",
+    "relation": "Rajaram Kashinde",
+    "house_number": null,
+    "age": 47,
+    "gender": "Male",
+    "epic": "TUZ6741896"
+  },
+  {
+    "serial": 84,
+    "name": "Shobha Bhaurav Kashinde",
+    "relation": "Bhaurav Kashinde",
+    "house_number": null,
+    "age": 40,
+    "gender": "Female",
+    "epic": "TUZ6741763"
+  },
+  {
+    "serial": 85,
+    "name": "Mahadev Namadev Khedekar",
+    "relation": "Namadev Khedekar",
+    "house_number": null,
+    "age": 36,
+    "gender": "Male",
+    "epic": "TUZ6741920"
+  },
+  {
+    "serial": 86,
+    "name": "Akshay Jagannath Khirade",
+    "relation": "Jagannath Khirade",
+    "house_number": null,
+    "age": 27,
+    "gender": "Male",
+    "epic": "TUZ7040041"
+  },
+  {
+    "serial": 87,
+    "name": "Kiran Jagnath Kirade",
+    "relation": "Jagnath Kirade",
+    "house_number": null,
+    "age": 29,
+    "gender": "Female",
+    "epic": "TUZ6742274"
+  },
+  {
+    "serial": 88,
+    "name": "Mangla Panchakshari Kirtanakar",
+    "relation": "Panchakshari Kirtanakar",
+    "house_number": null,
+    "age": 63,
+    "gender": "Female",
+    "epic": "TUZ6544134"
+  },
+  {
+    "serial": 89,
+    "name": "Sandhya Yogesh Kumbare",
+    "relation": "Yogesh Kumbare",
+    "house_number": null,
+    "age": 35,
+    "gender": "Female",
+    "epic": "TUZ6544076"
+  },
+  {
+    "serial": 90,
+    "name": "Satish Chillapa Kumbare",
+    "relation": "Chillapa Kubare",
+    "house_number": null,
+    "age": 34,
+    "gender": "Male",
+    "epic": "TUZ6544316"
+  },
+  {
+    "serial": 91,
+    "name": "Shantabai Sadashiv Kumbre",
+    "relation": "Sadashiv Kumbre",
+    "house_number": null,
+    "age": 75,
+    "gender": "Female",
+    "epic": "TUZ7019193"
+  },
+  {
+    "serial": 92,
+    "name": "Devidas Munjaji Landge",
+    "relation": "Munjaji Landge",
+    "house_number": null,
+    "age": 52,
+    "gender": "Male",
+    "epic": "TUZ7148232"
+  },
+  {
+    "serial": 93,
+    "name": "Rekhabai Lonakar",
+    "relation": "Gautam Lonkar",
+    "house_number": null,
+    "age": 53,
+    "gender": "Female",
+    "epic": "TUZ6544118"
+  },
+  {
+    "serial": 94,
+    "name": "Siddharth Baban Lonkar",
+    "relation": "Baban Lonkar",
+    "house_number": null,
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ6544191"
+  },
+  {
+    "serial": 95,
+    "name": "Shivraj Harihar Mahajan",
+    "relation": "Harihar Mahajan",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6742027"
+  },
+  {
+    "serial": 96,
+    "name": "Sarada Lashman Maske",
+    "relation": "Lashman Maske",
+    "house_number": null,
+    "age": 35,
+    "gender": "Female",
+    "epic": "TUZ6742266"
+  },
+  {
+    "serial": 97,
+    "name": "Dynaneshvar Mahadu Maske",
+    "relation": "Mahadu Maske",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6544365"
+  },
+  {
+    "serial": 98,
+    "name": "Sandeep Prahlad More",
+    "relation": "Prahlad More",
+    "house_number": null,
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6544258"
+  },
+  {
+    "serial": 99,
+    "name": "Rekha Suresh Mulage",
+    "relation": "Suresh Mulage",
+    "house_number": null,
+    "age": 35,
+    "gender": "Female",
+    "epic": "TUZ6742035"
+  },
+  {
+    "serial": 100,
+    "name": "Komal Kishor Pavar",
+    "relation": "Kishor Pavar",
+    "house_number": null,
+    "age": 31,
+    "gender": "Female",
+    "epic": "TUZ6741805"
+  },
+  {
+    "serial": 101,
+    "name": "Santosh Ratan Puri",
+    "relation": "Ratan Puri",
+    "house_number": null,
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ6742019"
+  },
+  {
+    "serial": 102,
+    "name": "Dhodji Kaluji Salave",
+    "relation": "Kaluji Salave",
+    "house_number": null,
+    "age": 104,
+    "gender": "Male",
+    "epic": "TUZ6742076"
+  },
+  {
+    "serial": 103,
+    "name": "Chadrabaga Doduji Salave",
+    "relation": "Doduji Savale",
+    "house_number": null,
+    "age": 97,
+    "gender": "Female",
+    "epic": "TUZ6742084"
+  },
+  {
+    "serial": 104,
+    "name": "Mandabai Namdev Salave",
+    "relation": "Namdev Salave",
+    "house_number": null,
+    "age": 51,
+    "gender": "Female",
+    "epic": "TUZ6742209"
+  },
+  {
+    "serial": 105,
+    "name": "Babita Mahadev Salave",
+    "relation": "Mahadev Salave",
+    "house_number": null,
+    "age": 33,
+    "gender": "Female",
+    "epic": "TUZ6742233"
+  },
+  {
+    "serial": 106,
+    "name": "Dagadu Namdev Salve",
+    "relation": "Namdev Salve",
+    "house_number": null,
+    "age": 63,
+    "gender": "Male",
+    "epic": "TUZ6741987"
+  },
+  {
+    "serial": 107,
+    "name": "Vandana Gautam Salve",
+    "relation": "Gautam Salve",
+    "house_number": null,
+    "age": 35,
+    "gender": "Female",
+    "epic": "TUZ6544175"
+  },
+  {
+    "serial": 108,
+    "name": "Jyoti Rahul Salve",
+    "relation": "Rahul Salve",
+    "house_number": null,
+    "age": 33,
+    "gender": "Female",
+    "epic": "TUZ3599289"
+  },
+  {
+    "serial": 109,
+    "name": "Seeta Dattrao Salve",
+    "relation": "Dattrao Salve",
+    "house_number": null,
+    "age": 30,
+    "gender": "Female",
+    "epic": "TUZ7209000"
+  },
+  {
+    "serial": 110,
+    "name": "Dhammapal Vishwanath Salve",
+    "relation": "Vishwanath Salve",
+    "house_number": null,
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ6544274"
+  },
+  {
+    "serial": 111,
+    "name": "Raju Kaduji Savle",
+    "relation": "Kaduji Savle",
+    "house_number": null,
+    "age": 31,
+    "gender": "Male",
+    "epic": "TUZ6544183"
+  },
+  {
+    "serial": 112,
+    "name": "Damodhar Prahlad Sharma",
+    "relation": "Prahlad Sharma",
+    "house_number": null,
+    "age": 33,
+    "gender": "Male",
+    "epic": "TUZ6544282"
+  },
+  {
+    "serial": 113,
+    "name": "Damodhar Pralhad Sharma",
+    "relation": "Pralhad Sharma",
+    "house_number": null,
+    "age": 33,
+    "gender": "Male",
+    "epic": "TUZ6741904"
+  },
+  {
+    "serial": 114,
+    "name": "Gorakhanath Subhash Sherakhar",
+    "relation": "Subhash Sherakhar",
+    "house_number": null,
+    "age": 31,
+    "gender": "Male",
+    "epic": "TUZ6741847"
+  },
+  {
+    "serial": 115,
+    "name": "Manik Subhash Sherkar",
+    "relation": "Subhash Sherkar",
+    "house_number": null,
+    "age": 35,
+    "gender": "Male",
+    "epic": "TUZ6081202"
+  },
+  {
+    "serial": 116,
+    "name": "Jyoti Santosh Surve",
+    "relation": "Santosh Surve",
+    "house_number": null,
+    "age": 39,
+    "gender": "Female",
+    "epic": "TUZ3599305"
+  },
+  {
+    "serial": 117,
+    "name": "Dilip Sadashiv Surve",
+    "relation": "Sadashiv Surve",
+    "house_number": null,
+    "age": 37,
+    "gender": "Male",
+    "epic": "TUZ6544415"
+  },
+  {
+    "serial": 118,
+    "name": "Satish Vaishnath Surve",
+    "relation": "Vaishnath Surve",
+    "house_number": null,
+    "age": 35,
+    "gender": "Male",
+    "epic": "TUZ6742258"
+  },
+  {
+    "serial": 119,
+    "name": "Sunita Bhanudas Surve",
+    "relation": "Bhanudas Surve",
+    "house_number": null,
+    "age": 32,
+    "gender": "Female",
+    "epic": "TUZ6969075"
+  },
+  {
+    "serial": 120,
+    "name": "Avinash Sadashiv Surve",
+    "relation": "Sadashiv Surve",
+    "house_number": null,
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ6544399"
+  },
+  {
+    "serial": 121,
+    "name": "Varsha Dilip Surve",
+    "relation": "Dilip Surve",
+    "house_number": null,
+    "age": 30,
+    "gender": "Female",
+    "epic": "TUZ6544084"
+  },
+  {
+    "serial": 122,
+    "name": "Kiran Shiddharth Surve",
+    "relation": "Shiddharth Surve",
+    "house_number": null,
+    "age": 29,
+    "gender": "Female",
+    "epic": "TUZ7019177"
+  },
+  {
+    "serial": 123,
+    "name": "Rupali Sachin Surve",
+    "relation": "Sachin Surve",
+    "house_number": null,
+    "age": 28,
+    "gender": "Female",
+    "epic": "TUZ7019185"
+  },
+  {
+    "serial": 124,
+    "name": "Prashant Sunil Tayade",
+    "relation": "Sunil Tayade",
+    "house_number": null,
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ6969042"
+  },
+  {
+    "serial": 125,
+    "name": "Indubai Rambhau Aakmar",
+    "relation": "Rambhau Aakmar",
+    "house_number": "-",
+    "age": 76,
+    "gender": "Female",
+    "epic": "TUZ7372527"
+  },
+  {
+    "serial": 126,
+    "name": "Shivkanya Malakarjun Aakmar",
+    "relation": "Malakarjun Aakmar",
+    "house_number": "-",
+    "age": 24,
+    "gender": "Female",
+    "epic": "TUZ7372436"
+  },
+  {
+    "serial": 127,
+    "name": "Ankita Muralidhar Aakmar",
+    "relation": "Murlidhar Aakmar",
+    "house_number": "-",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ7372766"
+  },
+  {
+    "serial": 128,
+    "name": "Mirabai Santosh Aare",
+    "relation": "Santosh Aare",
+    "house_number": "-",
+    "age": 28,
+    "gender": "Female",
+    "epic": "TUZ7372469"
+  },
+  {
+    "serial": 129,
+    "name": "Ramprabhu Pralhadrao Deshmukh",
+    "relation": "Pralhadrao Deshmukh",
+    "house_number": "-",
+    "age": 36,
+    "gender": "Male",
+    "epic": "TUZ7372352"
+  },
+  {
+    "serial": 130,
+    "name": "Ashatai Gajanan Deshmukh",
+    "relation": "Gajanan Deshmukh",
+    "house_number": "-",
+    "age": 32,
+    "gender": "Female",
+    "epic": "TUZ7372451"
+  },
+  {
+    "serial": 131,
+    "name": "Vidya Rajkumar Deshmukh",
+    "relation": "Rajkumar Deshmukh",
+    "house_number": "-",
+    "age": 31,
+    "gender": "Female",
+    "epic": "TUZ7372493"
+  },
+  {
+    "serial": 132,
+    "name": "Rekha Namdevrao Deshmukh",
+    "relation": "Namdevrao Deshmukh",
+    "house_number": "-",
+    "age": 31,
+    "gender": "Female",
+    "epic": "TUZ7372360"
+  },
+  {
+    "serial": 133,
+    "name": "Ranibai Tukaram Deshmukh",
+    "relation": "Tukaram Deshmukh",
+    "house_number": "-",
+    "age": 28,
+    "gender": "Female",
+    "epic": "TUZ7372717"
+  },
+  {
+    "serial": 134,
+    "name": "Pravin Aashru Gawali",
+    "relation": "Aashru Gawali",
+    "house_number": "-",
+    "age": 23,
+    "gender": "Male",
+    "epic": "TUZ7372402"
+  },
+  {
+    "serial": 135,
+    "name": "Amol Ingole",
+    "relation": "Shankar Ingole",
+    "house_number": "-",
+    "age": 22,
+    "gender": "Male",
+    "epic": "TUZ7433212"
+  },
+  {
+    "serial": 136,
+    "name": "Shivaji Vilasrao Jadhav",
+    "relation": "Vilasrao Jadhav",
+    "house_number": "-",
+    "age": 37,
+    "gender": "Male",
+    "epic": "TUZ7372386"
+  },
+  {
+    "serial": 137,
+    "name": "Archana Shivaji Jadhav",
+    "relation": "Shivaji Jadhav",
+    "house_number": "-",
+    "age": 31,
+    "gender": "Female",
+    "epic": "TUZ7372394"
+  },
+  {
+    "serial": 138,
+    "name": "Annpurna Santosh Jogadand",
+    "relation": "Santosh Jogadand",
+    "house_number": "-",
+    "age": 25,
+    "gender": "Female",
+    "epic": "TUZ7372691"
+  },
+  {
+    "serial": 139,
+    "name": "Madhuri Avi Jogadand",
+    "relation": "Avi Jogadand",
+    "house_number": "-",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ7372592"
+  },
+  {
+    "serial": 140,
+    "name": "Meena Rajesh Jogadand",
+    "relation": "Rajesh Jogadand",
+    "house_number": "-",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ7372618"
+  },
+  {
+    "serial": 141,
+    "name": "Anuradha Sagar Kambale",
+    "relation": "Sagar Kambale",
+    "house_number": "-",
+    "age": 31,
+    "gender": "Female",
+    "epic": "TUZ7372758"
+  },
+  {
+    "serial": 142,
+    "name": "Twin Kal Amol Kambale",
+    "relation": "Amol Kambale",
+    "house_number": "-",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ7372410"
+  },
+  {
+    "serial": 143,
+    "name": "Dipali Motiram Khandare",
+    "relation": "Motiram Khandare",
+    "house_number": "-",
+    "age": 30,
+    "gender": "Female",
+    "epic": "TUZ7372253"
+  },
+  {
+    "serial": 144,
+    "name": "Sunita Ganesh Khandare",
+    "relation": "Ganesh Khandare",
+    "house_number": "-",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ7372261"
+  },
+  {
+    "serial": 145,
+    "name": "Surekha Mahadev Khedekar",
+    "relation": "Mahadev Khedekar",
+    "house_number": "-",
+    "age": 31,
+    "gender": "Female",
+    "epic": "TUZ7372378"
+  },
+  {
+    "serial": 146,
+    "name": "Jamunabai Vithal Maske",
+    "relation": "Vithal Maske",
+    "house_number": "-",
+    "age": 61,
+    "gender": "Female",
+    "epic": "TUZ7372279"
+  },
+  {
+    "serial": 147,
+    "name": "Gaurav Gajananrao Pawar",
+    "relation": "Gajananrao Pawar",
+    "house_number": "-",
+    "age": 24,
+    "gender": "Male",
+    "epic": "TUZ7372725"
+  },
+  {
+    "serial": 148,
+    "name": "Shubham Gajanan Pawar",
+    "relation": "Gajanan Pawar",
+    "house_number": "-",
+    "age": 23,
+    "gender": "Male",
+    "epic": "TUZ7372311"
+  },
+  {
+    "serial": 149,
+    "name": "Manisha Nagesh Salave",
+    "relation": "Nagesh Salave",
+    "house_number": "-",
+    "age": 34,
+    "gender": "Female",
+    "epic": "TUZ7372428"
+  },
+  {
+    "serial": 150,
+    "name": "Diksha Devidas Salave",
+    "relation": "Devidas Salave",
+    "house_number": "-",
+    "age": 30,
+    "gender": "Female",
+    "epic": "TUZ7372667"
+  },
+  {
+    "serial": 151,
+    "name": "Shivraj Devidas Salave",
+    "relation": "Devidas Salave",
+    "house_number": "-",
+    "age": 23,
+    "gender": "Male",
+    "epic": "TUZ7372642"
+  },
+  {
+    "serial": 152,
+    "name": "Mangesh Aashru Salave",
+    "relation": "Aashru Salave",
+    "house_number": "-",
+    "age": 23,
+    "gender": "Male",
+    "epic": "TUZ7372345"
+  },
+  {
+    "serial": 153,
+    "name": "Gajanan Uttam Surve",
+    "relation": "Uttam Surve",
+    "house_number": "-",
+    "age": 27,
+    "gender": "Male",
+    "epic": "TUZ7372741"
+  },
+  {
+    "serial": 154,
+    "name": "Laxmi Avinash Surve",
+    "relation": "Avinash Surve",
+    "house_number": "-",
+    "age": 24,
+    "gender": "Female",
+    "epic": "TUZ7372444"
+  },
+  {
+    "serial": 155,
+    "name": "Sadhana Bhagwan Aare",
+    "relation": "Bhagwan Aare",
+    "house_number": ".",
+    "age": 39,
+    "gender": "Female",
+    "epic": "TUZ7406010"
+  },
+  {
+    "serial": 156,
+    "name": "Vaishali Aakamar",
+    "relation": "Shivaraj Aakamar",
+    "house_number": "0",
+    "age": 24,
+    "gender": "Female",
+    "epic": "TUZ7903446"
+  },
+  {
+    "serial": 157,
+    "name": "Sapana Aakamar",
+    "relation": "Shivaraj Akamar",
+    "house_number": "0",
+    "age": 22,
+    "gender": "Female",
+    "epic": "TUZ7903438"
+  },
+  {
+    "serial": 158,
+    "name": "Somanath Aare",
+    "relation": "Belappa Are",
+    "house_number": "0",
+    "age": 25,
+    "gender": "Male",
+    "epic": "TUZ7903420"
+  },
+  {
+    "serial": 159,
+    "name": "Aakash Ingole",
+    "relation": "Janardhan Ingole",
+    "house_number": "0",
+    "age": 21,
+    "gender": "Male",
+    "epic": "TUZ7903404"
+  },
+  {
+    "serial": 160,
+    "name": "Suraj Ingole",
+    "relation": "Janardhan Ingole",
+    "house_number": "0",
+    "age": 21,
+    "gender": "Male",
+    "epic": "TUZ7903412"
+  },
+  {
+    "serial": 161,
+    "name": "Shubhangi Manik Kamble",
+    "relation": "Manik Kambale",
+    "house_number": "0",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ7903453"
+  },
+  {
+    "serial": 162,
+    "name": "Sanket Kumbare",
+    "relation": "Anil Kumbare",
+    "house_number": "0",
+    "age": 24,
+    "gender": "Male",
+    "epic": "TUZ7903479"
+  },
+  {
+    "serial": 163,
+    "name": "Mahadev Salve",
+    "relation": "Ananda Salve",
+    "house_number": "0",
+    "age": 31,
+    "gender": "Male",
+    "epic": "TUZ7903487"
+  },
+  {
+    "serial": 164,
+    "name": "Vedanti Bangar",
+    "relation": "Dattarao",
+    "house_number": "Pankanergaon",
+    "age": 22,
+    "gender": "Female",
+    "epic": "TUZ8036691"
+  },
+  {
+    "serial": 165,
+    "name": "Shankar Dhondiba Akale",
+    "relation": "Dhondiba Akale",
+    "house_number": "1",
+    "age": 61,
+    "gender": "Male",
+    "epic": "TUZ6418297"
+  },
+  {
+    "serial": 166,
+    "name": "Somnath Shankarappa Akale",
+    "relation": "Shankarappa Akale",
+    "house_number": "1",
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ6418305"
+  },
+  {
+    "serial": 167,
+    "name": "Omkar Shadakshari Kirtanakar",
+    "relation": "Shadakshari Kirtanakar",
+    "house_number": "1",
+    "age": 54,
+    "gender": "Male",
+    "epic": "TUZ7098643"
+  },
+  {
+    "serial": 168,
+    "name": "Basveshvar Shadakshari Kirtanakar",
+    "relation": "Shadakshari Kirtanakar",
+    "house_number": "1",
+    "age": 49,
+    "gender": "Male",
+    "epic": "TUZ7729155"
+  },
+  {
+    "serial": 169,
+    "name": "Santoshi Omkar Kirtanakar",
+    "relation": "Omkar Kirtanakar",
+    "house_number": "1",
+    "age": 43,
+    "gender": "Female",
+    "epic": "BLP1227388"
+  },
+  {
+    "serial": 170,
+    "name": "Shubham Kubare",
+    "relation": "Belaappa Kunbre",
+    "house_number": "1",
+    "age": 68,
+    "gender": "Male",
+    "epic": "TUZ7903545"
+  },
+  {
+    "serial": 171,
+    "name": "Punam Lonkar",
+    "relation": "Ravi Lonkar",
+    "house_number": "1",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ7903461"
+  },
+  {
+    "serial": 172,
+    "name": "Sunita Ingole",
+    "relation": "Samadhan Ingole",
+    "house_number": "02",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ7919574"
+  },
+  {
+    "serial": 173,
+    "name": "Rohini Maheshwar Kirtankar",
+    "relation": "Maheshwar Kirtankar",
+    "house_number": "02",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ7372295"
+  },
+  {
+    "serial": 174,
+    "name": "Malakarjun Panchakshari Kirtanakar",
+    "relation": "Panchakshari Kirtanakar",
+    "house_number": "2",
+    "age": 70,
+    "gender": "Male",
+    "epic": "TUZ7729163"
+  },
+  {
+    "serial": 175,
+    "name": "Shivaganga Someshwar Kirtanakar",
+    "relation": "Someshwar Kirtanakar",
+    "house_number": "2",
+    "age": 67,
+    "gender": "Female",
+    "epic": "TUZ0080408"
+  },
+  {
+    "serial": 176,
+    "name": "Maheshvar Panchakshari Kirtanakar",
+    "relation": "Panchakshari Kirtanakar",
+    "house_number": "2",
+    "age": 59,
+    "gender": "Male",
+    "epic": "TUZ7729171"
+  },
+  {
+    "serial": 177,
+    "name": "Siddheshwar Panchakshari Kirtanakar",
+    "relation": "Panchakshari Kirtanakar",
+    "house_number": "2",
+    "age": 53,
+    "gender": "Male",
+    "epic": "TUZ0080416"
+  },
+  {
+    "serial": 178,
+    "name": "Nandkishore Someshwar Kirtanakar",
+    "relation": "Someshwar Kirtanakar",
+    "house_number": "2",
+    "age": 42,
+    "gender": "Male",
+    "epic": "BLP1228725"
+  },
+  {
+    "serial": 179,
+    "name": "Kalpana Siddheshvar Kirtanakar",
+    "relation": "Siddheshvar Kirtanakar",
+    "house_number": "2",
+    "age": 42,
+    "gender": "Female",
+    "epic": "BLP1259043"
+  },
+  {
+    "serial": 180,
+    "name": "Aditi Kirtankar",
+    "relation": "Siddheshwar Kirtankar",
+    "house_number": "2",
+    "age": 20,
+    "gender": "Female",
+    "epic": "TUZ8061160"
+  },
+  {
+    "serial": 181,
+    "name": "Vishvanathaappa Punjappa Bolavar",
+    "relation": "Punjappa Bolavar",
+    "house_number": "3",
+    "age": 86,
+    "gender": "Male",
+    "epic": "BLP1230713"
+  },
+  {
+    "serial": 182,
+    "name": "Gangabai Vishvanathappa Bolavar",
+    "relation": "Vishvanathappa Bolavar",
+    "house_number": "3",
+    "age": 80,
+    "gender": "Female",
+    "epic": "TUZ7098650"
+  },
+  {
+    "serial": 183,
+    "name": "Sachin Vishwanathappa Bolwar",
+    "relation": "Vishwanathappa Bolwar",
+    "house_number": "3",
+    "age": 37,
+    "gender": "Male",
+    "epic": "TUZ7209331"
+  },
+  {
+    "serial": 184,
+    "name": "Sharada Bhimashankar Bolwar",
+    "relation": "Bhimashankar Bolawar",
+    "house_number": "04",
+    "age": 38,
+    "gender": "Female",
+    "epic": "TUZ7372287"
+  },
+  {
+    "serial": 185,
+    "name": "Kaveri Sambhappa Bolwar",
+    "relation": "Sambha Bolaval",
+    "house_number": "04",
+    "age": 33,
+    "gender": "Female",
+    "epic": "TUZ6122808"
+  },
+  {
+    "serial": 186,
+    "name": "Ganesh Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "04",
+    "age": 22,
+    "gender": "Male",
+    "epic": "TUZ7433139"
+  },
+  {
+    "serial": 187,
+    "name": "Bhimshankar Prahlad Bolakar",
+    "relation": "Prahlad Bolakar",
+    "house_number": "4",
+    "age": 33,
+    "gender": "Male",
+    "epic": "TUZ7098668"
+  },
+  {
+    "serial": 188,
+    "name": "Vimalbai Kashinathaappa Bolavar",
+    "relation": "Kashinathaappa Bolavar",
+    "house_number": "4",
+    "age": 80,
+    "gender": "Female",
+    "epic": "BLP0108415"
+  },
+  {
+    "serial": 189,
+    "name": "Marotiappa Dagadappa Bolavar",
+    "relation": "Dagadappa Bolavar",
+    "house_number": "4",
+    "age": 73,
+    "gender": "Male",
+    "epic": "TUZ7729189"
+  },
+  {
+    "serial": 190,
+    "name": "Mandabai Marotiappa Bolavar",
+    "relation": "Marotiappa Bolavar",
+    "house_number": "4",
+    "age": 64,
+    "gender": "Female",
+    "epic": "TUZ7729197"
+  },
+  {
+    "serial": 191,
+    "name": "Lakshmanaappa Dagadappa Bolavar",
+    "relation": "Dagadappa Bolavar",
+    "house_number": "4",
+    "age": 63,
+    "gender": "Male",
+    "epic": "TUZ7729205"
+  },
+  {
+    "serial": 192,
+    "name": "Nirmalabai Pralhadaappa Bolavar",
+    "relation": "Pralhadaappa Bolavar",
+    "house_number": "4",
+    "age": 63,
+    "gender": "Female",
+    "epic": "TUZ6122782"
+  },
+  {
+    "serial": 193,
+    "name": "Mangalabai Lakshamanaappa Bolavar",
+    "relation": "Lakshamanaappa Bolavar",
+    "house_number": "4",
+    "age": 61,
+    "gender": "Female",
+    "epic": "TUZ0080476"
+  },
+  {
+    "serial": 194,
+    "name": "Pralhadaappa Dagadappa Bolavar",
+    "relation": "Dagadappa Bolavar",
+    "house_number": "4",
+    "age": 59,
+    "gender": "Male",
+    "epic": "TUZ3635703"
+  },
+  {
+    "serial": 195,
+    "name": "Subhash Kashinathaappa Bolavar",
+    "relation": "Kashinathaappa Bolavar",
+    "house_number": "4",
+    "age": 56,
+    "gender": "Male",
+    "epic": "TUZ7729213"
+  },
+  {
+    "serial": 196,
+    "name": "Anita Subhash Bolavar",
+    "relation": "Subhash Bolavar",
+    "house_number": "4",
+    "age": 52,
+    "gender": "Female",
+    "epic": "TUZ0080456"
+  },
+  {
+    "serial": 197,
+    "name": "Kanchan Raju Bolavar",
+    "relation": "Raju Bolavar",
+    "house_number": "4",
+    "age": 41,
+    "gender": "Female",
+    "epic": "BLP1250364"
+  },
+  {
+    "serial": 198,
+    "name": "Sambhappa Kashinathppa Bolwar",
+    "relation": "Kashinathaappa Bolavar",
+    "house_number": "4",
+    "age": 73,
+    "gender": "Male",
+    "epic": "TUZ6122790"
+  },
+  {
+    "serial": 199,
+    "name": "Ramesh Kashinath Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 52,
+    "gender": "Male",
+    "epic": "TUZ7729221"
+  },
+  {
+    "serial": 200,
+    "name": "Shantabai Ramesh Bolwar",
+    "relation": "Ramesh Bolwar",
+    "house_number": "4",
+    "age": 48,
+    "gender": "Female",
+    "epic": "TUZ7729239"
+  },
+  {
+    "serial": 201,
+    "name": "Suresh Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 45,
+    "gender": "Male",
+    "epic": "TUZ7729247"
+  },
+  {
+    "serial": 202,
+    "name": "Savita Suresh Bolwar",
+    "relation": "Suresh Bolwar",
+    "house_number": "4",
+    "age": 40,
+    "gender": "Female",
+    "epic": "TUZ7729254"
+  },
+  {
+    "serial": 203,
+    "name": "Rajkumar Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 39,
+    "gender": "Male",
+    "epic": "TUZ7729262"
+  },
+  {
+    "serial": 204,
+    "name": "Sunanda Rajkumar Bolwar",
+    "relation": "Rajkumar Bolwar",
+    "house_number": "4",
+    "age": 35,
+    "gender": "Female",
+    "epic": "TUZ7729270"
+  },
+  {
+    "serial": 205,
+    "name": "Ganesh Raju Bolwar",
+    "relation": "Raju Bolwar",
+    "house_number": "4",
+    "age": 33,
+    "gender": "Male",
+    "epic": "TUZ7729288"
+  },
+  {
+    "serial": 206,
+    "name": "Anita Ganesh Bolwar",
+    "relation": "Ganesh Bolwar",
+    "house_number": "4",
+    "age": 29,
+    "gender": "Female",
+    "epic": "TUZ7729296"
+  },
+  {
+    "serial": 207,
+    "name": "Shankar Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ7729304"
+  },
+  {
+    "serial": 208,
+    "name": "Meena Shankar Bolwar",
+    "relation": "Shankar Bolwar",
+    "house_number": "4",
+    "age": 25,
+    "gender": "Female",
+    "epic": "TUZ7729312"
+  },
+  {
+    "serial": 209,
+    "name": "Ravi Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 27,
+    "gender": "Male",
+    "epic": "TUZ7729320"
+  },
+  {
+    "serial": 210,
+    "name": "Kusum Ravi Bolwar",
+    "relation": "Ravi Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ7729338"
+  },
+  {
+    "serial": 211,
+    "name": "Mahadev Kashinath Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 31,
+    "gender": "Male",
+    "epic": "TUZ7729346"
+  },
+  {
+    "serial": 212,
+    "name": "Shobha Mahadev Bolwar",
+    "relation": "Mahadev Bolwar",
+    "house_number": "4",
+    "age": 28,
+    "gender": "Female",
+    "epic": "TUZ7729353"
+  },
+  {
+    "serial": 213,
+    "name": "Sanjay Ramesh Bolwar",
+    "relation": "Ramesh Bolwar",
+    "house_number": "4",
+    "age": 26,
+    "gender": "Male",
+    "epic": "TUZ7729361"
+  },
+  {
+    "serial": 214,
+    "name": "Ankita Sanjay Bolwar",
+    "relation": "Sanjay Bolwar",
+    "house_number": "4",
+    "age": 22,
+    "gender": "Female",
+    "epic": "TUZ7729379"
+  },
+  {
+    "serial": 215,
+    "name": "Vijay Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 24,
+    "gender": "Male",
+    "epic": "TUZ7729387"
+  },
+  {
+    "serial": 216,
+    "name": "Kavita Vijay Bolwar",
+    "relation": "Vijay Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ7729395"
+  },
+  {
+    "serial": 217,
+    "name": "Shivaji Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ7729403"
+  },
+  {
+    "serial": 218,
+    "name": "Sunita Shivaji Bolwar",
+    "relation": "Shivaji Bolwar",
+    "house_number": "4",
+    "age": 25,
+    "gender": "Female",
+    "epic": "TUZ7729411"
+  },
+  {
+    "serial": 219,
+    "name": "Prakash Kashinath Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ7729429"
+  },
+  {
+    "serial": 220,
+    "name": "Lata Prakash Bolwar",
+    "relation": "Prakash Bolwar",
+    "house_number": "4",
+    "age": 27,
+    "gender": "Female",
+    "epic": "TUZ7729437"
+  },
+  {
+    "serial": 221,
+    "name": "Gajanan Marotiappa Bolwar",
+    "relation": "Marotiappa Bolwar",
+    "house_number": "4",
+    "age": 33,
+    "gender": "Male",
+    "epic": "TUZ7209349"
+  },
+  {
+    "serial": 222,
+    "name": "Sawan Subhasappa Bolwar",
+    "relation": "Subhasappa Bolwar",
+    "house_number": "4",
+    "age": 27,
+    "gender": "Male",
+    "epic": "TUZ7039977"
+  },
+  {
+    "serial": 223,
+    "name": "Shital Subhasappa Bolwar",
+    "relation": "Subhasappa Bolwar",
+    "house_number": "4",
+    "age": 26,
+    "gender": "Female",
+    "epic": "TUZ7208945"
+  },
+  {
+    "serial": 224,
+    "name": "Bhagyashri Gajanan Bolwar",
+    "relation": "Gajanan Bolwar",
+    "house_number": "4",
+    "age": 26,
+    "gender": "Female",
+    "epic": "TUZ7209364"
+  },
+  {
+    "serial": 225,
+    "name": "Vaishnavi Bolwar",
+    "relation": "Rajkumar Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ8096034"
+  },
+  {
+    "serial": 226,
+    "name": "Saurabh Bolwar",
+    "relation": "Rajkumar Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Male",
+    "epic": "TUZ8096075"
+  },
+  {
+    "serial": 227,
+    "name": "Ankita Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 20,
+    "gender": "Female",
+    "epic": "TUZ0080486"
+  },
+  {
+    "serial": 228,
+    "name": "Ramesh Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ0080507"
+  },
+  {
+    "serial": 229,
+    "name": "Suresh Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ0080523"
+  },
+  {
+    "serial": 230,
+    "name": "Anita Bolwar",
+    "relation": "Raju Bolwar",
+    "house_number": "4",
+    "age": 27,
+    "gender": "Female",
+    "epic": "TUZ0080531"
+  },
+  {
+    "serial": 231,
+    "name": "Ganesh Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 25,
+    "gender": "Male",
+    "epic": "TUZ0080549"
+  },
+  {
+    "serial": 232,
+    "name": "Savita Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 24,
+    "gender": "Female",
+    "epic": "TUZ0080556"
+  },
+  {
+    "serial": 233,
+    "name": "Raju Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 26,
+    "gender": "Male",
+    "epic": "TUZ0080564"
+  },
+  {
+    "serial": 234,
+    "name": "Anil Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 22,
+    "gender": "Male",
+    "epic": "TUZ0080572"
+  },
+  {
+    "serial": 235,
+    "name": "Sunita Bolwar",
+    "relation": "Raju Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ0080580"
+  },
+  {
+    "serial": 236,
+    "name": "Vijay Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ0080598"
+  },
+  {
+    "serial": 237,
+    "name": "Kavita Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ0080606"
+  },
+  {
+    "serial": 238,
+    "name": "Shankar Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ0080614"
+  },
+  {
+    "serial": 239,
+    "name": "Meena Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 27,
+    "gender": "Female",
+    "epic": "TUZ0080622"
+  },
+  {
+    "serial": 240,
+    "name": "Sanjay Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ0080630"
+  },
+  {
+    "serial": 241,
+    "name": "Ankita Bolwar",
+    "relation": "Ramesh Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ0080648"
+  },
+  {
+    "serial": 242,
+    "name": "Mahesh Bolwar",
+    "relation": "Raju Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Male",
+    "epic": "TUZ0080655"
+  },
+  {
+    "serial": 243,
+    "name": "Laxmi Mahesh Bolwar",
+    "relation": "Mahesh Bolwar",
+    "house_number": "4",
+    "age": 20,
+    "gender": "Female",
+    "epic": "TUZ0080663"
+  },
+  {
+    "serial": 244,
+    "name": "Rajesh Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 24,
+    "gender": "Male",
+    "epic": "TUZ0080671"
+  },
+  {
+    "serial": 245,
+    "name": "Sangeeta Rajesh Bolwar",
+    "relation": "Rajesh Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ0080689"
+  },
+  {
+    "serial": 246,
+    "name": "Pravin Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 22,
+    "gender": "Male",
+    "epic": "TUZ0080697"
+  },
+  {
+    "serial": 247,
+    "name": "Anjali Pravin Bolwar",
+    "relation": "Pravin Bolwar",
+    "house_number": "4",
+    "age": 20,
+    "gender": "Female",
+    "epic": "TUZ0080705"
+  },
+  {
+    "serial": 248,
+    "name": "Suresh Ramesh Bolwar",
+    "relation": "Ramesh Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Male",
+    "epic": "TUZ0080713"
+  },
+  {
+    "serial": 249,
+    "name": "Kusum Suresh Bolwar",
+    "relation": "Suresh Bolwar",
+    "house_number": "4",
+    "age": 20,
+    "gender": "Female",
+    "epic": "TUZ0080721"
+  },
+  {
+    "serial": 250,
+    "name": "Ganesh Kashinath Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 25,
+    "gender": "Male",
+    "epic": "TUZ0080739"
+  },
+  {
+    "serial": 251,
+    "name": "Sunita Ganesh Bolwar",
+    "relation": "Ganesh Bolwar",
+    "house_number": "4",
+    "age": 22,
+    "gender": "Female",
+    "epic": "TUZ0080747"
+  },
+  {
+    "serial": 252,
+    "name": "Ravi Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Male",
+    "epic": "TUZ0080754"
+  },
+  {
+    "serial": 253,
+    "name": "Meena Ravi Bolwar",
+    "relation": "Ravi Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ0080762"
+  },
+  {
+    "serial": 254,
+    "name": "Shankar Raju Bolwar",
+    "relation": "Raju Bolwar",
+    "house_number": "4",
+    "age": 26,
+    "gender": "Male",
+    "epic": "TUZ0080770"
+  },
+  {
+    "serial": 255,
+    "name": "Anita Shankar Bolwar",
+    "relation": "Shankar Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ0080788"
+  },
+  {
+    "serial": 256,
+    "name": "Vijay Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 24,
+    "gender": "Male",
+    "epic": "TUZ0080796"
+  },
+  {
+    "serial": 256,
+    "name": "Vijay Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 24,
+    "gender": "Male",
+    "epic": "TUZ0080796"
+  },
+  {
+    "serial": 257,
+    "name": "Kavita Vijay Bolwar",
+    "relation": "Vijay Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ0080804"
+  },
+  {
+    "serial": 258,
+    "name": "Ramesh Kashinath Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ0080812"
+  },
+  {
+    "serial": 259,
+    "name": "Sunita Ramesh Bolwar",
+    "relation": "Ramesh Bolwar",
+    "house_number": "4",
+    "age": 25,
+    "gender": "Female",
+    "epic": "TUZ0080820"
+  },
+  {
+    "serial": 260,
+    "name": "Ganesh Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 27,
+    "gender": "Male",
+    "epic": "TUZ0080838"
+  },
+  {
+    "serial": 261,
+    "name": "Meena Ganesh Bolwar",
+    "relation": "Ganesh Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ0080846"
+  },
+  {
+    "serial": 262,
+    "name": "Shankar Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ0080853"
+  },
+  {
+    "serial": 263,
+    "name": "Anita Shankar Bolwar",
+    "relation": "Shankar Bolwar",
+    "house_number": "4",
+    "age": 26,
+    "gender": "Female",
+    "epic": "TUZ0080861"
+  },
+  {
+    "serial": 264,
+    "name": "Ravi Raju Bolwar",
+    "relation": "Raju Bolwar",
+    "house_number": "4",
+    "age": 24,
+    "gender": "Male",
+    "epic": "TUZ0080879"
+  },
+  {
+    "serial": 265,
+    "name": "Kusum Ravi Bolwar",
+    "relation": "Ravi Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ0080887"
+  },
+  {
+    "serial": 266,
+    "name": "Mahadev Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ0080895"
+  },
+  {
+    "serial": 267,
+    "name": "Shobha Mahadev Bolwar",
+    "relation": "Mahadev Bolwar",
+    "house_number": "4",
+    "age": 28,
+    "gender": "Female",
+    "epic": "TUZ0080903"
+  },
+  {
+    "serial": 268,
+    "name": "Sanjay Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 27,
+    "gender": "Male",
+    "epic": "TUZ0080911"
+  },
+  {
+    "serial": 269,
+    "name": "Ankita Sanjay Bolwar",
+    "relation": "Sanjay Bolwar",
+    "house_number": "4",
+    "age": 22,
+    "gender": "Female",
+    "epic": "TUZ0080929"
+  },
+  {
+    "serial": 270,
+    "name": "Vijay Ramesh Bolwar",
+    "relation": "Ramesh Bolwar",
+    "house_number": "4",
+    "age": 25,
+    "gender": "Male",
+    "epic": "TUZ0080937"
+  },
+  {
+    "serial": 271,
+    "name": "Lata Vijay Bolwar",
+    "relation": "Vijay Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ0080945"
+  },
+  {
+    "serial": 272,
+    "name": "Shivaji Kashinath Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 30,
+    "gender": "Male",
+    "epic": "TUZ0080952"
+  },
+  {
+    "serial": 273,
+    "name": "Sunita Shivaji Bolwar",
+    "relation": "Shivaji Bolwar",
+    "house_number": "4",
+    "age": 26,
+    "gender": "Female",
+    "epic": "TUZ0080960"
+  },
+  {
+    "serial": 274,
+    "name": "Rajesh Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ0080978"
+  },
+  {
+    "serial": 275,
+    "name": "Sangeeta Rajesh Bolwar",
+    "relation": "Rajesh Bolwar",
+    "house_number": "4",
+    "age": 24,
+    "gender": "Female",
+    "epic": "TUZ0080986"
+  },
+  {
+    "serial": 276,
+    "name": "Pravin Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Male",
+    "epic": "TUZ0080994"
+  },
+  {
+    "serial": 277,
+    "name": "Anjali Pravin Bolwar",
+    "relation": "Pravin Bolwar",
+    "house_number": "4",
+    "age": 20,
+    "gender": "Female",
+    "epic": "TUZ0081000"
+  },
+  {
+    "serial": 278,
+    "name": "Suresh Ramesh Bolwar",
+    "relation": "Ramesh Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Male",
+    "epic": "TUZ0081018"
+  },
+  {
+    "serial": 279,
+    "name": "Kusum Suresh Bolwar",
+    "relation": "Suresh Bolwar",
+    "house_number": "4",
+    "age": 20,
+    "gender": "Female",
+    "epic": "TUZ0081026"
+  },
+  {
+    "serial": 280,
+    "name": "Ganesh Kashinath Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 25,
+    "gender": "Male",
+    "epic": "TUZ0081034"
+  },
+  {
+    "serial": 281,
+    "name": "Sunita Ganesh Bolwar",
+    "relation": "Ganesh Bolwar",
+    "house_number": "4",
+    "age": 22,
+    "gender": "Female",
+    "epic": "TUZ0081042"
+  },
+  {
+    "serial": 282,
+    "name": "Ravi Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Male",
+    "epic": "TUZ0081059"
+  },
+  {
+    "serial": 283,
+    "name": "Meena Ravi Bolwar",
+    "relation": "Ravi Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ0081067"
+  },
+  {
+    "serial": 284,
+    "name": "Shankar Raju Bolwar",
+    "relation": "Raju Bolwar",
+    "house_number": "4",
+    "age": 26,
+    "gender": "Male",
+    "epic": "TUZ0081075"
+  },
+  {
+    "serial": 285,
+    "name": "Anita Shankar Bolwar",
+    "relation": "Shankar Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ0081083"
+  },
+  {
+    "serial": 286,
+    "name": "Vijay Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 24,
+    "gender": "Male",
+    "epic": "TUZ0081091"
+  },
+  {
+    "serial": 287,
+    "name": "Kavita Vijay Bolwar",
+    "relation": "Vijay Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ0081109"
+  },
+  {
+    "serial": 288,
+    "name": "Ramesh Kashinath Bolwar",
+    "relation": "Kashinath Bolwar",
+    "house_number": "4",
+    "age": 28,
+    "gender": "Male",
+    "epic": "TUZ0081117"
+  },
+  {
+    "serial": 289,
+    "name": "Sunita Ramesh Bolwar",
+    "relation": "Ramesh Bolwar",
+    "house_number": "4",
+    "age": 25,
+    "gender": "Female",
+    "epic": "TUZ0081125"
+  },
+  {
+    "serial": 290,
+    "name": "Ganesh Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 27,
+    "gender": "Male",
+    "epic": "TUZ0081133"
+  },
+  {
+    "serial": 291,
+    "name": "Meena Ganesh Bolwar",
+    "relation": "Ganesh Bolwar",
+    "house_number": "4",
+    "age": 23,
+    "gender": "Female",
+    "epic": "TUZ0081141"
+  },
+  {
+    "serial": 292,
+    "name": "Shankar Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 29,
+    "gender": "Male",
+    "epic": "TUZ0081158"
+  },
+  {
+    "serial": 293,
+    "name": "Anita Shankar Bolwar",
+    "relation": "Shankar Bolwar",
+    "house_number": "4",
+    "age": 26,
+    "gender": "Female",
+    "epic": "TUZ0081166"
+  },
+  {
+    "serial": 294,
+    "name": "Ravi Raju Bolwar",
+    "relation": "Raju Bolwar",
+    "house_number": "4",
+    "age": 24,
+    "gender": "Male",
+    "epic": "TUZ0081174"
+  },
+  {
+    "serial": 295,
+    "name": "Kusum Ravi Bolwar",
+    "relation": "Ravi Bolwar",
+    "house_number": "4",
+    "age": 21,
+    "gender": "Female",
+    "epic": "TUZ0081182"
+  },
+  {
+    "serial": 296,
+    "name": "Mahadev Dagadappa Bolwar",
+    "relation": "Dagadappa Bolwar",
+    "house_number": "4",
+    "age": 32,
+    "gender": "Male",
+    "epic": "TUZ0081190"
+  },
+  {
+    "serial": 297,
+    "name": "Shobha Mahadev Bolwar",
+    "relation": "Mahadev Bolwar",
+    "house_number": "4",
+    "age": 28,
+    "gender": "Female",
+    "epic": "TUZ0081208"
+  },
+  {
+    "serial": 298,
+    "name": "Sanjay Subhash Bolwar",
+    "relation": "Subhash Bolwar",
+    "house_number": "4",
+    "age": 27,
+    "gender": "Male",
+    "epic": "TUZ0081216"
+  },
+  {
+    "serial": 299,
+    "name": "Ankita Sanjay Bolwar",
+    "relation": "Sanjay Bolwar",
+    "house_number": "4",
+    "age": 22,
+    "gender": "Female",
+    "epic": "TUZ0081224"
+  },
+  {
+    "serial": 300,
+    "name": "Vijay Ramesh Bolwar",
+    "relation": "Ramesh Bolwar",
+    "house_number": "4",
+    "age": 25,
+    "gender": "Male",
+    "epic": "TUZ0081232"
+  }
+]

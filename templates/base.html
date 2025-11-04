@@ -2,7 +2,7 @@
 <html lang="mr">
   <head>
     <meta charset="UTF-8" />
-    <title>{{ title if title else "मतदार माहिती प्रणाली" }}</title>
+    <title>{{ title if title else "Voter Information System" }}</title>
 
     <link
       rel="stylesheet"
@@ -145,12 +145,12 @@
   <body>
     <!-- ✅ Mobile-friendly Navbar -->
     <div class="navbar print-button">
-      <div class="navbar-title">मतदार माहिती प्रणाली</div>
+      <div class="navbar-title">Voter Information System</div>
 
       {% if session.get('user') %}
       <div>
-        <a href="/dashboard">🏠 मुख्य पृष्ठ</a>
-        <a href="/logout">🚪 लॉगआउट</a>
+        <a href="/dashboard">🏠 Home</a>
+        <a href="/logout">🚪Logout</a>
       </div>
       {% endif %}
     </div>

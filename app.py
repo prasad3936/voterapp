@@ -1,19 +1,25 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
-import sqlite3, math, urllib.parse
+import json, math, urllib.parse
 
 app = Flask(__name__)
 app.secret_key = "verysecretkey_local"
 
-# ---------------- DB CONNECTION ----------------
-def get_db():
-    conn = sqlite3.connect("voters.sqlite")
-    conn.row_factory = sqlite3.Row  # return dict-like rows
-    return conn
+# ✅ Toggle testing mode here
+TEST_MODE = False   # False for production
+
+# ---------------- LOAD JSON DATA ----------------
+def load_voters():
+    with open("voters.json", "r", encoding="utf-8") as f:
+        return json.load(f)
 
 # ---------------- LOGIN ----------------
 @app.route("/", methods=["GET", "POST"])
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    if TEST_MODE:
+        session["user"] = "admin"
+        return redirect(url_for("dashboard"))
+
     if request.method == "POST":
         u = request.form.get("username")
         p = request.form.get("password")
@@ -23,51 +29,58 @@ def login():
         flash("❌ चुकीचे Username/Password", "danger")
     return render_template("login.html")
 
+# ---------------- LOGIN CHECK ----------------
+def require_login():
+    if TEST_MODE:
+        session["user"] = "admin"
+        return None
+    if "user" not in session:
+        return redirect(url_for("login"))
+    return None
+
 # ---------------- DASHBOARD ----------------
 @app.route("/dashboard")
 def dashboard():
-    if "user" not in session:
-        return redirect(url_for("login"))
+    auth = require_login()
+    if auth: return auth
 
-    q = request.args.get("q", "").strip()
+    q = request.args.get("q", "").strip().lower()
     gender = request.args.get("gender", "")
     page = int(request.args.get("page", 1))
 
     per_page = 20
-    offset = (page - 1) * per_page
+    voters = load_voters()
 
-    query = "FROM voters WHERE name IS NOT NULL AND name != ''"
-    params = []
+    results = []
+    for v in voters:
+        if v.get("name"):
+            match = True
 
-    # Search
-    if q:
-        query += " AND (name LIKE ? OR serial LIKE ? OR epic LIKE ? OR relation LIKE ? OR house LIKE ?)"
-        like = f"%{q}%"
-        params += [like, like, like, like, like]
+            # Search text
+            if q:
+                match = False
+                for key, val in v.items():
+                    if val and q in str(val).lower():
+                        match = True
+                        break
 
-    # Gender Filter
-    if gender:
-        query += " AND gender = ?"
-        params.append(gender)
+            # Gender filter
+            if gender and v.get("gender") != gender:
+                match = False
 
-    conn = get_db()
-    cur = conn.cursor()
+            if match:
+                results.append(v)
 
-    # Total count
-    cur.execute("SELECT COUNT(*) " + query, params)
-    total = cur.fetchone()[0]
+    # Pagination
+    total = len(results)
+    start = (page - 1) * per_page
+    end = start + per_page
+    page_data = results[start:end]
     total_pages = math.ceil(total / per_page)
-
-    # Fetch data
-    sql = f"SELECT * {query} ORDER BY CAST(serial AS INTEGER) ASC LIMIT ? OFFSET ?"
-    cur.execute(sql, params + [per_page, offset])
-    voters = cur.fetchall()
-
-    conn.close()
 
     return render_template(
         "dashboard.html",
-        voters=voters,
+        voters=page_data,
         q=q,
         gender=gender,
         page=page,
@@ -75,24 +88,20 @@ def dashboard():
     )
 
 # ---------------- VOTER DETAIL ----------------
-@app.route("/voter/<int:vid>")
-def voter_detail(vid):
-    if "user" not in session:
-        return redirect(url_for("login"))
+@app.route("/voter/<int:serial>")
+def voter_detail(serial):
+    auth = require_login()
+    if auth: return auth
 
-    conn = get_db()
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM voters WHERE id = ?", (vid,))
-    v = cur.fetchone()
-    conn.close()
-
-    if not v:
+    voters = load_voters()
+    voter = next((v for v in voters if v["serial"] == serial), None)
+    if not voter:
         return "❌ Voter Not Found", 404
 
-    text = f"मतदार माहिती:\nनाव: {v['name']}\nEPIC: {v['epic']}\nक्रमांक: {v['serial']}"
+    text = f"मतदार माहिती:\nनाव: {voter['name']}\nEPIC: {voter['epic']}\nक्रमांक: {voter['serial']}"
     wa_url = "https://wa.me/?text=" + urllib.parse.quote(text)
 
-    return render_template("card.html", v=v, wa_url=wa_url)
+    return render_template("card.html", v=voter, wa_url=wa_url)
 
 # ---------------- LOGOUT ----------------
 @app.route("/logout")
@@ -100,6 +109,6 @@ def logout():
     session.clear()
     return redirect(url_for("login"))
 
-# ---------------- RUN APP ----------------
+# ---------------- RUN ----------------
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)

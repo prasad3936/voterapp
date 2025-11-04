@@ -24,7 +24,6 @@
     width: 45%;
   }
 
-  /* Mobile Photo resize */
   @media (max-width: 576px) {
     .voter-photo {
       width: 110px !important;
@@ -37,7 +36,6 @@
     }
   }
 
-  /* Printing */
   @media print {
     .no-print {
       display: none !important;
@@ -60,7 +58,7 @@
 
 <div class="container mt-3" id="vCard">
   <div class="card voter-card-box card-border shadow">
-    <h5 class="text-center fw-bold text-primary mt-2">मतदार ओळखपत्र</h5>
+    <h5 class="text-center fw-bold text-primary mt-2">Voter ID Card</h5>
 
     <div class="text-center mb-2">
       <img
@@ -73,11 +71,11 @@
 
     <table class="table table-sm table-bordered mb-0">
       <tr>
-        <th>नाव</th>
+        <th>Name</th>
         <td>{{ v.name }}</td>
       </tr>
       <tr>
-        <th>क्रमांक</th>
+        <th>Serial No</th>
         <td>{{ v.serial }}</td>
       </tr>
       <tr>
@@ -85,36 +83,31 @@
         <td>{{ v.epic }}</td>
       </tr>
       <tr>
-        <th>वडिलांचे नाव / पतीचे नाव</th>
+        <th>Father/Husband Name</th>
         <td>{{ v.relation }}</td>
       </tr>
       <tr>
-        <th>घर क्रमांक</th>
+        <th>House No</th>
         <td>{{ v.house_no }}</td>
       </tr>
       <tr>
-        <th>वय</th>
+        <th>Age</th>
         <td>{{ v.age }}</td>
       </tr>
       <tr>
-        <th>लिंग</th>
+        <th>Gender</th>
         <td>{{ v.gender }}</td>
       </tr>
     </table>
   </div>
 </div>
 
-<!-- Action Buttons -->
 <div class="container mt-3 no-print">
   <button class="btn btn-success w-100 mb-2" onclick="shareToWhatsapp()">
-    📲 WhatsApp वर शेअर
+    📲 Share via WhatsApp
   </button>
-  <!---
-  <button class="btn btn-primary w-100 mb-2" onclick="window.print()">
-    🖨️ प्रिंट
-  </button>
--->
-  <a href="/dashboard" class="btn btn-secondary w-100"> ⬅ परत </a>
+
+  <a href="/dashboard" class="btn btn-secondary w-100">⬅ Back</a>
 </div>
 
 <script>
@@ -131,7 +124,7 @@
           a.href = canvas.toDataURL();
           a.download = "voter_card.png";
           a.click();
-          alert("Saved — now share manually.");
+          alert("Image saved! Share it manually.");
         }
       });
     });
