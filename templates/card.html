@@ -6,6 +6,7 @@
   .voter-card-box {
     max-width: 420px;
     margin: auto;
+    position: relative;
   }
 
   .card-border {
@@ -24,6 +25,18 @@
     width: 45%;
   }
 
+  /* ✅ Campaign Banner */
+  .campaign-banner {
+    background: linear-gradient(90deg, #ffb703, #ff7b00);
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+
   @media (max-width: 576px) {
     .voter-photo {
       width: 110px !important;
@@ -33,6 +46,10 @@
     table th {
       font-size: 13px;
       padding: 6px;
+    }
+    .campaign-banner {
+      font-size: 14px;
+      padding: 5px;
     }
   }
 
@@ -58,8 +75,8 @@
 
 <div class="container mt-3" id="vCard">
   <div class="card voter-card-box card-border shadow">
-    <h5 class="text-center fw-bold text-primary mt-2" data-lang="voterIdCard">
-      Voter ID Card
+    <h5 class="text-center fw-bold text-primary mt-2">
+      मतदार ओळखपत्र (Voter ID Card)
     </h5>
 
     <div class="text-center mb-2">
@@ -73,70 +90,91 @@
 
     <table class="table table-sm table-bordered mb-0">
       <tr>
-        <th data-lang="name">Name</th>
+        <th>नाव</th>
         <td>{{ v.name }}</td>
       </tr>
       <tr>
-        <th data-lang="serial">Serial No</th>
+        <th>क्रमांक</th>
         <td>{{ v.serial }}</td>
       </tr>
       <tr>
-        <th data-lang="epic">EPIC</th>
+        <th>EPIC</th>
         <td>{{ v.epic }}</td>
       </tr>
       <tr>
-        <th data-lang="relation">Father/Husband Name</th>
+        <th>वडिलांचे/पतीचे नाव</th>
         <td>{{ v.relation }}</td>
       </tr>
       <tr>
-        <th data-lang="houseNo">House No</th>
-        <td>{{ v.house_no }}</td>
+        <th>घर क्रमांक</th>
+        <td>{{ v.house_number }}</td>
       </tr>
       <tr>
-        <th data-lang="age">Age</th>
+        <th>वय</th>
         <td>{{ v.age }}</td>
       </tr>
       <tr>
-        <th data-lang="gender">Gender</th>
+        <th>लिंग</th>
         <td>{{ v.gender }}</td>
       </tr>
+      <tr>
+        <th>भाग क्रमांक</th>
+        <td>{{ v.booth_reference }}</td>
+      </tr>
     </table>
+
+    <!-- ✅ Campaign message banner -->
+    <div class="campaign-banner">🗳️ आपलाच डॉ. सुमित सुभाषराव धोटे Mob</div>
+    <div class="campaign-banner mb-2">
+      📞 9422512345 | <i class="bi bi-instagram"></i> 📸 sumit_d_patil17
+    </div>
   </div>
-</div>
 
-<div class="container mt-3 no-print">
-  <button
-    class="btn btn-success w-100 mb-2"
-    onclick="shareToWhatsapp()"
-    data-lang="shareWhatsapp"
-  >
-    📲 Share via WhatsApp
-  </button>
+  <!-- Share & Back Buttons -->
+  <div class="container mt-3 no-print">
+    <button class="btn btn-success w-100 mb-2" onclick="shareToWhatsapp()">
+      📲 WhatsApp वर शेअर करा
+    </button>
 
-  <a href="/dashboard" class="btn btn-secondary w-100" data-lang="back">
-    ⬅ Back
-  </a>
-</div>
+    <a href="/dashboard" class="btn btn-secondary w-100"> ⬅ मागे जा </a>
+  </div>
 
-<script>
-  function shareToWhatsapp() {
-    let card = document.getElementById("vCard");
-    html2canvas(card).then((canvas) => {
-      canvas.toBlob(async (blob) => {
-        const file = new File([blob], "voter_card.png", { type: "image/png" });
+  <script>
+    const senderName = "आपलाच डॉ. सुमित सुभाषराव धोटे"; // ✅ Campaign name shown in message
 
-        if (navigator.canShare && navigator.canShare({ files: [file] })) {
-          await navigator.share({ title: "Voter Card", files: [file] });
-        } else {
-          const a = document.createElement("a");
-          a.href = canvas.toDataURL();
-          a.download = "voter_card.png";
-          a.click();
-          alert("Image saved! Share it manually.");
-        }
+    function shareToWhatsapp() {
+      const card = document.getElementById("vCard");
+
+      html2canvas(card).then((canvas) => {
+        canvas.toBlob(async (blob) => {
+          const file = new File([blob], "voter_card.png", {
+            type: "image/png",
+          });
+
+          const textMessage =
+            `मतदार माहिती:\n` +
+            `नाव: {{ v.name }}\n` +
+            `EPIC: {{ v.epic }}\n` +
+            `घर क्रमांक: {{ v.house_number }}\n` +
+            `क्रमांक: {{ v.serial }}\n` +
+            `वय: {{ v.age }} | लिंग: {{ v.gender }}\n\n` +
+            `आपलाच ${senderName}`;
+
+          if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({
+              title: "Voter ID Card",
+              text: textMessage,
+              files: [file],
+            });
+          } else {
+            const waText = encodeURIComponent(textMessage);
+            const waUrl = "https://wa.me/?text=" + waText;
+            window.open(waUrl, "_blank");
+          }
+        });
       });
-    });
-  }
-</script>
+    }
+  </script>
 
-{% endblock %}
+  {% endblock %}
+</div>
