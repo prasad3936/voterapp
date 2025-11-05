@@ -5,9 +5,15 @@
     <title>{{ title if title else "Voter Information System" }}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+    <!-- ✅ Bootstrap -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <!-- ✅ Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
     <style>
@@ -15,20 +21,23 @@
       body {
         margin: 0;
         background: #f4f8ff;
-        font-family: Arial;
+        font-family: Arial, sans-serif;
         height: 100%;
         display: flex;
         flex-direction: column;
       }
+
+      /* Navbar */
       .navbar {
         background: #003366;
-        padding: 12px;
+        padding: 10px 14px;
         color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
       }
+
       .navbar a {
         color: white;
         margin-left: 12px;
@@ -36,6 +45,36 @@
         font-size: 14px;
         font-weight: bold;
       }
+
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+
+      /* Total Voter Badge */
+      #voterCountBadge {
+        background: linear-gradient(90deg, #007bff, #00b4ff);
+        color: #fff;
+        font-weight: 700;
+        border-radius: 20px;
+        padding: 6px 12px;
+        margin-left: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Auto translate toggle */
+      .translator-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: 10px;
+        color: white;
+        font-size: 14px;
+      }
+      .translator-switch input {
+        transform: scale(1.2);
+      }
+
+      /* Lang buttons */
       .lang-btn {
         border: 1px solid #fff;
         color: #fff;
@@ -45,7 +84,14 @@
         cursor: pointer;
         font-size: 13px;
         margin-left: 5px;
+        transition: all 0.3s ease;
       }
+
+      .lang-btn:hover {
+        background: white;
+        color: #003366;
+      }
+
       footer {
         background: #002850;
         color: #fff;
@@ -53,6 +99,16 @@
         padding: 8px 0;
         font-size: 13px;
         margin-top: auto;
+      }
+
+      footer a {
+        color: #00ffb3;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
       }
 
       /* Hide Google UI */
@@ -68,57 +124,68 @@
         font-size: 0 !important;
         color: transparent !important;
       }
-      body {
-        top: 0 !important;
-      }
 
-      /* Voter badge */
-      #voterCountBadge {
-        font-size: 0.75rem;
-        padding: 4px 8px;
-        border-radius: 10px;
-        background: #0d6efd;
+      /* ✅ Floating Contact Developer Button */
+      .contact-dev-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25d366;
         color: white;
-        margin-left: 6px;
-        font-weight: bold;
-      }
-
-      /* Auto translate toggle */
-      .translator-switch {
-        display: inline-flex;
+        padding: 10px 16px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        z-index: 9999;
+        transition: 0.3s;
+        display: flex;
         align-items: center;
-        gap: 6px;
-        margin-left: 10px;
-        color: white;
+        gap: 8px;
       }
-      .translator-switch input {
-        transform: scale(1.1);
+
+      .contact-dev-btn:hover {
+        transform: scale(1.05);
+        background: #22c15e;
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          text-align: center;
+          gap: 8px;
+        }
       }
     </style>
   </head>
 
   <body>
+    <!-- ✅ Navbar -->
     <div class="navbar">
       <div class="navbar-title fw-bold">Voter Information System</div>
 
       {% if session.get('user') %}
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center flex-wrap">
         <a href="/dashboard">🏠 Home</a>
+
+        <!-- ✅ Total Voters -->
         <span id="voterCountBadge">Total: {{ total_voters }}</span>
 
-        <!-- Toggle -->
+        <!-- Auto Translate -->
         <label class="translator-switch">
           <input id="translatorToggle" type="checkbox" />
           <small>Auto Translate</small>
         </label>
 
-        <!-- Lang Buttons (Hidden initially) -->
+        <!-- Language Buttons -->
         <div id="langButtons" style="display: none">
           <button class="lang-btn" onclick="chooseLang('en')">🇬🇧 EN</button>
           <button class="lang-btn" onclick="chooseLang('mr')">🇮🇳 MR</button>
         </div>
 
-        <a href="/logout">🚪 Logout</a>
+        <!-- Logout -->
+        <a href="/logout"><i class="fa-solid fa-door-open"></i> Logout</a>
 
         <span
           id="google_translate_element"
@@ -128,18 +195,37 @@
       {% endif %}
     </div>
 
+    <!-- ✅ Content Area -->
     <div class="content-wrapper container mt-2">
       {% block content %}{% endblock %}
     </div>
 
-    <footer>© Invictus Technologies Pvt Ltd 2025</footer>
+    <!-- ✅ Floating Developer Contact -->
+    <div
+      class="contact-dev-btn"
+      onclick="window.open('https://wa.me/919637370116?text=Hi%20Prasad%2C%20I%20need%20help%20with%20a%20web%20project!', '_blank')"
+    >
+      <i class="fa-brands fa-whatsapp"></i> Contact Developer
+    </div>
 
+    <!-- ✅ Footer -->
+    <footer>
+      Copyright © 2025 All Rights Reserved | 💻 Developed by
+      <strong>Prasad Zungare Patil</strong> |
+      <a
+        href="https://wa.me/919637370116?text=Hi%20Prasad%2C%20I%20want%20a%20website%20like%20voterapp!"
+      >
+        WhatsApp</a
+      >
+      📞 +91 9637370116
+    </footer>
+
+    <!-- ✅ Translator Script -->
     <script>
       const GOOGLE_SCRIPT_SRC =
         "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
       let googleScriptEl = null;
 
-      // ✅ Google translate init
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
           {
@@ -153,7 +239,6 @@
         setGoogleLang(saved);
       }
 
-      // ✅ Load Google script dynamically
       function loadGoogleScript() {
         if (googleScriptEl) return;
         googleScriptEl = document.createElement("script");
@@ -162,7 +247,6 @@
         document.head.appendChild(googleScriptEl);
       }
 
-      // ✅ Set language
       function setGoogleLang(lang) {
         const combo = document.querySelector(".goog-te-combo");
         if (!combo) return;
@@ -171,24 +255,19 @@
         localStorage.setItem("langChoice", lang);
       }
 
-      // ✅ Turn translator on/off
       function setTranslatorEnabled(enabled) {
         localStorage.setItem("translatorEnabled", enabled ? "1" : "0");
-
-        // Show/Hide language buttons
         document.getElementById("langButtons").style.display = enabled
           ? "inline-flex"
           : "none";
-
         if (enabled) {
           loadGoogleScript();
         } else {
           localStorage.setItem("langChoice", "en");
-          location.reload(); // remove translation
+          location.reload();
         }
       }
 
-      // ✅ EN/MR button clicked
       function chooseLang(lang) {
         if (localStorage.getItem("translatorEnabled") !== "1") {
           setTranslatorEnabled(true);
@@ -198,7 +277,6 @@
         }
       }
 
-      // ✅ On page load
       document.addEventListener("DOMContentLoaded", () => {
         const enabled = localStorage.getItem("translatorEnabled") === "1";
         document.getElementById("translatorToggle").checked = enabled;
@@ -213,6 +291,13 @@
           .addEventListener("change", (ev) => {
             setTranslatorEnabled(ev.target.checked);
           });
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.location.pathname.startsWith("/voter/")) {
+          const badge = document.getElementById("voterCountBadge");
+          if (badge) badge.style.display = "none";
+        }
       });
     </script>
   </body>

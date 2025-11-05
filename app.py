@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.secret_key = "verysecretkey_local"
 
 # ✅ Toggle testing mode here
-TEST_MODE = False   # False for production
+TEST_MODE = False  # False for production
 
 
 # ---------------- LOAD JSON DATA ----------------
@@ -29,7 +29,7 @@ def load_voters():
             or item.get("relation")
         )
 
-        # ✅ Updated house_number normalization
+        # ✅ Normalize house number
         house_number = (
             item.get("घर क्रमांक")
             or item.get("घर_क्रमांक")
@@ -59,18 +59,18 @@ def load_voters():
 
         voters.append({
             "serial": serial,
-            "name": name,
-            "relation": relation,
+            "name": name or "NA",
+            "relation": relation or "NA",
             "house_number": house_number,
             "age": age,
             "gender": gender,
-            "epic": epic,
+            "epic": epic or "NA",
             "booth_reference": booth_ref
         })
 
-    # ✅ Remove records without essential info
-    clean_voters = [v for v in voters if v.get("name") and v.get("epic")]
-    return clean_voters
+    # ✅ Do NOT filter out missing data (to preserve total count)
+    print(f"✅ Total voters loaded: {len(voters)}")  # Debug line
+    return voters
 
 
 def normalize_house_number(value):
@@ -78,7 +78,6 @@ def normalize_house_number(value):
     if not value or str(value).strip().lower() in ("na", "none", "-", ""):
         return "NA"
 
-    # Replace Marathi digits with English equivalents
     marathi_to_english = str.maketrans("०१२३४५६७८९", "0123456789")
     cleaned = str(value).strip().translate(marathi_to_english)
     return cleaned
@@ -89,7 +88,6 @@ def safe_int(x):
     if not x:
         return None
     try:
-        # Remove commas or Marathi digits
         marathi_to_english = str.maketrans("०१२३४५६७८९", "0123456789")
         x = str(x).translate(marathi_to_english)
         x = re.sub(r"[^\d]", "", x)
@@ -145,13 +143,15 @@ def dashboard():
     for v in voters:
         match = True
 
-        # 🔍 Search in any field
+        # 🔍 Search in all fields
         if q:
             match = any(q in str(val).lower() for val in v.values() if val)
 
-        # 🚻 Gender filter
-        if gender and v.get("gender") != gender:
-            match = False
+        # 🚻 Gender filter (case-insensitive)
+        if gender:
+            gval = str(v.get("gender", "")).lower()
+            if gender.lower() not in gval:
+                match = False
 
         if match:
             results.append(v)
@@ -198,7 +198,8 @@ def voter_detail(serial):
     )
     wa_url = "https://wa.me/?text=" + urllib.parse.quote(text)
 
-    return render_template("card.html", v=voter, wa_url=wa_url)
+    # ✅ Hide total count on card
+    return render_template("card.html", v=voter, wa_url=wa_url, hide_total=True)
 
 
 # ---------------- LOGOUT ----------------

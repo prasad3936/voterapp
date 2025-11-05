@@ -1,75 +1,67 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div class="container mt-2">
-
   <h4 class="fw-bold text-primary mb-3" data-lang="voterList">Voters List</h4>
 
-
-  <!-- Search + Filter Form -->
+  <!-- 🔍 Search + Pagination Form -->
   <form method="get" class="row g-2 mb-2 align-items-center">
-
     <!-- Search -->
-    <div class="col-12 col-md-4">
-      <input class="form-control"
+    <div class="col-12 col-md-6 col-lg-5">
+      <input
+        class="form-control"
         name="q"
         value="{{q}}"
         placeholder="Search Name / EPIC / Address"
-        data-lang-placeholder="searchPlaceholder">
+        data-lang-placeholder="searchPlaceholder"
+      />
     </div>
 
-    <!-- Gender Filter -->
-    <div class="col-6 col-md-2">
-      <select class="form-select" name="gender">
-        <option value="" data-lang="gender">Gender</option>
-        <option value="Male" {% if gender=='Male' %}selected{% endif %} data-lang="male">Male</option>
-        <option value="Female" {% if gender=='Female' %}selected{% endif %} data-lang="female">Female</option>
-      </select>
-    </div>
-
-    <!-- Submit Button -->
-    <div class="col-6 col-md-2">
-      <button class="btn btn-primary w-100 fw-bold" data-lang="searchBtn">🔍 Search</button>
+    <!-- Search Button -->
+    <div class="col-6 col-md-3 col-lg-2">
+      <button class="btn btn-primary w-100 fw-bold" data-lang="searchBtn">
+        🔍 Search
+      </button>
     </div>
 
     <!-- Pagination -->
-    <div class="col-12 col-md-4 text-end mt-1">
+    <div class="col-12 col-md-6 col-lg-5 text-end mt-1">
       <ul class="pagination pagination-sm justify-content-end mb-0">
-
         {% if page > 1 %}
         <li class="page-item">
-          <a class="page-link" href="?page={{page-1}}&q={{q}}&gender={{gender}}" data-lang="prev">⬅ Prev</a>
+          <a class="page-link" href="?page={{page-1}}&q={{q}}" data-lang="prev"
+            >⬅ Prev</a
+          >
         </li>
         {% else %}
-        <li class="page-item disabled"><span class="page-link" data-lang="prev">⬅ Prev</span></li>
-        {% endif %}
-
-        {% set window_size = 4 %}
-        {% set start = ((page - 1) // window_size) * window_size + 1 %}
-        {% set end = [start + window_size - 1, total_pages] | min %}
-
-        {% for p in range(start, end + 1) %}
+        <li class="page-item disabled">
+          <span class="page-link" data-lang="prev">⬅ Prev</span>
+        </li>
+        {% endif %} {% set window_size = 4 %} {% set start = ((page - 1) //
+        window_size) * window_size + 1 %} {% set end = [start + window_size - 1,
+        total_pages] | min %} {% for p in range(start, end + 1) %}
         <li class="page-item {% if p == page %}active{% endif %}">
-          <a class="page-link" href="?page={{p}}&q={{q}}&gender={{gender}}">{{p}}</a>
+          <a class="page-link" href="?page={{p}}&q={{q}}">{{p}}</a>
         </li>
-        {% endfor %}
-
-        {% if page < total_pages %}
+        {% endfor %} {% if page < total_pages %}
         <li class="page-item">
-          <a class="page-link" href="?page={{page+1}}&q={{q}}&gender={{gender}}" data-lang="next">Next ➡</a>
+          <a class="page-link" href="?page={{page+1}}&q={{q}}" data-lang="next"
+            >Next ➡</a
+          >
         </li>
         {% else %}
-        <li class="page-item disabled"><span class="page-link" data-lang="next">Next ➡</span></li>
+        <li class="page-item disabled">
+          <span class="page-link" data-lang="next">Next ➡</span>
+        </li>
         {% endif %}
-
       </ul>
     </div>
-
   </form>
 
-  <!-- Table -->
+  <!-- 🧾 Table -->
   <div class="table-responsive">
-    <table class="table table-bordered table-hover bg-white shadow-sm text-center align-middle small">
+    <table
+      class="table table-bordered table-hover bg-white shadow-sm text-center align-middle small"
+    >
       <thead class="table-primary text-nowrap">
         <tr>
           <th data-lang="photo">Photo</th>
@@ -86,26 +78,32 @@
         {% for v in voters %}
         <tr>
           <td>
-            <img src="/{{ v.photo if v.photo else 'static/photos/default.jpg' }}"
-                 width="45" height="55" class="rounded border">
+            <img
+              src="/{{ v.photo if v.photo else 'static/photos/default.jpg' }}"
+              width="45"
+              height="55"
+              class="rounded border"
+            />
           </td>
-
           <td class="text-start">{{ v.name }}</td>
           <td>{{ v.serial }}</td>
           <td class="text-nowrap">{{ v.epic }}</td>
           <td>{{ v.house_number }}</td>
           <td>{{ v.age }}</td>
-
           <td>
-            <a class="btn btn-success btn-sm w-100"
-               href="/voter/{{v.serial}}" data-lang="viewBtn">View</a>
+            <a
+              class="btn btn-success btn-sm w-100"
+              href="/voter/{{v.serial}}"
+              data-lang="viewBtn"
+            >
+              View
+            </a>
           </td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
-
 </div>
 
 {% endblock %}
