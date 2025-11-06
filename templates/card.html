@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
@@ -12,14 +13,13 @@
     margin: 32px auto 12px;
   }
 
-  /* Card = flex column: content grows, footer stays at bottom */
   #cardOnly {
     display: flex;
     flex-direction: column;
     background: #fff;
     border: 2px solid #000;
     border-radius: 12px;
-    overflow: hidden; /* keeps footer corners rounded */
+    overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   }
 
@@ -58,40 +58,45 @@
     text-align: left;
   }
 
-  /* Footer bars (full width, no overlap) */
-  .campaign-bar,
-  .contact-bar {
-    width: 100%;
-    padding: 8px 12px;
-    text-align: center;
-    font-weight: 700;
-  }
-  .campaign-bar {
-    background: linear-gradient(90deg, #ffb703, #ff7b00);
+  /* ✅ Campaign Footer */
+  .campaign-footer {
+    background: linear-gradient(90deg, #ff9f1c, #ff7f11);
     color: #000;
+    text-align: center;
+    padding: 10px 12px;
+    font-weight: 800;
+    font-size: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
   }
+
+  .campaign-subline {
+    background: #ffe7c4;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
   .contact-bar {
-    background: #ffedd3;
-    color: #222;
-    font-weight: 700;
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    background: #fff6eb;
+    color: #000;
+    text-align: center;
+    font-size: 13.5px;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
-    padding-top: 10px;
-    padding-bottom: 10px;
   }
+
   .contact-item {
     display: inline-flex;
-    gap: 8px;
     align-items: center;
-  }
-  .contact-item .emoji {
-    font-size: 16px;
-  }
-  .handle {
+    gap: 6px;
     font-weight: 700;
   }
 
@@ -104,6 +109,10 @@
     table.table-sm th {
       font-size: 13px;
     }
+    .campaign-footer {
+      font-size: 14px;
+      padding: 8px;
+    }
   }
 
   @media print {
@@ -113,10 +122,9 @@
   }
 </style>
 
-<!-- ====== CARD (only this area is captured) ====== -->
+<!-- ✅ CARD (only this area is captured) -->
 <div class="voter-card-box">
-  <div id="cardOnly" class="shadow-sm">
-    <!-- Content -->
+  <div id="cardOnly">
     <div class="card-body-clean">
       <h5 class="title">मतदार ओळखपत्र (Voter ID Card)</h5>
 
@@ -129,57 +137,32 @@
       </div>
 
       <table class="table table-sm table-bordered mb-0">
-        <tr>
-          <th>नाव</th>
-          <td>{{ v.name }}</td>
-        </tr>
-        <tr>
-          <th>क्रमांक</th>
-          <td>{{ v.serial }}</td>
-        </tr>
-        <tr>
-          <th>EPIC</th>
-          <td>{{ v.epic }}</td>
-        </tr>
-        <tr>
-          <th>वडिलांचे/पतीचे नाव</th>
-          <td>{{ v.relation }}</td>
-        </tr>
-        <tr>
-          <th>घर क्रमांक</th>
-          <td>{{ v.house_number }}</td>
-        </tr>
-        <tr>
-          <th>वय</th>
-          <td>{{ v.age }}</td>
-        </tr>
-        <tr>
-          <th>लिंग</th>
-          <td>{{ v.gender }}</td>
-        </tr>
-        <tr>
-          <th>प्रभाग क्रमांक</th>
-          <td>{{ v.booth_reference }}</td>
-        </tr>
+        <tr><th>नाव</th><td>{{ v.name }}</td></tr>
+        <tr><th>क्रमांक</th><td>{{ v.serial }}</td></tr>
+        <tr><th>EPIC</th><td>{{ v.epic }}</td></tr>
+        <tr><th>वडिलांचे/पतीचे नाव</th><td>{{ v.relation }}</td></tr>
+        <tr><th>घर क्रमांक</th><td>{{ v.house_number }}</td></tr>
+        <tr><th>वय</th><td>{{ v.age }}</td></tr>
+        <tr><th>लिंग</th><td>{{ v.gender }}</td></tr>
+        <tr><th>प्रभाग क्रमांक</th><td>{{ v.booth_reference }}</td></tr>
       </table>
     </div>
 
-    <!-- Footer (sticks to bottom, spans full width) -->
-    <div class="campaign-bar">🗳️ आपलाच डॉ. सुमित सुभाषराव धोटे</div>
+    <!-- ✅ Campaign Section -->
+    <div class="campaign-footer">🗳️ आपल्या हक्काचा - डॉ. सुमित सुभाष धोटे</div>
+    <div class="campaign-subline">
+      प्रभाग क्रमांक ११ ( अ ) — एक संधी नव्या पर्वाला, एक संधी नव्या विकासाला..!!
+    </div>
+
+    <!-- ✅ Contact Section -->
     <div class="contact-bar">
-      <span class="contact-item"
-        ><span class="emoji">📞</span>
-        <span class="handle">+91 954505118</span></span
-      >
-      <span class="contact-item"
-        ><span class="emoji"🅾 </span>
-        <span class="handle">sumit_d_patil17</span></span
-      >
+      <span class="contact-item">📞 9545051118</span>
+      <span class="contact-item">🅾 sumit_d_patil17</span>
     </div>
   </div>
 </div>
 
-<!-- ====== ACTION BUTTONS (not captured) ====== -->
+<!-- ✅ Buttons (not captured in image) -->
 <div class="container no-print" style="max-width: 460px">
   <button class="btn btn-success w-100 mb-2" onclick="shareToWhatsapp()">
     📲 WhatsApp वर शेअर करा
@@ -188,39 +171,37 @@
 </div>
 
 <script>
-  const senderName = "आपलाच डॉ. सुमित सुभाषराव धोटे";
+  const senderName = "आपल्या हक्काचा - डॉ. सुमित सुभाष धोटे";
 
   function shareToWhatsapp() {
-    const card = document.getElementById("cardOnly"); // capture only the card
-    html2canvas(card, { backgroundColor: "#ffffff", scale: 2 }).then(
-      (canvas) => {
-        canvas.toBlob(async (blob) => {
-          const file = new File([blob], "voter_card.png", {
-            type: "image/png",
+    const card = document.getElementById("cardOnly");
+    html2canvas(card, { backgroundColor: "#ffffff", scale: 2 }).then((canvas) => {
+      canvas.toBlob(async (blob) => {
+        const file = new File([blob], "voter_card.png", { type: "image/png" });
+
+        const textMessage =
+          `मतदार माहिती:\n` +
+          `नाव: {{ v.name }}\n` +
+          `EPIC: {{ v.epic }}\n` +
+          `घर क्रमांक: {{ v.house_number }}\n` +
+          `क्रमांक: {{ v.serial }}\n` +
+          `वय: {{ v.age }} | लिंग: {{ v.gender }}\n\n` +
+          `आपल्या हक्काचा - डॉ. सुमित सुभाष धोटे\n` +
+          `📞 9545051118\n` +
+          `प्रभाग क्रमांक ११ ( अ )`;
+
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            title: "Voter ID Card",
+            text: textMessage,
+            files: [file],
           });
-
-          const textMessage =
-            `मतदार माहिती:\n` +
-            `नाव: {{ v.name }}\n` +
-            `EPIC: {{ v.epic }}\n` +
-            `घर क्रमांक: {{ v.house_number }}\n` +
-            `क्रमांक: {{ v.serial }}\n` +
-            `वय: {{ v.age }} | लिंग: {{ v.gender }}\n\n` +
-            `आपलाच ${senderName}`;
-
-          if (navigator.canShare && navigator.canShare({ files: [file] })) {
-            await navigator.share({
-              title: "Voter ID Card",
-              text: textMessage,
-              files: [file],
-            });
-          } else {
-            const waText = encodeURIComponent(textMessage);
-            window.open("https://wa.me/?text=" + waText, "_blank");
-          }
-        });
-      }
-    );
+        } else {
+          const waText = encodeURIComponent(textMessage);
+          window.open("https://wa.me/?text=" + waText, "_blank");
+        }
+      });
+    });
   }
 </script>
 
