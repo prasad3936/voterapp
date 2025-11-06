@@ -13,4 +13,4 @@ jobs:
       - name: Curl Render App
         run: |
           echo "Pinging Render instance..."
-          curl -s -o /dev/null -w "%{http_code}\n" https://voterapp-v0wr.onrender.com/voter/2
+          curl -s -o /dev/null -w "%{http_code}\n" https://voteforsumitdhotepatil.onrender.com/
