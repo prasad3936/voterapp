@@ -269,14 +269,7 @@
     "gender": "Male",
     "epic": "TUZ6544266"
   }
-]
-
-
-<!-- Page Break - Batch 2 -->
-
-
-json
-[
+,
   {
     "serial": "31",
     "name": "Vijay Sukhlal Bahire",
@@ -547,14 +540,7 @@ json
     "gender": "Female",
     "epic": "TUZ6081228"
   }
-]
-
-
-<!-- Page Break - Batch 3 -->
-
-
-json
-[
+,
   {
     "serial": "61",
     "name": "Rajesh Kisan Jogdand",
@@ -825,14 +811,7 @@ json
     "gender": "Male",
     "epic": "TUZ6544316"
   }
-]
-
-
-<!-- Page Break - Batch 4 -->
-
-
-json
-[
+,
   {
     "serial": "91",
     "name": "Shantabai Sadashiv Kumbre",
@@ -1103,14 +1082,7 @@ json
     "gender": "Male",
     "epic": "TUZ6544399"
   }
-]
-
-
-<!-- Page Break - Batch 5 -->
-
-
-json
-[
+,
   {
     "serial": "121",
     "name": "Varsha Dilip Surve",
@@ -1381,14 +1353,7 @@ json
     "gender": "Female",
     "epic": "TUZ7372667"
   }
-]
-
-
-<!-- Page Break - Batch 6 -->
-
-
-json
-[
+,
   {
     "serial": "151",
     "name": "Shivraj Devidas Salave",
@@ -1659,14 +1624,7 @@ json
     "gender": "Female",
     "epic": "TUZ8061160"
   }
-]
-
-
-<!-- Page Break - Batch 7 -->
-
-
-json
-[
+,
   {
     "serial": "181",
     "name": "Vishvanathaappa Punjappa Bolavar",
@@ -1937,14 +1895,7 @@ json
     "gender": "Male",
     "epic": "BLP0108571"
   }
-]
-
-
-<!-- Page Break - Batch 8 -->
-
-
-json
-[
+,
   {
     "serial": "211",
     "name": "Kaveribai Dashrath Jogdand",
@@ -2215,14 +2166,7 @@ json
     "gender": "Male",
     "epic": "TUZ7039993"
   }
-]
-
-
-<!-- Page Break - Batch 9 -->
-
-
-json
-[
+,
   {
     "serial": "241",
     "name": "Ramchandra Irappa Are",
@@ -2493,14 +2437,7 @@ json
     "gender": "Male",
     "epic": "TUZ7729411"
   }
-]
-
-
-<!-- Page Break - Batch 10 -->
-
-
-json
-[
+,
   {
     "serial": "271",
     "name": "Gajanan Vinayakrao Deshmukh",
@@ -2771,14 +2708,7 @@ json
     "gender": "Female",
     "epic": "BLP1232263"
   }
-]
-
-
-<!-- Page Break - Batch 11 -->
-
-
-json
-[
+,
   {
     "serial": "301",
     "name": "Uttamrao Laxmanrao Surve",
@@ -3049,14 +2979,7 @@ json
     "gender": "Female",
     "epic": null
   }
-]
-
-
-<!-- Page Break - Batch 12 -->
-
-
-json
-[
+,
   {
     "serial": "331",
     "name": "Dagdu Jairam Surve",
@@ -3327,14 +3250,7 @@ json
     "gender": "Female",
     "epic": "BLP1232271"
   }
-]
-
-
-<!-- Page Break - Batch 13 -->
-
-
-json
-[
+,
   {
     "serial": "361",
     "name": "Kailash Mahadu Surve",
@@ -3605,14 +3521,7 @@ json
     "gender": "Male",
     "epic": "TUZ0081612"
   }
-]
-
-
-<!-- Page Break - Batch 14 -->
-
-
-json
-[
+,
   {
     "serial": "391",
     "name": "Savitrabai Prabhakar Salve",
@@ -3883,14 +3792,7 @@ json
     "gender": "Male",
     "epic": "TUZ7729635"
   }
-]
-
-
-<!-- Page Break - Batch 15 -->
-
-
-json
-[
+,
   {
     "serial": "421",
     "name": "Kelas Baban Kambale",
@@ -4161,14 +4063,7 @@ json
     "gender": "Female",
     "epic": null
   }
-]
-
-
-<!-- Page Break - Batch 16 -->
-
-
-json
-[
+,
   {
     "serial": "451",
     "name": "Ujwala Rajesh Salve",
@@ -4439,14 +4334,7 @@ json
     "gender": "Female",
     "epic": "TUZ7099021"
   }
-]
-
-
-<!-- Page Break - Batch 17 -->
-
-
-json
-[
+,
   {
     "serial": "481",
     "name": "Shantabai Baliram More",
@@ -4717,14 +4605,7 @@ json
     "gender": "Male",
     "epic": "BLP1250232"
   }
-]
-
-
-<!-- Page Break - Batch 18 -->
-
-
-json
-[
+,
   {
     "serial": "511",
     "name": "Nandkishore Laxman Khandare",
@@ -4995,14 +4876,7 @@ json
     "gender": "Male",
     "epic": "TUZ7099161"
   }
-]
-
-
-<!-- Page Break - Batch 19 -->
-
-
-json
-[
+,
   {
     "serial": "541",
     "name": "Shashikala Prahlad Khandare",
@@ -5273,14 +5147,7 @@ json
     "gender": "Male",
     "epic": "TUZ7099575"
   }
-]
-
-
-<!-- Page Break - Batch 20 -->
-
-
-json
-[
+,
   {
     "serial": "571",
     "name": "Chandrakala Sheshrao Deshmukh",
@@ -5551,14 +5418,7 @@ json
     "gender": "Female",
     "epic": "TUZ7958374"
   }
-]
-
-
-<!-- Page Break - Batch 21 -->
-
-
-json
-[
+,
   {
     "serial": "601",
     "name": "Sampatrao Manaku Bangar",
@@ -5829,14 +5689,7 @@ json
     "gender": "Female",
     "epic": "BLP1232206"
   }
-]
-
-
-<!-- Page Break - Batch 22 -->
-
-
-json
-[
+,
   {
     "serial": "631",
     "name": "DIPALI AMOL JOGDAND JOGDAND",
@@ -6107,14 +5960,7 @@ json
     "gender": "Male",
     "epic": "TUZ6123269"
   }
-]
-
-
-<!-- Page Break - Batch 23 -->
-
-
-json
-[
+,
   {
     "serial": "661",
     "name": "Ratnamala Nago Jogdand",
@@ -6385,14 +6231,7 @@ json
     "gender": "Male",
     "epic": "BLP1227875"
   }
-]
-
-
-<!-- Page Break - Batch 24 -->
-
-
-json
-[
+,
   {
     "serial": "691",
     "name": "Meenabai Samadhan Chatase",
@@ -6663,14 +6502,7 @@ json
     "gender": "Female",
     "epic": "BLP1232222"
   }
-]
-
-
-<!-- Page Break - Batch 25 -->
-
-
-json
-[
+,
   {
     "serial": "721",
     "name": "Bhagwan Ayanaappa Malekar",
@@ -6941,14 +6773,7 @@ json
     "gender": "Male",
     "epic": "TUZ1225655"
   }
-]
-
-
-<!-- Page Break - Batch 26 -->
-
-
-json
-[
+,
   {
     "serial": "751",
     "name": "Laxmi Bai Ashru Khedkar",
@@ -7219,14 +7044,7 @@ json
     "gender": "Male",
     "epic": "TUZ6123145"
   }
-]
-
-
-<!-- Page Break - Batch 27 -->
-
-
-json
-[
+,
   {
     "serial": "781",
     "name": "Dwarkabai Gajanan Khandare",
@@ -7497,14 +7315,7 @@ json
     "gender": "Female",
     "epic": "BLP1227974"
   }
-]
-
-
-<!-- Page Break - Batch 28 -->
-
-
-json
-[
+,
   {
     "serial": "811",
     "name": "Kamal Devidas Landage",
@@ -7775,14 +7586,7 @@ json
     "gender": "Male",
     "epic": "TUZ7954340"
   }
-]
-
-
-<!-- Page Break - Batch 29 -->
-
-
-json
-[
+,
   {
     "serial": "841",
     "name": "Rambhau Bhagappa Akamar",
@@ -8053,14 +7857,7 @@ json
     "gender": "Male",
     "epic": null
   }
-]
-
-
-<!-- Page Break - Batch 30 -->
-
-
-json
-[
+,
   {
     "serial": "871",
     "name": "Satyabhamabai Belappa Are",
@@ -8331,14 +8128,7 @@ json
     "gender": "Male",
     "epic": null
   }
-]
-
-
-<!-- Page Break - Batch 31 -->
-
-
-json
-[
+,
   {
     "serial": "901",
     "name": "Samindrabai Sadashiv Kamble",
@@ -8609,14 +8399,7 @@ json
     "gender": "Female",
     "epic": "TUZ6665400"
   }
-]
-
-
-<!-- Page Break - Batch 32 -->
-
-
-json
-[
+,
   {
     "serial": "931",
     "name": "Rahul Dattarav Salave",
@@ -8887,14 +8670,7 @@ json
     "gender": "Female",
     "epic": "TUZ3635976"
   }
-]
-
-
-<!-- Page Break - Batch 33 -->
-
-
-json
-[
+,
   {
     "serial": "961",
     "name": "Babanaappa Kashinathaappa Hendre",
@@ -9165,14 +8941,7 @@ json
     "gender": "Female",
     "epic": "TUZ7099419"
   }
-]
-
-
-<!-- Page Break - Batch 34 -->
-
-
-json
-[
+,
   {
     "serial": "991",
     "name": "Bhujang Baban Garad",
@@ -9443,14 +9212,7 @@ json
     "gender": "Male",
     "epic": "TUZ7148224"
   }
-]
-
-
-<!-- Page Break - Batch 35 -->
-
-
-json
-[
+,
   {
     "serial": "1021",
     "name": "Rameshwar Sopan Jogdand",
@@ -9721,14 +9483,7 @@ json
     "gender": "Female",
     "epic": "BLP1225754"
   }
-]
-
-
-<!-- Page Break - Batch 36 -->
-
-
-json
-[
+,
   {
     "serial": "1051",
     "name": "Sarubai Manik Rao Kurhe",
@@ -9999,14 +9754,7 @@ json
     "gender": "Male",
     "epic": "TUZ8236051"
   }
-]
-
-
-<!-- Page Break - Batch 37 -->
-
-
-json
-[
+,
   {
     "serial": "1081",
     "name": "BHAGYASHRI SAMADHAN SALVE",
@@ -10052,14 +9800,7 @@ json
     "gender": "Male",
     "epic": "TUZ8291957"
   }
-]
-
-
-<!-- Page Break - Batch 38 -->
-
-
-json
-[
+,
   {
     "serial": "1086",
     "name": "Kavita Anil Akamar",
@@ -10123,14 +9864,7 @@ json
     "gender": "Male",
     "epic": "TUZ6123343"
   }
-]
-
-
-<!-- Page Break - Batch 39 -->
-
-
-json
-[
+,
   {
     "serial": "1093",
     "name": "Sangita Santosh Puri",
@@ -10203,14 +9937,7 @@ json
     "gender": "Female",
     "epic": "TUZ8359598"
   }
-]
-
-
-<!-- Page Break - Batch 40 -->
-
-
-json
-[
+,
   {
     "serial": "1",
     "name": "DIPALI BHIMASHANKAR AKMAR",

@@ -9,7 +9,7 @@ TEST_MODE = False   # False for production
 
 # ---------------- LOAD JSON DATA ----------------
 def load_voters():
-    with open("voters.json", "r", encoding="utf-8") as f:
+    with open("voter_data.json", "r", encoding="utf-8") as f:
         return json.load(f)
 
 # ---------------- LOGIN ----------------
@@ -96,7 +96,7 @@ def dashboard():
 
 
 # ---------------- VOTER DETAIL ----------------
-@app.route("/voter/<int:serial>")
+@app.route("/voter/<serial>")
 def voter_detail(serial):
     auth = require_login()
     if auth: return auth
