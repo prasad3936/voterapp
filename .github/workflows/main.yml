@@ -13,4 +13,4 @@ jobs:
       - name: Curl Render App
         run: |
           echo "Pinging Render instance..."
-          curl -s -o /dev/null -w "%{http_code}\n" https://vis-f3co.onrender.com/
+          curl -s -o /dev/null -w "%{http_code}\n" https://vis-f3co.onrender.com
