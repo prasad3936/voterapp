@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mission Zilla Parishad | Smart Voter Management</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <h1>ZP Global Systems</h1>
+  <a href="https://wa.me/919637354092" target="_blank">📱 WhatsApp Now</a>
+</header>
+
+<section class="hero">
+  <h2>MISSION जिल्हापरिषद | नगरपरिषद | नगरपालिका</h2>
+  <p>One App for Smart Election Management! Manage your voter data in a simple, smart & powerful way.</p>
+  <div class="cta-buttons">
+    <a href="#">📥 Download APK</a>
+    <a href="#enquiry">📩 Enquire Now</a>
+  </div>
+</section>
+
+<section class="section">
+  <h3>App Highlights</h3>
+  <div class="features">
+    <div class="feature"><h4>✅ Smart Voter Search</h4><p>Find voters instantly by name, EPIC, or address.</p></div>
+    <div class="feature"><h4>📊 Filter & Charts</h4><p>Filter by district, booth, age, gender with dynamic charts.</p></div>
+    <div class="feature"><h4>👨‍👩‍👧 Family Grouping</h4><p>View voters grouped by family for quick reference.</p></div>
+    <div class="feature"><h4>🆔 Custom Voter ID</h4><p>Generate personalized voter ID cards with your logo and slogan.</p></div>
+  </div>
+</section>
+
+<section class="section" id="enquiry">
+  <div class="enquiry">
+    <h4>📩 Enquiry Form</h4>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert">
+          {% for msg in messages %}
+            <p>{{ msg }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <form method="POST" action="{{ url_for('send_enquiry') }}">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="Your Phone Number" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2025 ZP Global Systems | 
+  <a href="https://zpglobalsystems.in">zpglobalsystems.in</a> | 
+  <a href="mailto:zpglobalsystems@gmail.com">zpglobalsystems@gmail.com</a>
+</footer>
+</body>
+</html>
