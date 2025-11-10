@@ -1,112 +1,62 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
-import pymysql, math, urllib.parse
+from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_mail import Mail, Message
+import os
 
 app = Flask(__name__)
-app.secret_key = "verysecretkey_local"
+app.secret_key = "supersecretkey"  # Change this in production
 
-# ---------------- DB CONNECTION ----------------
-def get_db():
-    return pymysql.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="voterdb",
-        charset="utf8mb4",
-        cursorclass=pymysql.cursors.DictCursor
-    )
+# ----------------------------
+# Flask-Mail configuration
+# ----------------------------
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USER', 'yourgmail@gmail.com')  # your Gmail
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASS', 'your-app-password')    # app password (not Gmail password)
+app.config['MAIL_DEFAULT_SENDER'] = ('Mission ZP Enquiry', app.config['MAIL_USERNAME'])
 
-# ---------------- LOGIN ----------------
-@app.route("/", methods=["GET", "POST"])
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        u = request.form.get("username")
-        p = request.form.get("password")
-        if u == "admin" and p == "admin":
-            session["user"] = "admin"
-            return redirect(url_for("dashboard"))
-        flash("❌ चुकीचे Username/Password", "danger")
+mail = Mail(app)
 
-    return render_template("login.html")
+# ----------------------------
+# Routes
+# ----------------------------
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-# ---------------- DASHBOARD ----------------
-@app.route("/dashboard")
-def dashboard():
-    if "user" not in session:
-        return redirect(url_for("login"))
+@app.route('/send', methods=['POST'])
+def send_enquiry():
+    name = request.form.get('name')
+    email = request.form.get('email')
+    phone = request.form.get('phone')
+    message = request.form.get('message')
 
-    q = request.args.get("q", "").strip()
-    gender = request.args.get("gender", "")
-    page = int(request.args.get("page", 1))
+    if not (name and email and phone and message):
+        flash("⚠️ Please fill all the fields before submitting.")
+        return redirect(url_for('home'))
 
-    per_page = 20
-    offset = (page - 1) * per_page
+    try:
+        msg = Message(
+            subject=f"New Enquiry from {name}",
+            recipients=["zpglobalsystems@gmail.com"]
+        )
+        msg.body = f"""
+        📩 New Enquiry Received
 
-    query = "FROM voters WHERE 1=1"
-    params = []
+        Name: {name}
+        Email: {email}
+        Phone: {phone}
 
-    # Search box
-    if q:
-        query += " AND (name LIKE %s OR serial LIKE %s OR epic LIKE %s OR relation LIKE %s OR house LIKE %s)"
-        like = f"%{q}%"
-        params += [like, like, like, like, like]
-
-    # Gender Filter
-    if gender:
-        query += " AND gender=%s"
-        params.append(gender)
-
-    conn = get_db()
-    cur = conn.cursor()
-
-    # Total count for pagination
-    cur.execute("SELECT COUNT(*) " + query, params)
-    total = cur.fetchone()["COUNT(*)"]
-    total_pages = math.ceil(total / per_page)
-
-    # Fetch page data
-    sql = f"SELECT * {query} ORDER BY serial*1 ASC LIMIT %s OFFSET %s"
-    cur.execute(sql, params + [per_page, offset])
-    voters = cur.fetchall()
-
-    conn.close()
-
-    return render_template(
-        "dashboard.html",
-        voters=voters,
-        q=q,
-        gender=gender,
-        page=page,
-        total_pages=total_pages
-    )
+        Message:
+        {message}
+        """
+        mail.send(msg)
+        flash("✅ Your enquiry has been sent successfully!")
+    except Exception as e:
+        print("Error:", e)
+        flash("❌ Sorry, there was a problem sending your enquiry. Try again later.")
+    return redirect(url_for('home'))
 
 
-# ---------------- VOTER DETAIL ----------------
-@app.route("/voter/<int:vid>")
-def voter_detail(vid):
-    if "user" not in session:
-        return redirect(url_for("login"))
-
-    conn = get_db()
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM voters WHERE id=%s", (vid,))
-    v = cur.fetchone()
-    conn.close()
-
-    if not v:
-        return "❌ Voter Not Found", 404
-
-    text = f"मतदार माहिती:\nनाव: {v['name']}\nEPIC: {v['epic']}\nक्रमांक: {v['serial']}"
-    wa_url = "https://wa.me/?text=" + urllib.parse.quote(text)
-
-    return render_template("card.html", v=v, wa_url=wa_url)
-
-# ---------------- LOGOUT ----------------
-@app.route("/logout")
-def logout():
-    session.clear()
-    return redirect(url_for("login"))
-
-# ---------------- RUN APP ----------------
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
