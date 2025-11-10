@@ -23,7 +23,9 @@ mail = Mail(app)
 @app.route('/')
 def home():
     return render_template('index.html')
-
+@app.route('/success')
+def success():
+    return render_template('success.html')
 @app.route('/send', methods=['POST'])
 def send_enquiry():
     name = request.form.get('name')
@@ -55,7 +57,7 @@ def send_enquiry():
     except Exception as e:
         print("Error:", e)
         flash("❌ Sorry, there was a problem sending your enquiry. Try again later.")
-    return redirect(url_for('home'))
+    return redirect(url_for('success'))
 
 
 if __name__ == "__main__":
