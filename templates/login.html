@@ -1,15 +1,77 @@
-{% extends "base.html" %} {% block content %}
-<div class="login-box">
-  <h2>लॉगिन</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enquiry Sent | Mission Zilla Parishad</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .success-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      text-align: center;
+      color: #003d99;
+    }
 
-  <form method="post">
-    <input type="text" name="username" placeholder="वापरकर्ता नाव" required />
-    <input type="password" name="password" placeholder="पासवर्ड" required />
-    <button type="submit">लॉगिन</button>
-  </form>
+    .success-container h2 {
+      font-size: 2rem;
+      color: #0056d6;
+      margin-bottom: 15px;
+    }
 
-  <p style="margin-top: 10px; font-size: 13px; color: #555">
-    Username: admin | Password: admin
-  </p>
+    .success-container p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .success-icon {
+      font-size: 80px;
+      color: #28a745;
+      margin-bottom: 15px;
+    }
+
+    .btn-home {
+      background: #0056d6;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-home:hover {
+      background: #003d99;
+    }
+
+    footer {
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ZP Global Systems</h1>
+  <a href="https://wa.me/919637354092" target="_blank">📱 WhatsApp Now</a>
+</header>
+
+<div class="success-container">
+  <div class="success-icon">✅</div>
+  <h2>Enquiry Sent Successfully!</h2>
+  <p>Thank you for reaching out to <strong>Mission Zilla Parishad</strong>.<br>
+  Our team will contact you shortly on the provided details.</p>
+  <a href="{{ url_for('home') }}" class="btn-home">⬅ Back to Home</a>
 </div>
-{% endblock %}
+
+<footer>
+  © 2025 ZP Global Systems |
+  <a href="https://zpglobalsystems.in">zpglobalsystems.in</a> |
+  <a href="mailto:zpglobalsystems@gmail.com">zpglobalsystems@gmail.com</a>
+</footer>
+
+</body>
+</html>
