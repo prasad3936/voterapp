@@ -1,0 +1,113 @@
+{% extends "base.html" %} {% block content %}
+
+<style>
+  .evm-box {
+    max-width: 650px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #ccd4e0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .preview {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border: 1px solid #bbb;
+    padding: 3px;
+    border-radius: 4px;
+    background: #fff;
+  }
+
+  .candidate-row {
+    display: grid;
+    grid-template-columns: 30px 1fr 180px 70px;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .btn-save {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+</style>
+
+<div class="evm-box">
+  <h2 class="text-center fw-bold mb-3">
+    🗳 {{ 'Edit EVM' if session_id else 'Create New EVM' }}
+  </h2>
+
+  <p class="text-center text-muted">
+    Upload symbol images (PNG/JPG/SVG) — Size auto-adjusts to 55×55
+  </p>
+
+  <!-- FLASH MESSAGES -->
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %} {% for category, msg in messages %}
+  <div class="alert alert-{{ category }} text-center">{{ msg }}</div>
+  {% endfor %} {% endif %} {% endwith %}
+
+  <form method="POST" enctype="multipart/form-data">
+    {% for i in range(1, 11) %} {% set existing = candidates[i-1] if candidates
+    and i-1 < candidates|length else None %}
+
+    <div class="candidate-row">
+      <!-- Index -->
+      <div class="fw-bold">{{ i }}.</div>
+
+      <!-- Name -->
+      <input
+        type="text"
+        class="form-control"
+        name="name_{{i}}"
+        placeholder="Candidate Name"
+        value="{{ existing.name if existing else '' }}"
+      />
+
+      <!-- File Upload -->
+      <input
+        type="file"
+        class="form-control"
+        name="symbol_{{i}}"
+        accept="image/*"
+        onchange="previewImage(this, {{i}})"
+      />
+
+      <!-- Preview / Existing Image -->
+      <img
+        id="preview{{i}}"
+        class="preview"
+        src="{{ existing.symbol if existing else '' }}"
+        style="{{ 'display:block;' if existing else 'display:none;' }}"
+      />
+    </div>
+
+    {% endfor %}
+
+    <button class="btn btn-primary btn-save mt-3" type="submit">
+      💾 Save EVM
+    </button>
+
+    <a href="/dashboard" class="btn btn-success btn-save mt-2">
+      ← Back to Dashboard
+    </a>
+  </form>
+</div>
+
+<script>
+  function previewImage(input, id) {
+    let file = input.files[0];
+    let img = document.getElementById("preview" + id);
+    if (file) {
+      img.src = URL.createObjectURL(file);
+      img.style.display = "block";
+    }
+  }
+</script>
+
+{% endblock %}

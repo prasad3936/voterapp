@@ -1,0 +1,394 @@
+{% extends "base.html" %} {% block content %}
+
+<style>
+  /* ------------------------------
+        PAGE LAYOUT
+-------------------------------*/
+  .evm-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+
+  /* ------------------------------
+        BALLOT UNIT (EVM)
+-------------------------------*/
+  .evm-frame {
+    width: 360px;
+    background: #f1f1e8;
+    border: 4px solid #bcbcbc;
+    border-radius: 16px;
+    padding: 12px 10px;
+    position: relative;
+  }
+
+  .ready-light {
+    width: 18px;
+    height: 18px;
+    background: #00ff3c;
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    box-shadow: 0 0 10px #00ff3c;
+  }
+
+  .speaker {
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #666 30%, transparent 40%);
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+  }
+
+  .panel {
+    width: 100%;
+    background: #ffffff;
+    border: 3px solid #5374d3;
+    margin-top: 12px;
+  }
+
+  .evm-row {
+    display: grid;
+    grid-template-columns: 1fr 18px 70px;
+    height: 38px;
+    border-bottom: 1px solid #7ea0ff;
+    align-items: center;
+  }
+
+  .paper-cell {
+    display: flex;
+    align-items: center;
+    border-right: 2px solid #5374d3;
+    padding-left: 6px;
+  }
+
+  .num {
+    width: 26px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .symbol-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-left: 4px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+
+  .cand-name {
+    margin-left: 6px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .led {
+    width: 12px;
+    height: 12px;
+    background: #922;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+
+  .led.active {
+    background: red;
+    box-shadow: 0 0 8px red;
+  }
+
+  .vote-btn {
+    width: 55px;
+    height: 26px;
+    background: #0266ff;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.15s;
+  }
+  .vote-btn:active {
+    transform: scale(0.88);
+    background: #004bbd;
+  }
+
+  /* ------------------------------
+        REALISTIC VVPAT M3
+-------------------------------*/
+  .vvpat {
+    width: 260px;
+  }
+
+  .vvpat-top {
+    background: #1a4d9c;
+    border-radius: 14px 14px 0 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    position: relative;
+  }
+
+  .vvpat-header {
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  /* angled top */
+  .vvpat-screen-frame {
+    width: 160px;
+    height: 130px;
+    background: #153c74;
+    border-radius: 6px;
+    margin: auto;
+    transform: perspective(140px) rotateX(14deg);
+    padding: 6px;
+  }
+
+  /* screen window */
+  .vvpat-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#e6eef8, #d4dbee);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* reflection effect */
+  .vvpat-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.22), transparent);
+    transform: skewX(-20deg);
+    pointer-events: none;
+  }
+
+  .vvpat-label-box {
+    width: 120px;
+    height: 29px;
+    background: #fff;
+    margin: 12px auto 4px auto;
+    border-radius: 3px;
+    border: 1px solid #aaa;
+  }
+
+  .vvpat-led-green {
+    width: 14px;
+    height: 14px;
+    background: #00ff4e;
+    border-radius: 50%;
+    margin: auto;
+    animation: blink 1.4s infinite;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* bottom box */
+  .vvpat-bottom-box {
+    width: 260px;
+    height: 150px;
+    background: #d3d3d3;
+    border: 3px solid #b1b1b1;
+    border-radius: 0 0 14px 14px;
+  }
+
+  /* ------------------------------
+        VVPAT SLIP (REALISTIC)
+-------------------------------*/
+  .vvpat-slip {
+    width: 120px;
+    height: 80px;
+    background: white;
+    border: 1px solid #888;
+    position: absolute;
+    top: -160px;
+    left: 20px;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    transition: top 1.2s ease;
+    animation: shake 0.15s 2;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(2px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+</style>
+
+<h3 class="text-center mt-3">🗳 EVM & VVPAT SIMULATION</h3>
+
+<!-- ACTION BUTTONS -->
+<div class="action-btns d-flex justify-content-center gap-3 mb-3">
+  <a href="/dashboard" class="btn btn-dark">← Dashboard</a>
+  <a href="/evm/create?session_id={{session_id}}" class="btn btn-primary"
+    >✏️ Edit EVM</a
+  >
+  <button class="btn btn-success" onclick="showQR()">🔗 Share</button>
+
+  <a
+    class="btn btn-danger"
+    href="/evm/reset/{{session_id}}"
+    onclick="return confirm('Reset all votes?');"
+  >
+    🔄 Reset Votes
+  </a>
+</div>
+
+<div class="evm-wrapper">
+  <!-- EVM UNIT -->
+  <div class="evm-frame">
+    <div class="ready-light"></div>
+    <div class="speaker"></div>
+
+    <div class="panel">
+      {% for i in range(1, 11) %} {% set c = candidates[i-1] if i-1 <
+      candidates|length else None %}
+      <div class="evm-row">
+        <!-- PAPER -->
+        <div class="paper-cell">
+          <div class="num">{{i}}</div>
+
+          {% if c %} {% if c.symbol %}
+          <img src="{{c.symbol}}" class="symbol-img" />
+          {% endif %}
+          <div class="cand-name">{{c.name}}</div>
+          {% else %}
+          <div class="cand-name" style="opacity: 0.3">---</div>
+          {% endif %}
+        </div>
+
+        <!-- LED -->
+        <div class="led-cell">
+          <div
+            class="led"
+            id="led{{c.id if c else ''}}"
+            style="{% if not c %}opacity:.2{% endif %}"
+          ></div>
+        </div>
+
+        <!-- BUTTON -->
+        <div class="button-cell">
+          {% if c %}
+          <button
+            class="vote-btn"
+            onclick="castVote({{c.id}}, '{{c.name}}', '{{c.symbol}}')"
+          ></button>
+          {% else %}
+          <button class="vote-btn" disabled style="opacity: 0.2"></button>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- VVPAT UNIT -->
+  <div class="vvpat">
+    <div class="vvpat-top">
+      <div class="vvpat-header">VVPAT-M3</div>
+
+      <div class="vvpat-screen-frame">
+        <div class="vvpat-screen" id="vvpatWindow"></div>
+      </div>
+
+      <div class="vvpat-label-box"></div>
+      <div class="vvpat-led-green"></div>
+    </div>
+
+    <div class="vvpat-bottom-box"></div>
+  </div>
+</div>
+
+<!-- QR Modal -->
+<div class="modal fade" id="qrModal">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content text-center p-3">
+      <img src="{{qr}}" class="img-fluid border p-1" />
+      <button class="btn btn-secondary mt-2" data-bs-dismiss="modal">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<audio
+  id="beep"
+  src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"
+></audio>
+
+<script>
+  function showQR() {
+    new bootstrap.Modal(document.getElementById("qrModal")).show();
+  }
+
+  let hasVoted = false;
+
+  function castVote(cid, name, symbol) {
+    if (hasVoted) {
+      alert("Already voted.");
+      return;
+    }
+    hasVoted = true;
+
+    const led = document.getElementById("led" + cid);
+    led.classList.add("active");
+
+    document.getElementById("beep").play();
+
+    showVVPAT(name, symbol);
+
+    setTimeout(() => led.classList.remove("active"), 1200);
+
+    fetch(`/evm/vote/{{session_id}}/${cid}`, { method: "POST" });
+  }
+
+  function showVVPAT(name, symbol) {
+    const win = document.getElementById("vvpatWindow");
+
+    const slip = document.createElement("div");
+    slip.className = "vvpat-slip";
+
+    slip.innerHTML = `
+        <img src="${symbol}" style="width:35px;height:35px;"><br>
+        <b>${name}</b><br>
+        <small>VOTE RECORDED</small>
+    `;
+
+    win.appendChild(slip);
+
+    setTimeout(() => (slip.style.top = "10px"), 40);
+    setTimeout(() => (slip.style.top = "200px"), 2600);
+    setTimeout(() => slip.remove(), 3600);
+  }
+</script>
+
+{% endblock %}

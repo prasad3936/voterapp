@@ -1,7 +1,34 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="container mt-2">
-  <h4 class="fw-bold text-primary mb-3" data-lang="voterList">Voters List</h4>
+  <!-- HEADER + SIMULATE + DELETE + CREATE BUTTONS -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="fw-bold text-primary" data-lang="voterList">Voters List</h4>
+
+    <div class="d-flex gap-2">
+      {% if latest_session_id %}
+      <!-- Simulate EVM -->
+      <a href="/evm/{{ latest_session_id }}" class="btn btn-success fw-bold">
+        ▶️ Simulate EVM
+      </a>
+
+      <!-- Delete EVM 
+      <a
+        href="/evm/delete/{{ latest_session_id }}"
+        class="btn btn-danger fw-bold"
+        onclick="return confirm('⚠️ Are you sure you want to delete this EVM? All votes will be lost.')"
+        title="Delete EVM"
+      >
+        🗑 Delete
+      </a>
+      -->
+
+      {% else %}
+      <!-- Create EVM -->
+      <a href="/evm/create" class="btn btn-warning fw-bold"> ⚠️ Create EVM </a>
+      {% endif %}
+    </div>
+  </div>
 
   <!-- 🔍 Search + Pagination Form -->
   <form method="get" class="row g-2 mb-2 align-items-center">
@@ -10,7 +37,7 @@
       <input
         class="form-control"
         name="q"
-        value="{{q}}"
+        value="{{ q }}"
         placeholder="Search Name / EPIC / Address"
         data-lang-placeholder="searchPlaceholder"
       />
@@ -28,9 +55,13 @@
       <ul class="pagination pagination-sm justify-content-end mb-0">
         {% if page > 1 %}
         <li class="page-item">
-          <a class="page-link" href="?page={{page-1}}&q={{q}}" data-lang="prev"
-            >⬅ Prev</a
+          <a
+            class="page-link"
+            href="?page={{ page-1 }}&q={{ q }}"
+            data-lang="prev"
           >
+            ⬅ Prev
+          </a>
         </li>
         {% else %}
         <li class="page-item disabled">
@@ -40,13 +71,17 @@
         window_size) * window_size + 1 %} {% set end = [start + window_size - 1,
         total_pages] | min %} {% for p in range(start, end + 1) %}
         <li class="page-item {% if p == page %}active{% endif %}">
-          <a class="page-link" href="?page={{p}}&q={{q}}">{{p}}</a>
+          <a class="page-link" href="?page={{ p }}&q={{ q }}">{{ p }}</a>
         </li>
         {% endfor %} {% if page < total_pages %}
         <li class="page-item">
-          <a class="page-link" href="?page={{page+1}}&q={{q}}" data-lang="next"
-            >Next ➡</a
+          <a
+            class="page-link"
+            href="?page={{ page+1 }}&q={{ q }}"
+            data-lang="next"
           >
+            Next ➡
+          </a>
         </li>
         {% else %}
         <li class="page-item disabled">
@@ -57,7 +92,7 @@
     </div>
   </form>
 
-  <!-- 🧾 Table -->
+  <!-- 🧾 Voters Table -->
   <div class="table-responsive">
     <table
       class="table table-bordered table-hover bg-white shadow-sm text-center align-middle small"
@@ -85,15 +120,17 @@
               class="rounded border"
             />
           </td>
+
           <td class="text-start">{{ v.name }}</td>
           <td>{{ v.serial }}</td>
           <td class="text-nowrap">{{ v.epic }}</td>
           <td>{{ v.house_number }}</td>
           <td>{{ v.age }}</td>
+
           <td>
             <a
               class="btn btn-success btn-sm w-100"
-              href="/voter/{{v.serial}}"
+              href="/voter/{{ v.serial }}"
               data-lang="viewBtn"
             >
               View
