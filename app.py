@@ -352,6 +352,10 @@ def evm_reset(session_id):
     flash("🔄 All votes reset!", "warning")
     return redirect(url_for("evm_page", session_id=session_id))
 
+@app.route('/help')
+def slides():
+    total_slides = 11
+    return render_template("help.html", total=total_slides)
 
 # ---------------------------------------------------
 #  SERVER START
