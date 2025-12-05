@@ -329,7 +329,7 @@ def evm_vote(session_id, cid):
 def evm_delete(session_id):
     if session_id in EVM_SESSIONS:
         EVM_SESSIONS.pop(session_id)
-        save_evm_sessions(EVM_SESSIONS)
+        save_evm(EVM_SESSIONS)
         flash("🗑 EVM deleted successfully!", "danger")
     else:
         flash("❌ EVM not found!", "warning")
