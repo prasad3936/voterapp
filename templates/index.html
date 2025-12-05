@@ -1,87 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mission Zilla Parishad | Smart Voter Management</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mission Zilla Parishad | Smart Voter Management</title>
 
-<header class="navbar">
-  <div class="container">
-    <h1>ZP Global Systems</h1>
-    <a href="https://wa.me/919637354092" target="_blank" class="btn-primary">📱 WhatsApp Now</a>
-  </div>
-</header>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<section class="hero">
-  <div class="container hero-content">
-    <h2>MISSION <span class="highlight">जिल्हापरिषद | नगरपरिषद | नगरपालिका</span></h2>
-    <p>One App for Smart Election Management! Manage your voter data in a simple, smart & powerful way.</p>
-    <div class="cta-buttons">
-      <a href="#" class="btn-primary">📥 Download APK</a>
-      <a href="#enquiry" class="btn-outline">📩 Enquire Now</a>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">
+          <span class="brand-logo">ZP</span>
+          <div class="brand-text">
+            <span class="brand-title">ZP Global Systems</span>
+            <span class="brand-subtitle">Smart Election Technology</span>
+          </div>
+        </div>
+
+        <div class="nav-actions">
+          <button
+            id="darkToggle"
+            class="icon-btn"
+            aria-label="Toggle dark mode"
+          >
+            🌙
+          </button>
+
+          <!-- APK popup trigger -->
+          <a href="#apk" id="apkBtn" class="btn-primary nav-whatsapp">
+            📥 Download APK
+          </a>
+
+          <!-- WhatsApp with 9637354092 -->
+          <a
+            href="https://wa.me/919637354092"
+            target="_blank"
+            class="btn-primary nav-whatsapp"
+          >
+            📱 WhatsApp Now
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left reveal">
+          <div class="hero-badge">Mission 2025 · Smart Voter Management</div>
+          <h1>
+            MISSION
+            <span class="highlight">जिल्हापरिषद · नगरपरिषद · नगरपालिका</span>
+          </h1>
+          <p>
+            One app to manage your complete voter data – from house-level
+            planning to booth-level reports. Fast, secure and designed for real
+            ground teams.
+          </p>
+
+          <div class="cta-buttons">
+            <button id="apkBtn2" class="btn-primary">📥 Download APK</button>
+            <a href="#enquiry" class="btn-outline">📩 Enquire Now</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric">
+              <span class="metric-value" data-target="3141">0</span>
+              <span class="metric-label">Total Voters</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" data-target="963">0</span>
+              <span class="metric-label">Male</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" data-target="1466">0</span>
+              <span class="metric-label">Female</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone Mockups -->
+        <div class="hero-right reveal">
+          <div class="phone-orbit">
+            <div class="phone phone-main">
+              <div class="phone-inner">
+                <img
+                  src="{{ url_for('static', filename='images/home.jpg') }}"
+                  alt="App home screen"
+                />
+              </div>
+            </div>
+            <div class="phone phone-small phone-left">
+              <div class="phone-inner">
+                <img
+                  src="{{ url_for('static', filename='images/home.jpg') }}"
+                  alt="App screen left"
+                />
+              </div>
+            </div>
+            <div class="phone phone-small phone-right">
+              <div class="phone-inner">
+                <img
+                  src="{{ url_for('static', filename='images/home.jpg') }}"
+                  alt="App screen right"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section light">
+      <div class="container">
+        <h2 class="section-title reveal">✨ App Highlights</h2>
+        <p class="section-subtitle reveal">
+          Built for candidates, karyakartas and booth teams who need real-time,
+          accurate voter data.
+        </p>
+
+        <div class="features">
+          <div class="feature reveal">
+            <h4>✅ Smart Voter Search</h4>
+            <p>
+              Search voters instantly by name, EPIC number, booth, or address
+              with blazing fast filters.
+            </p>
+          </div>
+
+          <div class="feature reveal">
+            <h4>📊 Filters & Live Charts</h4>
+            <p>
+              Analyse voters by age, gender, ward, booth and more – with
+              auto-generated bar & pie charts.
+            </p>
+          </div>
+
+          <div class="feature reveal">
+            <h4>👨‍👩‍👧 Family Grouping</h4>
+            <p>
+              Group voters house-wise and family-wise for targeted campaigning
+              and follow-ups.
+            </p>
+          </div>
+
+          <div class="feature reveal">
+            <h4>🆔 Custom Voter ID Cards</h4>
+            <p>
+              Generate printable voter ID cards with your photo, party symbol,
+              and winning slogan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section dark-sec">
+      <div class="container">
+        <h2 class="section-title reveal light-text">What Leaders Are Saying</h2>
+        <p class="section-subtitle reveal light-text">
+          Trusted by local body leaders and campaign managers across
+          Maharashtra.
+        </p>
+
+        <div class="testimonial-wrapper reveal">
+          <div class="testimonial" id="testimonialText">
+            “Mission ZP app helped our team track every booth in real-time. We
+            could plan visits and follow-ups with full clarity.”
+          </div>
+          <div class="testimonial-meta">
+            <span id="testimonialName">Sitting ZP Member</span>
+            <span id="testimonialRole">Rural Constituency</span>
+          </div>
+          <div class="testimonial-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section light" id="faq">
+      <div class="container">
+        <h2 class="section-title reveal">❓ Frequently Asked Questions</h2>
+        <p class="section-subtitle reveal">
+          Clear answers for candidates, karyakartas and ground teams.
+        </p>
+
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              What is Mission ZP App?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Mission ZP App helps election teams manage booth-wise, house-wise
+              and family-wise voter data in one place.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              Is it useful for all local body elections?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes, it supports Zilla Parishad, Nagar Parishad, Nagar Palika and
+              Grampanchayat elections.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              Can I request custom features and reports?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes, we build custom modules, reports and exports based on your
+              local needs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- INSTALL GUIDE -->
+    <section class="section light" id="install">
+      <div class="container">
+        <h2 class="section-title reveal">📘 Installation & Usage Guide</h2>
+        <p class="section-subtitle reveal">
+          Follow this quick guide to install Mission ZP App and understand how
+          to use all features.
+        </p>
+
+        <div class="install-grid reveal">
+          <!-- Step-by-step guide -->
+          <div class="install-steps">
+            <h3>How to Install the APK</h3>
+            <ol>
+              <li>Click the <strong>Download APK</strong> button above.</li>
+              <li>
+                When prompted, allow installation from
+                <strong>Unknown Sources</strong>.
+              </li>
+              <li>
+                Open the downloaded file and press <strong>Install</strong>.
+              </li>
+              <li>Launch the app from your home screen.</li>
+              <li>Login or import your voter data.</li>
+            </ol>
+
+            <h3>How to Use the App</h3>
+            <ul>
+              <li>Search voters by name, house, family or booth.</li>
+              <li>Generate family-wise PDF lists.</li>
+              <li>Download custom voter ID cards.</li>
+              <li>Use EVM Simulation for team training.</li>
+              <li>Track voters using booth-wise analytics.</li>
+            </ul>
+          </div>
+
+          <!-- YouTube video -->
+          <div class="install-video">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              title="How to Use Matdar App - Full Tutorial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENQUIRY (GOOGLE FORM BACKEND) -->
+    <section class="section" id="enquiry">
+      <div class="container">
+        <h2 class="section-title reveal">📩 Enquiry Form</h2>
+        <p class="section-subtitle reveal">
+          Fill out the form below — our team will contact you shortly.
+        </p>
+
+        <div class="enquiry-box reveal">
+          <!-- Hidden iframe to capture Google Form redirect -->
+          <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style="display: none"
+            onload="if (submitted) { showSuccessModal(); }"
+          ></iframe>
+
+          <!-- Custom form that submits to Google Form -->
+          <form
+            id="google-form"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSeiKP7yDfzO0iISR8rq4ZRl4wegDq_YbznczQgVVD_rO9O0mQ/formResponse"
+            method="POST"
+            target="hidden_iframe"
+          >
+            <input
+              type="text"
+              name="entry.2005620554"
+              placeholder="Name नाव"
+              required
+            />
+            <input
+              type="email"
+              name="entry.1045781291"
+              placeholder="Email ईमेल"
+              required
+            />
+            <input
+              type="text"
+              name="entry.1065046570"
+              placeholder="Constituency मतदारसंघ"
+              required
+            />
+            <input
+              type="text"
+              name="entry.1166974658"
+              placeholder="Phone number फोन नंबर"
+              required
+            />
+            <textarea
+              name="entry.839337160"
+              rows="3"
+              placeholder="Election Type निवडणुकीचा प्रकार"
+              required
+            ></textarea>
+
+            <button id="submitBtn" type="submit" class="btn-primary btn-full">
+              Send Enquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUCCESS MODAL -->
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <h3>🎉 Enquiry Submitted</h3>
+        <p>Your details have been recorded. Our team will contact you soon.</p>
+        <button id="closeSuccess" class="btn-primary" style="margin-top: 10px">
+          OK
+        </button>
+      </div>
     </div>
-  </div>
-</section>
 
-<section class="section light">
-  <div class="container">
-    <h3>✨ App Highlights</h3>
-    <div class="features">
-      <div class="feature">
-        <h4>✅ Smart Voter Search</h4>
-        <p>Find voters instantly by name, EPIC, or address.</p>
-      </div>
-      <div class="feature">
-        <h4>📊 Filter & Charts</h4>
-        <p>Filter by district, booth, age, and gender with dynamic charts.</p>
-      </div>
-      <div class="feature">
-        <h4>👨‍👩‍👧 Family Grouping</h4>
-        <p>View voters grouped by family for easy analysis.</p>
-      </div>
-      <div class="feature">
-        <h4>🆔 Custom Voter ID</h4>
-        <p>Generate personalized voter ID cards with your logo and slogan.</p>
+    <!-- APK DOWNLOAD POPUP -->
+    <!-- APK DOWNLOAD POPUP -->
+    <div id="apkModal" class="modal">
+      <div class="modal-content apk-box">
+        <h3>📥 Download Mission ZP App</h3>
+        <p>Get the latest APK for your ground team.</p>
+
+        <a
+          href="{{ url_for('static', filename='app/missionzp.apk') }}"
+          download
+          class="btn-primary btn-full"
+          style="margin-top: 10px"
+        >
+          ⬇️ Download APK
+        </a>
+
+        <a
+          href="#install"
+          class="btn-outline btn-full"
+          id="goInstallGuide"
+          style="margin-top: 10px"
+        >
+          📘 View Installation Guide
+        </a>
+
+        <button id="closeApk" class="btn-outline" style="margin-top: 12px">
+          Close
+        </button>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="section" id="enquiry">
-  <div class="container">
-    <div class="enquiry-box">
-      <h3>📩 Enquiry Form</h3>
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        © 2025 ZP Global Systems ·
+        <a href="https://zpglobalsystems.in" target="_blank"
+          >zpglobalsystems.in</a
+        >
+        ·
+        <a href="mailto:zpglobalsystems@gmail.com">zpglobalsystems@gmail.com</a>
+      </p>
+    </footer>
 
-      {% with messages = get_flashed_messages() %}
-      {% if messages %}
-      <div class="alert">
-        {% for msg in messages %}
-        <p>{{ msg }}</p>
-        {% endfor %}
-      </div>
-      {% endif %}
-      {% endwith %}
+    <!-- Floating WhatsApp (9637354092) -->
+    <a
+      href="https://wa.me/919637354092"
+      target="_blank"
+      class="wa-float"
+      aria-label="Chat on WhatsApp"
+    >
+      💬
+    </a>
 
-      <form method="POST" action="{{ url_for('send_enquiry') }}">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="phone" placeholder="Your Phone Number" required>
-        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn-primary">Send Enquiry</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2025 ZP Global Systems |
-  <a href="https://zpglobalsystems.in">zpglobalsystems.in</a> |
-  <a href="mailto:zpglobalsystems@gmail.com">zpglobalsystems@gmail.com</a></p>
-</footer>
-
-</body>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
 </html>

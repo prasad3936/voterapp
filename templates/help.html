@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slideshow Viewer</title>
+
+    <style>
+      body {
+        margin: 0;
+        background: #f3f4f6;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        text-align: center;
+        width: 100%;
+        max-width: 900px;
+      }
+
+      img {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        border-radius: 10px;
+        background: #fff;
+        padding: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .pagination {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .page-btn {
+        padding: 10px 16px;
+        background: white;
+        border: 1px solid #d1d5db;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #374151;
+      }
+
+      .page-btn:hover {
+        background: #e5e7eb;
+      }
+
+      .active {
+        background: #2563eb;
+        color: white;
+        border-color: #2563eb;
+      }
+
+      .nav-btn {
+        padding: 10px 20px;
+        background: #e5e7eb;
+        border: 1px solid #cbd5e1;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #111;
+      }
+
+      .nav-btn:hover {
+        background: #d1d5db;
+      }
+
+      @media (max-width: 600px) {
+        img {
+          max-height: 55vh;
+        }
+        .page-btn,
+        .nav-btn {
+          padding: 8px 12px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Slide Image -->
+      <img id="slide" src="/static/images/1.png" alt="Slide" />
+
+      <!-- Pagination Navigation -->
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script>
+      let current = 1;
+      const total = 11;
+
+      function showSlide(num) {
+        current = num;
+        document.getElementById("slide").src = `/static/images/${current}.png`;
+        highlightActive();
+      }
+
+      function highlightActive() {
+        document.querySelectorAll(".page-btn").forEach((btn) => {
+          btn.classList.remove("active");
+          if (parseInt(btn.dataset.page) === current) {
+            btn.classList.add("active");
+          }
+        });
+      }
+
+      function nextSlide() {
+        current++;
+        if (current > total) current = 1;
+        showSlide(current);
+      }
+
+      function prevSlide() {
+        current--;
+        if (current < 1) current = total;
+        showSlide(current);
+      }
+
+      function buildPagination() {
+        const pagDiv = document.getElementById("pagination");
+
+        // Prev Button
+        pagDiv.innerHTML = `<button class="nav-btn" onclick="prevSlide()">← Prev</button>`;
+
+        // Number Buttons
+        for (let i = 1; i <= total; i++) {
+          pagDiv.innerHTML += `
+                <button class="page-btn" data-page="${i}" onclick="showSlide(${i})">${i}</button>
+            `;
+        }
+
+        // Next Button
+        pagDiv.innerHTML += `<button class="nav-btn" onclick="nextSlide()">Next →</button>`;
+
+        highlightActive();
+      }
+
+      buildPagination();
+    </script>
+  </body>
+</html>

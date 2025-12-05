@@ -59,6 +59,11 @@ def send_enquiry():
         flash("❌ Sorry, there was a problem sending your enquiry. Try again later.")
     return redirect(url_for('success'))
 
+@app.route('/help')
+def slides():
+    total_slides = 11
+    return render_template("help.html", total=total_slides)
+
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
