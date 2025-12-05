@@ -877,3 +877,101 @@ body.dark .faq-item {
     grid-template-columns: 1fr;
   }
 }
+/* =============================
+   MOBILE FIXES (IMPORTANT)
+============================= */
+
+@media (max-width: 600px) {
+  /* Reduce hero padding */
+  .hero {
+    padding: 40px 0 40px;
+  }
+
+  /* Reduce title size */
+  .hero h1 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  /* Reduce subtitle spacing */
+  .hero p {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  /* Smaller CTA buttons */
+  .cta-buttons a {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  /* Align metrics center */
+  .hero-metrics {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Smaller metrics numbers */
+  .metric-value {
+    font-size: 20px;
+  }
+
+  /* Fix phone layout */
+  .phone-orbit {
+    max-width: 260px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .phone-main {
+    width: 180px;
+    height: 340px;
+  }
+
+  .phone-small {
+    width: 110px;
+    height: 210px;
+  }
+
+  /* Reduce side overlap */
+  .phone-left {
+    left: -20px;
+  }
+
+  .phone-right {
+    right: -20px;
+  }
+
+  /* Make navbar compact */
+  .nav-inner {
+    padding: 6px 0;
+  }
+
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  .brand-title {
+    font-size: 16px;
+  }
+
+  /* Reduce floating WhatsApp size */
+  .wa-float {
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+    bottom: 12px;
+    right: 12px;
+  }
+  .phone-orbit {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+.hero-grid {
+  margin-top: -10px;
+}
