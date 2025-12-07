@@ -14,3 +14,6 @@ jobs:
         run: |
           echo "Pinging Render instance..."
           curl -s -o /dev/null -w "%{http_code}\n" https://voteforsumitdhotepatil.onrender.com/
+          curl -s -o /dev/null -w "%{http_code}\n" https://matadar.onrender.com/
+          curl -s -o /dev/null -w "%{http_code}\n" https://matadarweb.onrender.com/
+          
