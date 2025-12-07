@@ -27,7 +27,6 @@
         flex-direction: column;
       }
 
-      /* NAVBAR same as base.html */
       .navbar {
         background: #003366;
         padding: 10px 14px;
@@ -52,7 +51,6 @@
         color: #fff;
       }
 
-      /* CENTER CONTENT */
       .content-wrapper {
         flex: 1;
         display: flex;
@@ -61,7 +59,6 @@
         padding-top: 20px;
       }
 
-      /* FOOTER same as base.html */
       footer {
         background: #002850;
         color: #fff;
@@ -84,22 +81,26 @@
   </head>
 
   <body>
-    <!-- NAVBAR (same as base.html but without user session items) -->
     <div class="navbar">
       <div class="navbar-title">Voter Information System</div>
-
       <div class="d-flex align-items-center flex-wrap">
         <a href="/">🏠 Home</a>
       </div>
     </div>
 
-    <!-- LOGIN SECTION -->
     <div class="content-wrapper">
       <div class="card shadow p-4" style="max-width: 350px; width: 100%">
         <h4 class="text-center mb-3 fw-bold text-primary">🔐 Login</h4>
 
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, msg in messages %}
+        <div class="alert alert-{{ category }} text-center py-2">{{ msg }}</div>
+        {% endfor %} {% endif %} {% endwith %}
+
         <form method="post">
           <div class="mb-3">
+            <label class="form-label">Username</label>
             <input
               type="text"
               class="form-control"
@@ -110,6 +111,7 @@
           </div>
 
           <div class="mb-3">
+            <label class="form-label">Password</label>
             <input
               type="password"
               class="form-control"
@@ -123,12 +125,15 @@
             Login
           </button>
         </form>
+
+        <div class="text-center mt-3">
+          <a href="/register">Create new account</a>
+        </div>
       </div>
     </div>
 
-    <!-- FOOTER (same as base.html) -->
     <footer>
-      Copyright © 2025 All Rights Reserved | 💻 Developed by
+      Copyright © 2025 All Rights Reserved |
       <strong>Prasad Zungare Patil</strong> |
       <a
         href="https://wa.me/919637370116?text=Hi%20Prasad%2C%20I%20want%20a%20website%20like%20voterapp!"
@@ -138,7 +143,6 @@
       📞 +91 9637370116
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

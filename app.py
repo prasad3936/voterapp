@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 import json, math, urllib.parse, re, os
 from uuid import uuid4
 import qrcode
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.secret_key = "verysecretkey_local"
@@ -12,8 +13,93 @@ TEST_MODE = False
 #  FILES & FOLDERS
 # ---------------------------------------------------
 EVM_FILE = "evm_sessions.json"
+USER_FILE = "users.json"
+
 os.makedirs("static/symbols", exist_ok=True)
 os.makedirs("static/qr", exist_ok=True)
+
+
+# ---------------------------------------------------
+#  USER SYSTEM
+# ---------------------------------------------------
+def load_users():
+    if not os.path.exists(USER_FILE):
+        return []
+    with open(USER_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_users(users):
+    with open(USER_FILE, "w", encoding="utf-8") as f:
+        json.dump(users, f, indent=2, ensure_ascii=False)
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        username = request.form.get("username").strip()
+        password = request.form.get("password").strip()
+
+        if not username or not password:
+            flash("❌ कृपया सर्व माहिती भरा", "danger")
+            return redirect(url_for("register"))
+
+        users = load_users()
+
+        if any(u["username"] == username for u in users):
+            flash("⚠️ Username आधीपासून वापरलेले आहे", "warning")
+            return redirect(url_for("register"))
+
+        hashed = generate_password_hash(password)
+        users.append({"username": username, "password": hashed})
+        save_users(users)
+
+        flash("✅ User created successfully!", "success")
+        return redirect(url_for("login"))
+
+    return render_template("register.html")
+
+
+@app.route("/", methods=["GET", "POST"])
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if TEST_MODE:
+        session["user"] = "admin"
+        return redirect(url_for("dashboard"))
+
+    if request.method == "POST":
+        username = request.form.get("username").strip()
+        password = request.form.get("password").strip()
+
+        users = load_users()
+        user = next((u for u in users if u["username"] == username), None)
+
+        if not user or not check_password_hash(user["password"], password):
+            flash("❌ चुकीचे Username/Password", "danger")
+            return redirect(url_for("login"))
+
+        session["user"] = username
+        flash("✅ Login successful!", "success")
+        return redirect(url_for("dashboard"))
+
+    return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    flash("👋 Logged out successfully!", "info")
+    return redirect(url_for("login"))
+
+
+def require_login():
+    if TEST_MODE:
+        session["user"] = "admin"
+        return None
+    if "user" not in session:
+        flash("⚠️ कृपया लॉगिन करा", "warning")
+        return redirect(url_for("login"))
+    return None
 
 
 # ---------------------------------------------------
@@ -105,7 +191,6 @@ def load_voters():
             "booth_reference": booth_ref
         })
 
-    print(f"Loaded voters: {len(voters)}")
     return voters
 
 
@@ -128,34 +213,6 @@ def safe_int(x):
 
 
 # ---------------------------------------------------
-#  LOGIN SYSTEM
-# ---------------------------------------------------
-@app.route("/", methods=["GET", "POST"])
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if TEST_MODE:
-        session["user"] = "admin"
-        return redirect(url_for("dashboard"))
-
-    if request.method == "POST":
-        if request.form.get("username") == "admin" and request.form.get("password") == "admin":
-            session["user"] = "admin"
-            return redirect(url_for("dashboard"))
-        flash("❌ चुकीचे Username/Password", "danger")
-
-    return render_template("login.html")
-
-
-def require_login():
-    if TEST_MODE:
-        session["user"] = "admin"
-        return None
-    if "user" not in session:
-        return redirect(url_for("login"))
-    return None
-
-
-# ---------------------------------------------------
 #  DASHBOARD
 # ---------------------------------------------------
 @app.route("/dashboard")
@@ -172,10 +229,8 @@ def dashboard():
     voters = load_voters()
     total_voters_all = len(voters)
 
-    # 🔥 Get latest EVM session
     latest_session_id = list(EVM_SESSIONS.keys())[-1] if EVM_SESSIONS else None
 
-    # Filtering
     results = []
     for v in voters:
         match = True
@@ -189,7 +244,6 @@ def dashboard():
         if match:
             results.append(v)
 
-    # Pagination
     total_pages = math.ceil(len(results) / per_page)
     start = (page - 1) * per_page
     end = start + per_page
@@ -245,13 +299,12 @@ def evm_create():
         return auth
 
     session_id = request.args.get("session_id")
-
     existing = EVM_SESSIONS.get(session_id) if session_id else None
 
     if request.method == "POST":
         candidates = []
 
-        for i in range(1, 11):
+        for i in range(1, 10 + 1):
             name = request.form.get(f"name_{i}", "").strip()
             file = request.files.get(f"symbol_{i}")
 
@@ -265,6 +318,7 @@ def evm_create():
                 save_path = os.path.join("static/symbols", filename)
                 file.save(save_path)
                 symbol_path = "/" + save_path.replace("\\", "/")
+
             else:
                 if existing and i <= len(existing["candidates"]):
                     symbol_path = existing["candidates"][i-1]["symbol"]
@@ -324,7 +378,10 @@ def evm_vote(session_id, cid):
     save_evm(EVM_SESSIONS)
     return "OK"
 
-#
+
+# ---------------------------------------------------
+#  DELETE EVM
+# ---------------------------------------------------
 @app.route("/evm/delete/<session_id>")
 def evm_delete(session_id):
     if session_id in EVM_SESSIONS:
@@ -335,6 +392,7 @@ def evm_delete(session_id):
         flash("❌ EVM not found!", "warning")
 
     return redirect(url_for("dashboard"))
+
 
 # ---------------------------------------------------
 #  RESET VOTES
@@ -352,10 +410,12 @@ def evm_reset(session_id):
     flash("🔄 All votes reset!", "warning")
     return redirect(url_for("evm_page", session_id=session_id))
 
+
 @app.route('/help')
 def slides():
     total_slides = 11
     return render_template("help.html", total=total_slides)
+
 
 # ---------------------------------------------------
 #  SERVER START

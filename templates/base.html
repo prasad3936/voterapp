@@ -81,7 +81,7 @@
         text-decoration: underline;
       }
 
-      /* Floating Contact Developer Button */
+      /* Contact Button */
       .contact-dev-btn {
         position: fixed;
         bottom: 20px;
@@ -109,7 +109,7 @@
   </head>
 
   <body>
-    <!-- Navbar -->
+    <!-- NAVBAR -->
     <div class="navbar">
       <div class="navbar-title fw-bold">Voter Information System</div>
 
@@ -117,14 +117,25 @@
       <div class="d-flex align-items-center flex-wrap">
         <a href="/dashboard">🏠 Home</a>
 
+        <!-- Total Voters Badge -->
+        {% if total_voters %}
         <span id="voterCountBadge">Total: {{ total_voters }}</span>
+        {% endif %}
 
-        <a href="/logout"><i class="fa-solid fa-door-open"></i> Logout</a>
+        <!-- Username -->
+        <span class="ms-3 text-warning fw-bold">
+          <i class="fa-solid fa-user"></i> {{ session.get('user') }}
+        </span>
+
+        <!-- Logout Button -->
+        <a href="/logout" class="btn btn-sm btn-danger ms-3">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
       </div>
       {% endif %}
     </div>
 
-    <!-- ⭐ FLASH MESSAGE BLOCK ADDED HERE ⭐ -->
+    <!-- FLASH MESSAGES -->
     <div class="container mt-2">
       {% with messages = get_flashed_messages(with_categories=true) %} {% if
       messages %} {% for category, msg in messages %}
@@ -138,9 +149,8 @@
       </div>
       {% endfor %} {% endif %} {% endwith %}
     </div>
-    <!-- ⭐ END FLASH BLOCK ⭐ -->
 
-    <!-- Page Content -->
+    <!-- PAGE CONTENT -->
     <div class="content-wrapper container mt-2">
       {% block content %}{% endblock %}
     </div>
@@ -153,7 +163,7 @@
       <i class="fa-brands fa-whatsapp"></i> Contact Developer
     </div>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
       Copyright © 2025 |
       <strong>Developed by Prasad Zungare Patil</strong> |
