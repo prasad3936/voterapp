@@ -1,5 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
@@ -137,27 +136,52 @@
       </div>
 
       <table class="table table-sm table-bordered mb-0">
-        <tr><th>नाव</th><td>{{ v.name }}</td></tr>
-        <tr><th>क्रमांक</th><td>{{ v.serial }}</td></tr>
-        <tr><th>EPIC</th><td>{{ v.epic }}</td></tr>
-        <tr><th>वडिलांचे/पतीचे नाव</th><td>{{ v.relation }}</td></tr>
-        <tr><th>घर क्रमांक</th><td>{{ v.house_number }}</td></tr>
-        <tr><th>वय</th><td>{{ v.age }}</td></tr>
-        <tr><th>लिंग</th><td>{{ v.gender }}</td></tr>
-        <tr><th>प्रभाग क्रमांक</th><td>{{ v.booth_reference }}</td></tr>
+        <tr>
+          <th>नाव</th>
+          <td>{{ v.name }}</td>
+        </tr>
+        <tr>
+          <th>क्रमांक</th>
+          <td>{{ v.serial }}</td>
+        </tr>
+        <tr>
+          <th>EPIC</th>
+          <td>{{ v.epic }}</td>
+        </tr>
+        <tr>
+          <th>वडिलांचे/पतीचे नाव</th>
+          <td>{{ v.relation }}</td>
+        </tr>
+        <tr>
+          <th>घर क्रमांक</th>
+          <td>{{ v.house_number }}</td>
+        </tr>
+        <tr>
+          <th>वय</th>
+          <td>{{ v.age }}</td>
+        </tr>
+        <tr>
+          <th>लिंग</th>
+          <td>{{ v.gender }}</td>
+        </tr>
+        <tr>
+          <th>प्रभाग क्रमांक</th>
+          <td>{{ v.booth_reference }}</td>
+        </tr>
       </table>
     </div>
 
     <!-- ✅ Campaign Section -->
-    <div class="campaign-footer">🗳️ आपल्या हक्काचा - डॉ. सुमित सुभाष धोटे</div>
+    <div class="campaign-footer">🗳️ Matdar - ZP Global Systems</div>
     <div class="campaign-subline">
-      प्रभाग क्रमांक ११ ( अ ) — एक संधी नव्या पर्वाला, एक संधी नव्या विकासाला..!!
+      प्रभाग क्रमांक ११ ( अ ) — एक संधी नव्या पर्वाला, एक संधी नव्या
+      विकासाला..!!
     </div>
 
     <!-- ✅ Contact Section -->
     <div class="contact-bar">
-      <span class="contact-item">📞 9545051118</span>
-      <span class="contact-item">🅾 sumit_d_patil17</span>
+      <span class="contact-item">📞 9637354092</span>
+      <span class="contact-item">🅾 zpglobalsystems.in</span>
     </div>
   </div>
 </div>
@@ -175,33 +199,37 @@
 
   function shareToWhatsapp() {
     const card = document.getElementById("cardOnly");
-    html2canvas(card, { backgroundColor: "#ffffff", scale: 2 }).then((canvas) => {
-      canvas.toBlob(async (blob) => {
-        const file = new File([blob], "voter_card.png", { type: "image/png" });
-
-        const textMessage =
-          `मतदार माहिती:\n` +
-          `नाव: {{ v.name }}\n` +
-          `EPIC: {{ v.epic }}\n` +
-          `घर क्रमांक: {{ v.house_number }}\n` +
-          `क्रमांक: {{ v.serial }}\n` +
-          `वय: {{ v.age }} | लिंग: {{ v.gender }}\n\n` +
-          `आपल्या हक्काचा - डॉ. सुमित सुभाष धोटे\n` +
-          `📞 9545051118\n` +
-          `प्रभाग क्रमांक ११ ( अ )`;
-
-        if (navigator.canShare && navigator.canShare({ files: [file] })) {
-          await navigator.share({
-            title: "Voter ID Card",
-            text: textMessage,
-            files: [file],
+    html2canvas(card, { backgroundColor: "#ffffff", scale: 2 }).then(
+      (canvas) => {
+        canvas.toBlob(async (blob) => {
+          const file = new File([blob], "voter_card.png", {
+            type: "image/png",
           });
-        } else {
-          const waText = encodeURIComponent(textMessage);
-          window.open("https://wa.me/?text=" + waText, "_blank");
-        }
-      });
-    });
+
+          const textMessage =
+            `मतदार माहिती:\n` +
+            `नाव: {{ v.name }}\n` +
+            `EPIC: {{ v.epic }}\n` +
+            `घर क्रमांक: {{ v.house_number }}\n` +
+            `क्रमांक: {{ v.serial }}\n` +
+            `वय: {{ v.age }} | लिंग: {{ v.gender }}\n\n` +
+            `आपल्या हक्काचा - डॉ. सुमित सुभाष धोटे\n` +
+            `📞 9545051118\n` +
+            `प्रभाग क्रमांक ११ ( अ )`;
+
+          if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({
+              title: "Voter ID Card",
+              text: textMessage,
+              files: [file],
+            });
+          } else {
+            const waText = encodeURIComponent(textMessage);
+            window.open("https://wa.me/?text=" + waText, "_blank");
+          }
+        });
+      }
+    );
   }
 </script>
 
