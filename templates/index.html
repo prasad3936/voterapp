@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -36,15 +37,15 @@
             🌙
           </button>
 
-          <!-- APK popup trigger -->
-          <a href="#apk" id="apkBtn" class="btn-primary nav-whatsapp">
-            📥 Download Demo APK
-          </a>
-
           <!-- MANUAL popup trigger -->
           <button id="manualBtn" class="btn-outline nav-whatsapp">
             📘 User Manual
           </button>
+
+          <!-- APK popup trigger -->
+          <a href="#apk" id="apkBtn" class="btn-primary nav-whatsapp">
+            📥 Download Demo APK
+          </a>
 
           <!-- WhatsApp -->
           <a
@@ -77,9 +78,11 @@
             <button id="apkBtn2" class="btn-primary">
               📥 Download Demo APK
             </button>
+
             <button id="manualBtn2" class="btn-outline">
               📘 Download Manual
             </button>
+
             <a href="#enquiry" class="btn-outline">📩 Enquire Now</a>
           </div>
 
@@ -94,7 +97,7 @@
             </div>
             <div class="metric">
               <span class="metric-value" data-target="70">0</span>
-              <span class="metric-label">Winning % </span>
+              <span class="metric-label">Winning %</span>
             </div>
           </div>
         </div>
@@ -105,9 +108,11 @@
             <div class="demo-phone small">
               <img src="{{ url_for('static', filename='images/home.jpg') }}" />
             </div>
+
             <div class="demo-phone large">
               <img src="{{ url_for('static', filename='images/home.jpg') }}" />
             </div>
+
             <div class="demo-phone medium">
               <img src="{{ url_for('static', filename='images/home.jpg') }}" />
             </div>
@@ -116,16 +121,220 @@
       </div>
     </section>
 
-    <!-- OTHER SECTIONS REMAIN SAME ... -->
+    <!-- HIGHLIGHTS -->
+    <section class="section light">
+      <div class="container">
+        <h2 class="section-title reveal">✨ App Highlights</h2>
+        <p class="section-subtitle reveal">
+          Built for candidates, karyakartas and booth teams who need real-time,
+          accurate voter data.
+        </p>
+
+        <div class="features">
+          <div class="feature reveal">
+            <h4>✅ Smart Voter Search</h4>
+            <p>
+              Search voters instantly by name, EPIC number, booth, or address
+              with blazing fast filters.
+            </p>
+          </div>
+
+          <div class="feature reveal">
+            <h4>📊 Filters & Live Charts</h4>
+            <p>
+              Analyse voters by age, gender, ward, booth and more – with
+              auto-generated bar & pie charts.
+            </p>
+          </div>
+
+          <div class="feature reveal">
+            <h4>👨‍👩‍👧 Family Grouping</h4>
+            <p>
+              Group voters house-wise and family-wise for targeted campaigning
+              and follow-ups.
+            </p>
+          </div>
+
+          <div class="feature reveal">
+            <h4>📄 Voter PDF & Lists</h4>
+            <p>Download booth-wise, area-wise, street-wise PDFs instantly.</p>
+          </div>
+
+          <div class="feature reveal">
+            <h4>🧮 EVM Simulation</h4>
+            <p>Realistic election-style EVM voting demo.</p>
+          </div>
+
+          <div class="feature reveal">
+            <h4>🆔 Custom Voter ID Cards</h4>
+            <p>
+              Create printable voter cards with your logo, slogan & branding.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section dark-sec">
+      <div class="container">
+        <h2 class="section-title reveal light-text">What Leaders Are Saying</h2>
+        <p class="section-subtitle reveal light-text">
+          Trusted by local body leaders across Maharashtra.
+        </p>
+
+        <div class="testimonial-wrapper reveal">
+          <div class="testimonial" id="testimonialText">
+            “Mission ZP app helped our team track every booth in real-time.”
+          </div>
+          <div class="testimonial-meta">
+            <span id="testimonialName">Sitting ZP Member</span>
+            <span id="testimonialRole">Rural Constituency</span>
+          </div>
+          <div class="testimonial-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section light" id="faq">
+      <div class="container">
+        <h2 class="section-title reveal">❓ Frequently Asked Questions</h2>
+        <p class="section-subtitle reveal">
+          Clear answers for candidates, karyakartas and ground teams.
+        </p>
+
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              What is Mission ZP App?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Mission ZP App helps election teams manage booth-wise voter data.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              Is it useful for all local body elections?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes, ZP, Nagar Parishad, Municipality, GP etc.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              Can I request custom features?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Yes, custom modules can be added.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTALL GUIDE -->
+    <section class="section light" id="install">
+      <div class="container">
+        <h2 class="section-title reveal">📘 Installation & Usage Guide</h2>
+        <p class="section-subtitle reveal">
+          Follow this guide to install and use the app.
+        </p>
+
+        <div class="install-grid reveal">
+          <div class="install-steps">
+            <h3>How to Install the APK</h3>
+            <ol>
+              <li>Click the <strong>Download Demo APK</strong> button.</li>
+              <li>Allow installation from <strong>Unknown Sources</strong>.</li>
+              <li>Open the file → Install.</li>
+              <li>Login or import voter data.</li>
+            </ol>
+          </div>
+
+          <div class="install-video">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/HCNbg-RxXwE"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENQUIRY FORM -->
+    <section class="section" id="enquiry">
+      <div class="container">
+        <h2 class="section-title reveal">📩 Enquiry Form</h2>
+
+        <div class="enquiry-box reveal">
+          <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style="display: none"
+          ></iframe>
+
+          <form
+            id="google-form"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSeiKP7yDfzO0iISR8rq4ZRl4wegDq_YbznczQgVVD_rO9O0mQ/formResponse"
+            method="POST"
+            target="hidden_iframe"
+          >
+            <input
+              type="text"
+              name="entry.2005620554"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="email"
+              name="entry.1045781291"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="text"
+              name="entry.1065046570"
+              placeholder="Constituency"
+              required
+            />
+            <input
+              type="text"
+              name="entry.1166974658"
+              placeholder="Phone"
+              required
+            />
+
+            <textarea
+              name="entry.839337160"
+              rows="3"
+              placeholder="Election Type"
+              required
+            ></textarea>
+
+            <button id="submitBtn" type="submit" class="btn-primary btn-full">
+              Send Enquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
 
     <!-- SUCCESS MODAL -->
     <div id="successModal" class="modal">
       <div class="modal-content">
         <h3>🎉 Enquiry Submitted</h3>
-        <p>Your details have been recorded. Our team will contact you soon.</p>
-        <button id="closeSuccess" class="btn-primary" style="margin-top: 10px">
-          OK
-        </button>
+        <p>Your details have been recorded.</p>
+        <button id="closeSuccess" class="btn-primary">OK</button>
       </div>
     </div>
 
@@ -133,7 +342,7 @@
     <div id="apkModal" class="modal">
       <div class="modal-content apk-box">
         <h3>📥 Download Demo Matdar App</h3>
-        <p>Get the latest APK for your ground team.</p>
+        <p>Get the latest APK.</p>
 
         <a
           href="{{ url_for('static', filename='app/matadar.apk') }}"
@@ -143,8 +352,8 @@
           ⬇️ Download APK
         </a>
 
-        <a href="#install" class="btn-outline btn-full" id="goInstallGuide">
-          📘 View Installation Guide
+        <a href="#install" class="btn-outline btn-full">
+          📘 Installation Guide
         </a>
 
         <button id="closeApk" class="btn-outline">Close</button>
@@ -155,7 +364,7 @@
     <div id="manualModal" class="modal">
       <div class="modal-content apk-box">
         <h3>📘 User Manual</h3>
-        <p>Download the complete Matdar App User Guide (PDF).</p>
+        <p>Download the complete Matadar App User Guide (PDF).</p>
 
         <a
           href="{{ url_for('static', filename='manual/user_manual.pdf') }}"
@@ -179,7 +388,7 @@
       </p>
     </footer>
 
-    <!-- Floating WhatsApp -->
+    <!-- WhatsApp Floating -->
     <a
       href="https://wa.me/919637354092"
       target="_blank"
@@ -191,10 +400,11 @@
 
     <!-- JS -->
     <script>
-      let manualModal = document.getElementById("manualModal");
-      let manualBtn = document.getElementById("manualBtn");
-      let manualBtn2 = document.getElementById("manualBtn2");
-      let closeManual = document.getElementById("closeManual");
+      // Manual modal controls
+      const manualModal = document.getElementById("manualModal");
+      const manualBtn = document.getElementById("manualBtn");
+      const manualBtn2 = document.getElementById("manualBtn2");
+      const closeManual = document.getElementById("closeManual");
 
       manualBtn.onclick = () => (manualModal.style.display = "block");
       manualBtn2.onclick = () => (manualModal.style.display = "block");
